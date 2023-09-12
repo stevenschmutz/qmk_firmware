@@ -15,9 +15,9 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x6_3(  
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            KC_NO, KC_QUOT, KC_COMM, KC_DOT, LCTL_T(KC_P), KC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L, KC_NO, KC_NO, 
+            KC_NO, LGUI_T(KC_QUOT), KC_COMM, KC_DOT, LCTL_T(KC_P), KC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L, KC_NO, 
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            LGUI_T(KC_A), LALT_T(KC_O), LCTL_T(KC_E), LSFT_T(KC_U), LT(3,KC_I),          KC_D, KC_H, KC_T, KC_N, KC_S, KC_NO, 
+            KC_NO, KC_A, LALT_T(KC_O), LCTL_T(KC_E), LSFT_T(KC_U), LT(3,KC_I),          KC_D, KC_H, KC_T, KC_N, KC_S, KC_NO, 
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             KC_NO, LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, KC_X,                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z), KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -45,7 +45,7 @@ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            QK_BOOT, KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_EQL),
+            QK_BOOT, KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
 
 
 	[_NUMERIC] = LAYOUT_split_3x6_3(
@@ -56,7 +56,7 @@ KC_NO, KC_NO, KC_F5, KC_F6, KC_F7, KC_F8,                                       
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_NO, KC_F1, KC_F2, KC_F3, KC_F4,                                       KC_MINS, KC_1, KC_2, KC_3, KC_ASTR, KC_NO, 
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_TRNS)
+                KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_EQL)
 };
 
 #if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
