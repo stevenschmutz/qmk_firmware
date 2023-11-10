@@ -27,7 +27,10 @@ combo_t key_combos[] = {
   [JK_ESC]    = COMBO(jk_combo, KC_ESC),
 };
 
-
+enum custom_keycodes {
+  UPDIR = SAFE_RANGE,
+  CTRL_TICK,
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x6_3(
@@ -58,7 +61,7 @@ KC_NO, KC_TRNS, KC_QUES, KC_GRV, KC_PERC, KC_QUES,                              
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_PGDN, KC_UP, KC_PGUP, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, KC_NO, KC_NO, KC_NO, KC_F2, KC_NO,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
+KC_NO, KC_NO, KC_NO, UPDIR, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -82,7 +85,21 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 };
 #endif // defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
 
-
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  switch (keycode) {
+    case UPDIR:  // Types ../ to go up a directory on the shell.
+      if (record->event.pressed) {
+        SEND_STRING("../");
+      }
+      return false;
+    case CTRL_TICK:  // Types ctrl + backtick
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("`"));
+      }
+      return false;
+  }
+  return true;
+}
 
 
 
