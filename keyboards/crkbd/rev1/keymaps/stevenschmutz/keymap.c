@@ -58,7 +58,7 @@ KC_NO, KC_TRNS, KC_QUES, KC_GRV, KC_PERC, KC_QUES,                              
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_PGDN, KC_UP, KC_PGUP, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
+KC_NO, KC_NO, KC_NO, KC_NO, KC_F2, KC_NO,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
