@@ -11,6 +11,23 @@ enum layers {
     _NUMERIC,
 };
 
+// Details taken from keyboards/crkbd/keymaps/markstos/keymap.c
+enum combos {
+  DF_DASH,
+  JK_ESC
+};
+
+const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
+
+combo_t key_combos[] = {
+  // Add commonly used dash to home row
+  [DF_DASH]    = COMBO(df_combo, KC_MINS),
+  // For Vim, put Escape on the home row
+  [JK_ESC]    = COMBO(jk_combo, KC_ESC),
+};
+
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x6_3(
