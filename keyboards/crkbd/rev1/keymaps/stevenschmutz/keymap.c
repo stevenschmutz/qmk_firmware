@@ -13,16 +13,12 @@ enum layers {
 
 // Details taken from keyboards/crkbd/keymaps/markstos/keymap.c
 enum combos {
-  DF_DASH,
   JK_ESC
 };
 
-const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
 
 combo_t key_combos[] = {
-  // Add commonly used dash to home row
-  [DF_DASH]    = COMBO(df_combo, KC_MINS),
   // For Vim, put Escape on the home row
   [JK_ESC]    = COMBO(jk_combo, KC_ESC),
 };
@@ -30,6 +26,8 @@ combo_t key_combos[] = {
 enum custom_keycodes {
   UPDIR = SAFE_RANGE,
   CTRL_TICK,
+  CTRL_UP,
+  CTRL_DOWN,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -39,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             KC_NO, KC_A, KC_O, KC_E, KC_U, LT(3,KC_I),                                          KC_D, KC_H, KC_T, KC_N, KC_S, KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            KC_NO, LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, KC_X,                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z), KC_NO,
+            KC_NO, KC_SCLN, KC_Q, KC_J, KC_K, KC_X,                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z), KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                         LCTL_T(KC_ESC), LSFT_T(KC_TAB), LT(2,KC_SPC),                     SC_SENT, LT(1,KC_BSPC), LALT_T(KC_DEL)
 
@@ -63,7 +61,7 @@ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_NO, KC_NO, UPDIR, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO,
+KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     CTRL_UP, CTRL_DOWN, KC_TRNS, KC_NO,KC_NO, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             QK_BOOT, KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
 
@@ -95,6 +93,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     case CTRL_TICK:  // Types ctrl + backtick
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("`"));
+      }
+      return false;
+    case CTRL_UP:  // Types ctrl + UP
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_TAP(X_UP)));
+      }
+      return false;
+    case CTRL_DOWN:  // Types ctrl + down
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_TAP(X_DOWN)));
       }
       return false;
   }
