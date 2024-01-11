@@ -11,6 +11,7 @@ enum layers {
     _NUMERIC,
 };
 
+
 // Details taken from keyboards/crkbd/keymaps/markstos/keymap.c
 enum combos {
   JK_ESC
@@ -30,6 +31,7 @@ enum custom_keycodes {
   CTRL_DOWN,
 };
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x6_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -39,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             KC_NO, KC_SCLN, KC_Q, KC_J, KC_K, KC_X,                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z), KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        LCTL_T(KC_ESC), LSFT_T(KC_TAB), LT(2,KC_SPC),                     SC_SENT, LT(1,KC_BSPC), LALT_T(KC_DEL)
+                        LCTL_T(KC_ESC), LT(3,KC_TAB), LT(2,KC_SPC),                     SC_SENT, LT(1,KC_BSPC), LALT_T(KC_DEL)
 
             ),
 
@@ -59,7 +61,7 @@ KC_NO, KC_TRNS, KC_QUES, KC_GRV, KC_PERC, KC_QUES,                              
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_PGDN, KC_UP, KC_PGUP, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, KC_NO, KC_NO, UPDIR, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
+KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     CTRL_UP, CTRL_DOWN, KC_TRNS, KC_NO,KC_NO, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -82,6 +84,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
 };
 #endif // defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
+
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
@@ -108,6 +111,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   }
   return true;
 }
+
 
 
 
