@@ -80,15 +80,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-#if defined(ENCODER_MAP_ENABLE)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_DVORAK] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-   [_SYMBOL] = {ENCODER_CCW_CW(KC_TRNS, KC_TRNS)},
-    [_NAV] = {ENCODER_CCW_CW(KC_TRNS, KC_TRNS)},
-   [_NUMERIC] = {ENCODER_CCW_CW(KC_TRNS, KC_TRNS)},
-;
-#endif
-
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
     case UPDIR:  // Types ../ to go up a directory on the shell.
