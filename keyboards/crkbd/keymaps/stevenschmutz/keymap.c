@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "g/keymap_combo.h"
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -9,22 +10,6 @@ enum layers {
     _SYMBOL,
     _NAV,
     _NUMERIC,
-};
-
-// Details taken from keyboards/crkbd/keymaps/markstos/keymap.c
-enum combos {
-  DF_DASH,
-  JK_ESC
-};
-
-const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
-const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
-
-combo_t key_combos[] = {
-  // Add commonly used dash to home row
-  [DF_DASH]    = COMBO(df_combo, KC_MINS),
-  // For Vim, put Escape on the home row
-  [JK_ESC]    = COMBO(jk_combo, KC_ESC),
 };
 
 enum custom_keycodes {
