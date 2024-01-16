@@ -59,7 +59,7 @@ uint8_t get_hue(uint8_t layer) {
         case 2:
             return 180;
         case 1:
-            return 220;
+            return 43;
         default:
             return 0;
     }
