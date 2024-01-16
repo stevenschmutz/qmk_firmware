@@ -13,9 +13,10 @@ enum layers {
 };
 
 enum custom_keycodes {
-  UPDIR = SAFE_RANGE,
-  CTRL_TICK,
+    CTRL_TICK,
 };
+
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x5_3(
@@ -46,9 +47,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_PGDN, KC_UP, KC_PGUP, KC_END,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_NO, KC_NO, UPDIR, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
+ KC_NO, KC_NO, KC_NO, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,
+ KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     LCTL(KC_UP), LCTL(KC_DOWN), KC_NO, KC_NO, KC_TRNS,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             QK_BOOT, KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
 
@@ -67,11 +68,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case UPDIR:  // Types ../ to go up a directory on the shell.
-      if (record->event.pressed) {
-        SEND_STRING("../");
-      }
-      return false;
     case CTRL_TICK:  // Types ctrl + backtick
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("`"));

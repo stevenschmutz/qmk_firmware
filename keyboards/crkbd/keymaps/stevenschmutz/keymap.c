@@ -48,7 +48,7 @@ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_NO, KC_NO, UPDIR, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO,
+KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     LCTL(KC_UP), LCTL(KC_DOWN), KC_NO, KC_NO, KC_TRNS, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             QK_BOOT, KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
 
@@ -72,16 +72,12 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case UPDIR:  // Types ../ to go up a directory on the shell.
-      if (record->event.pressed) {
-        SEND_STRING("../");
-      }
-      return false;
     case CTRL_TICK:  // Types ctrl + backtick
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("`"));
       }
       return false;
+
   }
   return true;
 }
