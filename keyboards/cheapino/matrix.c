@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "print.h"
 
 // How long the scanning code waits for changed io to settle.
-#define MATRIX_IO_DELAY 30
+#define MATRIX_IO_DELAY 20
 
 #define COL_SHIFTER ((uint16_t)1)
 
