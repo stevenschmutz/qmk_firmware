@@ -33,3 +33,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define COMBO_VARIABLE_LEN
 #define COMBO_TERM 50
+
+
+
+/* Encoder config */
+/*#ifdef ENCODER_ENABLE */
+#   define ENCODERS_PAD_A { GP2 }
+#   define ENCODERS_PAD_B { GP3 }
+#   define ENCODERS_PAD_A_RIGHT { }
+#   define ENCODERS_PAD_B_RIGHT { }
+
+#   define ENCODER_RESOLUTIONS { 2 }
+
+/* For 4x encoders you also can assign default position if encoder skips pulses when it changes */
+/* direction. For example, if your encoder send high level on both pins by default, define this: */
+#   define ENCODER_DEFAULT_POS 0x3
+
+/*#endif*/

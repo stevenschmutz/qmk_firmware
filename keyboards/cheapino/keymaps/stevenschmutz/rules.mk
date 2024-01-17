@@ -3,7 +3,6 @@ LTO_ENABLE = yes
 VPATH  +=  keyboards/gboards/
 COMBO_ENABLE=yes
 ENCODER_ENABLE = yes
-SRC += encoder.c
 
 
 # This is for RGB *underglow*
