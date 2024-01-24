@@ -46,7 +46,7 @@ KC_NO, KC_TRNS, KC_QUES, KC_GRV, KC_PERC, KC_QUES,                              
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_PGDN, KC_UP, KC_PGUP, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, KC_NO, KC_NO, UPDIR, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
+KC_NO, KC_MUTE, KC_VOLD, KC_VOLU, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                     LCTL(KC_UP), LCTL(KC_DOWN), KC_NO, KC_NO, KC_TRNS, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
