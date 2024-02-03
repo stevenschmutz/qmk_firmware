@@ -7,19 +7,11 @@ static bool colABpressed = false;
 static bool encoderPressed = false;
 
 void clicked(void) {
-    tap_code(KC_MPLY);
+    tap_code(KC_MS_BTN1);
 }
 
 void turned(bool clockwise) {
-    if (IS_LAYER_ON(1)) {
-        tap_code(clockwise ? KC_VOLU : KC_VOLD);
-    } else if (IS_LAYER_ON(3)) {
-        tap_code16(clockwise ? LCTL(KC_TAB) : LCTL(LSFT(KC_TAB)));
-    } else if (IS_LAYER_ON(2)) {
-        tap_code(clockwise ? KC_MS_WH_DOWN : KC_MS_WH_UP);
-    } else {
-        tap_code(clockwise ? KC_VOLU : KC_VOLD);
-    }
+   tap_code16(clockwise ? KC_MS_WH_DOWN : KC_MS_WH_UP);
 }
 
 void blank_column(matrix_row_t current_matrix[], uint8_t col) {
