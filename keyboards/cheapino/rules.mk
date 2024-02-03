@@ -1,7 +1,5 @@
 CLTO_ENABLE = yes
-
 COMBO_ENABLE = yes
-
 APS_WORD_ENABLE = yes
 CUSTOM_MATRIX = lite
 WS2812_DRIVER = vendor
