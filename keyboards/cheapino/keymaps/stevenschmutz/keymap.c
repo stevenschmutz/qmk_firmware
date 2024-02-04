@@ -81,7 +81,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_DVORAK] = { ENCODER_CCW_CW(KC_PGUP, KC_PGDN),  ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
     [_SYMBOL] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
-    [_NAV] = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI),  ENCODER_CCW_CW(RGB_SPD, RGB_SPI)  },
+    [_NAV] = {  ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  ,  ENCODER_CCW_CW(RGB_SPD, RGB_SPI)  },
     [_NUMERIC] = { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD), ENCODER_CCW_CW(KC_LEFT, KC_RIGHT) },
 };
 #endif
