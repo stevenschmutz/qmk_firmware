@@ -1,5 +1,5 @@
 COMB(jkEsc,      KC_ESC,          KC_J, KC_K)
-COMB(htDel,      KC_DEL,          KC_H, KC_T)
+COMB(gcDel,      KC_DEL,          KC_G, KC_C)
 COMB(oeAlt,      KC_LALT,          KC_O, KC_E)
 COMB(euCtl,      KC_LCTL,          KC_E, KC_U)
 COMB(retspacecolon,  KC_COLON,   KC_B, KC_M)
