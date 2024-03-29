@@ -8,3 +8,5 @@ COMB(jqPrintSCR,  KC_PSCR,   KC_J, KC_Q)
 COMB(dotpPrintSCR,  KC_PSCR, KC_DOT, KC_P)
 COMB(entSpcBack,  KC_ENT,   KC_SPC, KC_BSPC)
 SUBS(helloWorld, "QMK is pretty rad eh?", KC_H, KC_J)
+
+#include "artsey.def"
