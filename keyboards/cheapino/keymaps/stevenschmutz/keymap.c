@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "g/keymap_combo.h"
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -10,13 +9,21 @@ enum layers {
     _SYMBOL,
     _NAV,
     _NUMERIC,
+  _ART_BASE,
+  _ART_NUM,
+  _ART_CUS,
+  _ART_PUNC,
+  _ART_MOU,
+  _ART_NAV,
+  _ART_SYM,
 };
 
 enum custom_keycodes {
     CTRL_TICK,
 };
 
-
+#include "aliases.c"
+#include "g/keymap_combo.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x5_3(
