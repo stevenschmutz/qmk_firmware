@@ -39,3 +39,8 @@ COMB(artsey_escape_2,KC_ESC,NAV_1_1,NAV_1_2,NAV_2_4)
 COMB(artsey_quote,KC_QUOT,BASE_1_2,BASE_2_2)
 COMB(artsey_bang,KC_EXLM,BASE_1_3,BASE_2_3)
 COMB(artsey_quest,KC_QUES,BASE_1_4,BASE_2_4)
+
+COMB(artsey_7,KC_7,NUM_1_1,NUM_1_2)
+COMB(artsey_8,KC_8,NUM_1_2,NUM_1_3)
+COMB(artsey_9,KC_9,NUM_2_1,NUM_2_2)
+COMB(artsey_0,KC_0,NUM_2_2,NUM_2_3)
