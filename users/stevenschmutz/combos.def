@@ -9,4 +9,3 @@ COMB(lrPrintSCR,  KC_PSCR,   KC_R, KC_L)
 COMB(entSpcBack,  KC_ENT,   KC_SPC, KC_BSPC)
 SUBS(helloWorld, "QMK is pretty rad eh?", KC_H, KC_J)
 
-#include "artsey.def"
