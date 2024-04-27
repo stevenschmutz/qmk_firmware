@@ -6,7 +6,7 @@ ARTSEY_C,
 ARTSEY_K,
 ARTSEY_B,
 ARTSEY_W,
-ARTSEY_N,
+ARTSEY_Y,
 ARTSEY_F,
 ARTSEY_X,
 ARTSEY_J,
@@ -67,7 +67,7 @@ const uint16_t PROGMEM artsey_c[] = {BASE_2_1,BASE_2_2,COMBO_END};
 const uint16_t PROGMEM artsey_k[] = {BASE_2_2,BASE_2_4,COMBO_END};
 const uint16_t PROGMEM artsey_b[] = {BASE_2_1,BASE_2_4,COMBO_END};
 const uint16_t PROGMEM artsey_w[] = {BASE_1_1,BASE_1_4,COMBO_END};
-const uint16_t PROGMEM artsey_n[] = {BASE_2_3,BASE_2_4,COMBO_END};
+const uint16_t PROGMEM artsey_y[] = {BASE_2_3,BASE_2_4,COMBO_END};
 const uint16_t PROGMEM artsey_f[] = {BASE_1_1,BASE_1_2,COMBO_END};
 const uint16_t PROGMEM artsey_x[] = {BASE_1_2,BASE_1_3,BASE_1_4,COMBO_END};
 const uint16_t PROGMEM artsey_j[] = {BASE_1_3,BASE_1_4,COMBO_END};
@@ -126,7 +126,7 @@ combo_t key_combos[] = {
 [ARTSEY_K] = COMBO_ACTION(artsey_k),
 [ARTSEY_B] = COMBO_ACTION(artsey_b),
 [ARTSEY_W] = COMBO_ACTION(artsey_w),
-[ARTSEY_N] = COMBO_ACTION(artsey_n),
+[ARTSEY_Y] = COMBO_ACTION(artsey_y),
 [ARTSEY_F] = COMBO_ACTION(artsey_f),
 [ARTSEY_X] = COMBO_ACTION(artsey_x),
 [ARTSEY_J] = COMBO_ACTION(artsey_j),
@@ -201,8 +201,8 @@ break;
 case ARTSEY_W:
 if (pressed) {SEND_STRING("w");}
 break;
-case ARTSEY_N:
-if (pressed) {SEND_STRING("n");}
+case ARTSEY_Y:
+if (pressed) {SEND_STRING("y");}
 break;
 case ARTSEY_F:
 if (pressed) {SEND_STRING("f");}
