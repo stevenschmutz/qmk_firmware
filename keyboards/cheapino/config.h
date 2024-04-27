@@ -34,4 +34,9 @@
  #define RGBLED_NUM 1                     // The number of LEDs connected
 
 
+
+// Display Configuration
+#define I2C1_SCL_PIN GP7
+#define I2C1_SDA_PIN GP8
+
 #define MAX_DEFERRED_EXECUTORS 32
