@@ -36,7 +36,8 @@
 
 
 // Display Configuration
-#define I2C1_SCL_PIN GP7
-#define I2C1_SDA_PIN GP8
+#define I2C_DRIVER_I2CD1
+#define I2C1_SCL_PIN GP27
+#define I2C1_SDA_PIN GP26
 
 #define MAX_DEFERRED_EXECUTORS 32
