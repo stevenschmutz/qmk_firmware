@@ -9,13 +9,7 @@ enum layers {
     _SYMBOL,
     _NAV,
     _NUMERIC,
-  _ART_BASE,
-  _ART_NUM,
-  _ART_CUS,
-  _ART_PUNC,
-  _ART_MOU,
-  _ART_NAV,
-  _ART_SYM,
+  _ART_MOU
 };
 
 enum custom_keycodes {
@@ -42,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_A, KC_O, KC_E, KC_U, LT(3,KC_I),                                          KC_D, KC_H, KC_T, KC_N, KC_S,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, LT(_ART_BASE,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
+             LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, LT(_ART_MOU,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                          LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC) ),
 
@@ -81,50 +75,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 
-[_ART_BASE] = LAYOUT_split_3x5_3(
-            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                          KC_NO, BASE_1_1, BASE_1_2, BASE_1_3, BASE_1_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,TG(_DVORAK),                                         KC_NO, BASE_2_1, BASE_2_2, BASE_2_3, BASE_2_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
-
-
-
-[_ART_NUM] = LAYOUT_split_3x5_3(
-            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                          KC_NO, NUM_1_1, NUM_1_2, NUM_1_3, NUM_1_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, NUM_2_1, NUM_2_2, NUM_2_3, NUM_2_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
-
-[_ART_CUS] = LAYOUT_split_3x5_3(
-            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                          KC_NO, CUS_1_1, CUS_1_2, CUS_1_3, CUS_1_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, CUS_2_1, CUS_2_2, CUS_2_3, CUS_2_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
-
-
-[_ART_PUNC] = LAYOUT_split_3x5_3(
-            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                          KC_NO, PUNC_1_1, PUNC_1_2, PUNC_1_3, PUNC_1_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, PUNC_2_1, PUNC_2_2, PUNC_2_3, PUNC_2_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
-
-
 [_ART_MOU] = LAYOUT_split_3x5_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
@@ -135,27 +85,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
-[_ART_NAV] = LAYOUT_split_3x5_3(
-            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                          KC_NO, NAV_1_1, NAV_1_2, NAV_1_3, NAV_1_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,TG(_ART_NAV),                                         KC_NO, NAV_2_1, NAV_2_2, NAV_2_3, NAV_2_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
-
-[_ART_SYM] = LAYOUT_split_3x5_3(
-            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                          KC_NO, SYM_1_1, SYM_1_2, SYM_1_3, SYM_1_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, SYM_2_1, SYM_2_2, SYM_2_3, SYM_2_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
-
 };
+
+#ifdef OLED_ENABLE
+bool oled_task_user(void) {
+    // Host Keyboard Layer Status
+    oled_write_P(PSTR("Layer: "), false);
+
+    switch (get_highest_layer(layer_state)) {
+        case _DVORAK:
+            oled_write_P(PSTR("DVORAK\n"), false);
+            break;
+        case _SYMBOL:
+            oled_write_P(PSTR("SYMBOL\n"), false);
+            break;
+        case _NAV:
+            oled_write_P(PSTR("NAV\n"), false);
+            break;
+        default:
+            // Or use the write_ln shortcut over adding '\n' to the end of your string
+            oled_write_ln_P(PSTR("Undefined"), false);
+    }
+
+    // Host Keyboard LED Status
+    led_t led_state = host_keyboard_led_state();
+    oled_write_P(led_state.num_lock ? PSTR("NUM ") : PSTR("    "), false);
+    oled_write_P(led_state.caps_lock ? PSTR("CAP ") : PSTR("    "), false);
+    oled_write_P(led_state.scroll_lock ? PSTR("SCR ") : PSTR("    "), false);
+    
+    return false;
+}
+#endif
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
