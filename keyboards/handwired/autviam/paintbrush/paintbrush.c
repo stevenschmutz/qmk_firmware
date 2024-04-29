@@ -16,7 +16,7 @@ uint8_t _value;
 // stop us from using the keyboard.
 // https://docs.qmk.fm/#/custom_quantum_functions?id=deferred-executor-registration
 uint32_t flash_led(uint32_t next_trigger_time, void *cb_arg) {
-    rgblight_sethsv(_hue_countdown * 5, 230, 70);
+    rgblight_sethsv(_hue_countdown * 10, 230, 70);
     _hue_countdown--;
     if (_hue_countdown == 0) {
         // Finished, reset to user chosen led color
