@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "aliases.c"
 #include "g/keymap_combo.h"
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
