@@ -11,6 +11,7 @@ enum layers {
     _SYMBOL,
     _NAV,
     _NUMERIC,
+    _ART_MOU,
 };
 
 enum custom_keycodes {
