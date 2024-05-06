@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             KC_NO, KC_A, KC_O, KC_E, KC_U, LT(3,KC_I),                                          KC_D, KC_H, KC_T, KC_N, KC_S, KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            KC_NO, LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, KC_X,                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z), KC_NO,
+            KC_NO, LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K,  LT(_ART_MOU,KC_X),                            KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z), KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                         KC_TRNS, LSFT_T(KC_TAB), LT(2,KC_SPC),                     SC_SENT, LT(1,KC_BSPC), KC_TRNS
 
@@ -61,7 +61,18 @@ KC_NO, KC_NO, KC_F5, KC_F6, KC_F7, KC_F8,                                       
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4,                                       KC_MINS, KC_1, KC_2, KC_3, KC_ASTR, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_EQL)
+                KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_EQL),
+
+[_ART_MOU] = LAYOUT_split_3x6_3(
+            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO, MOU_1_1, MOU_1_2, MOU_1_3, MOU_1_4,KC_NO,
+              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,KC_NO,
+              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,TG(_ART_MOU),                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,KC_NO,
+              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
+
 };
 
 #if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
