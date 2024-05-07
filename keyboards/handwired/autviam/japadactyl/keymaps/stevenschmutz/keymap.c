@@ -26,18 +26,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[_DVORAK] = LAYOUT_ortho_5x4 (
-            //,-----------------------------------------------------.                 
-             LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, KC_Y,                         
-              //,-----------------------------------------------------.              
-             KC_A, KC_O, KC_E, KC_U, KC_I,                                    
-              //,-----------------------------------------------------.            
-           LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, KC_X,                
-              //,-----------------------------------------------------.          
-                         LSFT_T(KC_TAB), KC_SPC, KC_TRNS),                
 
-
-
+    [_DVORAK] = LAYOUT_split_3x5_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, KC_Y,                          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_A, KC_O, KC_E, KC_U, KC_I,                                          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, KC_X,                               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO),
 };
 
 
