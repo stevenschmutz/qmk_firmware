@@ -12,6 +12,7 @@ enum layers {
   _ART_MOU
 };
 
+
 enum custom_keycodes {
     CTRL_TICK,
 };
@@ -22,17 +23,17 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x5_3(
-            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, KC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_A, KC_O, KC_E, KC_U, LT(3,KC_I),                                          KC_D, KC_H, KC_T, KC_N, KC_S,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, LT(_ART_MOU,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                         LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC) ),
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, KC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L,
+                                   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+                                   KC_A, KC_O, KC_E, KC_U, LT(3,KC_I),                                          KC_D, KC_H, KC_T, KC_N, KC_S,
+                                   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+                                   LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, LT(_ART_MOU,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
+                                   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+                                   LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC)
 
-
-	[_SYMBOL] = LAYOUT_split_3x5_3(
+                ),
+        [_SYMBOL] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_GRV, KC_CIRC, KC_AT, KC_DLR, KC_TILD,                                 KC_AMPR, KC_EXLM, KC_PIPE, KC_UNDS, KC_HASH,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -112,8 +113,7 @@ bool oled_task_user(void) {
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   // If console is enabled, it will print the matrix position and status of each key pressed
 #ifdef CONSOLE_ENABLE
-    uprintf("KL: kc: 0x%04X, col: %2u, row: %2u, pressed: %u, time: %5u, int: %u, count: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
-
+    uprintf("KL: kc: 0x%04X,row: %2u,  col: %2u, pressed: %u, time: %5u, int: %u, count: %u\n", keycode, record->event.key.row,record->event.key.col,  record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
 #endif
   switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
