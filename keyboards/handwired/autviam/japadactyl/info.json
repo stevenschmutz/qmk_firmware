@@ -16,7 +16,7 @@
         "split_3x5_3"
     ],
     "matrix_pins": {
-            "cols": ["GP8", "GP8", "GP7", "GP7", "GP6", "GP6", "GP29", "GP29", "GP28", "GP28", "GP22", "GP22"],
+            "cols": ["GP8","GP8", "GP7","GP7","GP6","GP29", "GP29", "GP28", "GP28", "GP22"],
             "rows": ["GP27", "GP26", "GP15", "GP14"]
         },
     "processor": "RP2040",
