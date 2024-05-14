@@ -3,7 +3,8 @@ JapaHub
 
 RJ45 Left
 ----
-||MCU Pins||Colour Wire||RJ45 Pins|| RJ45 Cable Colour||
+|MCU Pins|Colour Wire|RJ45 Pins| RJ45 Cable Colour|
+|--------|------------|--------|------------------|
 |5V|Weird|2222|Another|
 |GND|Weird|2222|Another|
 |3V3|Weird|2222|Another
@@ -17,7 +18,9 @@ RJ45 Left
 
 RJ45 Right
 ----
-||MCU Pins||Colour Wire||RJ45 Pins|| RJ45 Cable Colour||
+
+|MCU Pins|Colour Wire|RJ45 Pins| RJ45 Cable Colour|
+|--------|------------|--------|------------------|
 |GP0|Weird|2222|Another|
 |GP1|Weird|2222|Another|
 |GP2|Weird|2222|Another
@@ -31,7 +34,9 @@ RJ45 Right
 
 RJ12 Left
 ----
-||MCU Pins||Colour Wire||RJ45 Pins|| RJ45 Cable Colour||
+
+|MCU Pins|Colour Wire|RJ45 Pins| RJ45 Cable Colour|
+|--------|------------|--------|------------------|
 |GP13|Weird|2222|Another|
 |GP12|Weird|2222|Another|
 |GP11|Weird|2222|Another
