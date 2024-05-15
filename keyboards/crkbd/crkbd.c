@@ -100,14 +100,15 @@ static void set_keylog(uint16_t keycode, keyrecord_t *record) {
     // update keylog
     key_name = pgm_read_byte(&code_to_name[keycode]);
 }
-
+/* STEVEN REMOVED 2024-May-15
 static const char *depad_str(const char *depad_str, char depad_char) {
     while (*depad_str == depad_char)
         ++depad_str;
     return depad_str;
 }
-
+*/
 static void oled_render_keylog(void) {
+/*** STEVEN REMOVED 2024-May-15
     oled_write_char('0' + last_row, false);
     oled_write_P(PSTR("x"), false);
     oled_write_char('0' + last_col, false);
@@ -116,6 +117,7 @@ static void oled_render_keylog(void) {
     oled_write(depad_str(last_keycode_str, ' '), false);
     oled_write_P(PSTR(":"), false);
     oled_write_char(key_name, false);
+ */   
 }
 
 // static void render_bootmagic_status(bool status) {
@@ -150,7 +152,7 @@ bool oled_task_kb(void) {
     }
     if (is_keyboard_master()) {
         oled_render_layer_state();
-        //oled_render_keylog();
+        oled_render_keylog();
     } else {
         oled_render_logo();
     }
