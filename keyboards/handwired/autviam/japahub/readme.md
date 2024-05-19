@@ -5,15 +5,14 @@ RJ45 Left
 ----
 |MCU Pins|Colour Wire|RJ45 Pins| RJ45 Cable Colour|
 |--------|------------|--------|------------------|
-|5V|Weird|2222|Another|
-|GND|Weird|2222|Another|
-|3V3|Weird|2222|Another
-|GP29|Weird|2222|Another|
-|GP28|Weird|2222|Another|
-|GP27|Weird|2222|Another|
-|GP26|Weird|2222|Another|
-|GP15|Weird|2222|Another|
-|GP14|Weird|2222|Another|
+|5V|Yellow|7|BrownWhite|
+|GND|Orange|6|Green|
+|3V3||Green|5|BlueWhite
+|GP29|Blue|4|Blue|
+|GP28|Purple|3|GreenWhite|
+|GP27|Grey|2|Orange|
+|GP26|Brown|1|OrangeWhite|
+|GP15|N/A|2222|Another|
 
 
 RJ45 Right
@@ -21,27 +20,27 @@ RJ45 Right
 
 |MCU Pins|Colour Wire|RJ45 Pins| RJ45 Cable Colour|
 |--------|------------|--------|------------------|
-|GP0|Weird|2222|Another|
-|GP1|Weird|2222|Another|
-|GP2|Weird|2222|Another
-|GP3|Weird|2222|Another|
-|GP4|Weird|2222|Another|
-|GP5|Weird|2222|Another|
-|GP6Weird|2222|Another|
-|GP7|Weird|2222|Another|
-|GP8|Weird|2222|Another|
-|GP9|Weird|2222|Another|
+|GP0|Red|1|OrangWhite|
+|GP1|White|2|Orange|
+|GP2|Yellow|3|GreenWhite|
+|GP3|Orange|4|Blue|
+|GP4|Green|5|BlueWhite|
+|GP5|Blue|6|Green|
+|GP6|Purple|7|BrownWhite|
+|GP7|Grey|8|Brown|
 
-RJ12 Left
+
+RJ12
 ----
 
-|MCU Pins|Colour Wire|RJ45 Pins| RJ45 Cable Colour|
+|MCU Pins|Colour Wire|RJ12 Pins| RJ12 Cable Colour|
 |--------|------------|--------|------------------|
-|GP13|Weird|2222|Another|
-|GP12|Weird|2222|Another|
-|GP11|Weird|2222|Another
-|GP10|Weird|2222|Another|
-|GP9|Weird|2222|Another|
-|GP8|Weird|2222|Another|
+|GP8|Brown|1|Another|
+|GP9|n/a|n/a|n/a|
+|GP10|Orange|2|Black|
+|GP11|Yellow|3|Red|
+|GP12|White|4|Green|
+|GP13|Red|5|Yellow|
+|GP14||Black|6|n/a|
 
 
