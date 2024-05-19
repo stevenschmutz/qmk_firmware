@@ -37,10 +37,10 @@ RJ12
 |--------|------------|--------|------------------|
 |GP8|Brown|1|Another|
 |GP9|n/a|n/a|n/a|
-|GP10|Orange|2|Yellow|
-|GP11|Yellow|3|Green|
-|GP12|White|4|Red|
-|GP13|Red|5|Black|
+|GP10|Orange|2|Black|
+|GP11|Yellow|3|Red|
+|GP12|White|4|Green|
+|GP13|Red|5|Yellow|
 |GP14||Black|6|n/a|
 
 
