@@ -39,7 +39,7 @@ KC_NO, KC_GRV, KC_CIRC, KC_AT, KC_DLR, KC_TILD,                                 
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN, KC_SLSH,                              KC_HASH, KC_RPRN, KC_RCBR, KC_RBRC, KC_BSLS, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, KC_TRNS, KC_QUES, KC_GRV, KC_PERC, KC_QUES,                                 KC_PSCR, KC_BSLS, KC_COLN, KC_TRNS, KC_TRNS, KC_NO,
+KC_NO, KC_TRNS, KC_QUES, KC_GRV, KC_PERC, KC_QUES,                                 KC_TRNS, KC_BSLS, KC_COLN, KC_TRNS, KC_TRNS, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                          KC_TRNS, KC_TRNS, KC_TRNS,                             KC_TRNS, KC_TRNS, QK_BOOT),
 
