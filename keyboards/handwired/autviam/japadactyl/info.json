@@ -15,10 +15,14 @@
     "community_layouts": [
         "split_3x5_3"
     ],
+
+    "rowcomment":"GP13=>RJ11:5  ; GP12=>RJ11:4 ;GP11=>RJ11:3; GP10=>Not actually used - just there to fool the matrix.c code to do Japanese matrix",
+    "colcomment":"GP26=>RJ45:1; GP27=>RJ45:2 ;GP28=>RJ45:3; GP2=>RJ45:1; GP1=>RJ45:2; GP0=>RJ45:3",
     "matrix_pins": {
             "rows": ["GP13", "GP12", "GP11","GP10"],
-            "cols": ["GP26","GP26", "GP27","GP27","GP28","GP28","GP2", "GP2", "GP1", "GP1", "GP0","GP0"]
-        },
+            "cols": ["GP26","GP26","GP27","GP27", "GP28","GP28","GP2", "GP2", "GP1", "GP1", "GP0","GP0"]
+
+    },
     "processor": "RP2040",
     "url": "",
     "usb": {
