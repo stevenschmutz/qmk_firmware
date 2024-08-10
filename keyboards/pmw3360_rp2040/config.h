@@ -3,10 +3,10 @@
 
 #pragma once
 
-#define SPI_SCK_PIN GP22
-#define SPI_MOSI_PIN GP23
-#define SPI_MISO_PIN GP20
-#define PMW33XX_CS_PIN GP21 // SPI CS pin.
+#define SPI_SCK_PIN GP28
+#define SPI_MOSI_PIN GP29
+#define SPI_MISO_PIN GP26
+#define PMW33XX_CS_PIN GP27 // SPI CS pin.
 
 /* Optional. */
 #define PMW33XX_CPI 1600      // The CPI range is 100-12000, in increments of 100. Defaults to 1600 CPI.
