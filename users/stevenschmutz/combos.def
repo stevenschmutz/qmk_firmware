@@ -7,5 +7,6 @@ COMB(mwColon,  KC_COLON,   KC_W, KC_M)
 COMB(dotpeeSCR,  KC_PSCR,   KC_DOT, KC_P)
 COMB(gcPrintSCR,  KC_PSCR,   KC_C, KC_R)
 COMB(entSpcBack,  KC_BSPC, KC_ENT,   KC_SPC)
+SUBS(sendTest, SS_LCTL("ac"), KC_O, KC_E, KC_U)
 SUBS(helloWorld, "QMK is pretty rad eh?", KC_H, KC_J)
 
