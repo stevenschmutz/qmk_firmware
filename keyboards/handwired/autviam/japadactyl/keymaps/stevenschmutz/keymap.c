@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
@@ -17,6 +16,8 @@ enum custom_keycodes {
     CTRL_TICK,
 };
 
+
+
 #include "aliases.c"
 #include "g/keymap_combo.h"
 
@@ -25,12 +26,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, KC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L,
-                                   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                                   KC_A, KC_O, KC_E, KC_U, LT(3,KC_I),                                          KC_D, KC_H, KC_T, KC_N, KC_S,
-                                   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                                   LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, LT(_ART_MOU,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
-                                   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                                   LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC)
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_A, KC_O, KC_E, KC_U, LT(3,KC_I),                                          KC_D, KC_H, KC_T, KC_N, KC_S,
+
+      LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, LT(_ART_MOU,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
+      //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+                  LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC)
 
                 ),
         [_SYMBOL] = LAYOUT_split_3x5_3(
