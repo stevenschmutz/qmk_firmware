@@ -5,8 +5,11 @@ COMB(euCtl,      KC_LCTL,          KC_E, KC_U)
 COMB(Equal,      KC_EQUAL,          KC_0, KC_4)
 COMB(mwColon,  KC_COLON,   KC_W, KC_M)
 COMB(dotpeeSCR,  KC_PSCR,   KC_DOT, KC_P)
-COMB(gcPrintSCR,  KC_PSCR,   KC_C, KC_R)
-COMB(entSpcBack,  KC_BSPC, KC_ENT,   KC_SPC)
+COMB(specialSpace,  KC_SPC, KC_SCLN,   KC_Q,KC_J,KC_K)
+COMB(specalEnt,  KC_ENT,  KC_M,KC_W,KC_V,KC_Z)
+COMB(specialTab,  KC_TAB, KC_SCLN, KC_Q,KC_J)
+COMB(specalBack,  KC_BSPC, KC_W,KC_V,KC_Z)
+
 SUBS(sendTest, SS_LCTL("ac"), KC_O, KC_E, KC_U)
 SUBS(helloWorld, "QMK is pretty rad eh?", KC_H, KC_J)
 
