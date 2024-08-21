@@ -1,6 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "aliases.c"
-#include "g/keymap_combo.h"
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -14,6 +12,8 @@ enum layers {
     _ART_MOU,
 };
 
+#include "aliases.c"
+#include "g/keymap_combo.h"
 enum custom_keycodes {
   UPDIR = SAFE_RANGE,
   CTRL_TICK,
@@ -22,7 +22,7 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x6_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            KC_NO, LGUI_T(KC_QUOT), KC_COMM, KC_DOT, LCTL_T(KC_P), KC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L, KC_NO,
+            KC_NO, LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, KC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L, KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             KC_NO, KC_A, KC_O, KC_E, KC_U, LT(3,KC_I),                                          KC_D, KC_H, KC_T, KC_N, KC_S, KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
