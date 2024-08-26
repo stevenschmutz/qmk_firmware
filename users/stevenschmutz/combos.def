@@ -33,6 +33,7 @@ COMB(anotherPipe,  KC_PIPE, CKC_N, KC_V)
 //COMB(anotherBracketClosed,  KC_RPRN, CKC_T, CKC_N)
 //COMB(anotherSquareClosed,  KC_RCBR, KC_V, KC_W)
 COMB(anotherExcl,  KC_EXLM, KC_F, CKC_D)
+COMB(anotherQues,  KC_QUES, KC_B, CKC_D)
 SUBS(sendTest, SS_LCTL("ac"), CKC_O, CKC_E, CKC_U)
 SUBS(helloWorld, "QMK is pretty rad eh?", CKC_H, KC_J)
 
