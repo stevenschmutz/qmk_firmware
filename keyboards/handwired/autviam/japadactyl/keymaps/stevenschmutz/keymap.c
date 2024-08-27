@@ -13,6 +13,8 @@ enum custom_keycodes {
     CKC_M,
     CKC_K,
     CKC_I,
+    CKC_Y,
+    CKC_X,
     CKC_D,
     CKC_ESC,
     CKC_SPC,
@@ -43,11 +45,11 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, KC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L,
+        LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, CKC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , CKC_T , CKC_N , CKC_S,
 
-      LSFT_T(KC_SCLN), KC_Q, KC_J, KC_K, LT(_ART_MOU,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
+      KC_SCLN, KC_Q, KC_J, KC_K, CKC_X,                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                   LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, KC_TRNS, KC_TRNS
 
@@ -156,12 +158,13 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_O, KC_O, KC_LEFT_ALT, 2)
         SMTD_MT(CKC_E, KC_E, KC_LEFT_CTRL, 2)
         SMTD_MT(CKC_U, KC_U, KC_LSFT, 2)
-        SMTD_MT(CKC_S, KC_S, KC_LEFT_GUI, 2)
-        SMTD_MT(CKC_N, KC_N, KC_LEFT_ALT, 2)
-        SMTD_MT(CKC_T, KC_T, KC_LEFT_CTRL, 2)
+        SMTD_MT(CKC_S, KC_S, KC_S, 2)
+        SMTD_MT(CKC_N, KC_N, KC_N, 2)
+        SMTD_MT(CKC_T, KC_T, KC_T, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
-        //SMTD_LT(CKC_SPC, KC_SPC, _SYMBOLS)
-        //SMTD_LT(CKC_ESC, KC_ESC, _SYMBOLS)
+
+        SMTD_LT(CKC_Y, KC_Y, _ART_MOU)
+        SMTD_LT(CKC_X, KC_X, _NAV)
         //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
