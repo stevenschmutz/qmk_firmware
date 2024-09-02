@@ -1,7 +1,7 @@
 COMB(Equal,      KC_EQUAL,  KC_0,    KC_4)
 
 //Left hand
-COMB(jkEsc,      KC_ESC,    KC_J,    KC_K)
+COMB(jkSpace,      KC_SPC,    KC_J,    KC_K)
 //COMB(oeAlt,      KC_LALT,   CKC_O,    CKC_E)
 COMB(dotpeeSCR,  KC_PSCR,   KC_DOT,  KC_P)
 //COMB(euCtl,      KC_LCTL,   CKC_E,    CKC_U)
@@ -15,7 +15,7 @@ COMB(anotherSlash,  KC_BSLS,  CKC_E,  KC_J)
 COMB(anotherUnderscore,  KC_UNDS,  CKC_O,  KC_Q)
 COMB(anotherPerc,  KC_PERC,  CKC_Y,  LT(3,KC_I))
 COMB(anotherTilde,  KC_TILD,  LT(3,KC_I),  CKC_X)
-COMB(anotherSpace,  KC_SPC,   CKC_U, CKC_H)
+COMB(onlyESC,  KC_ESC,   CKC_U, CKC_H)
 //COMB(anotherQuest,  KC_QUES,  LT(_ART_MOU,KC_X), KC_K)
 
 //Right hand
