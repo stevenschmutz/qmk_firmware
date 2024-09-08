@@ -9,7 +9,7 @@ layers:
   - ','
   - .
   - P
-  - {t: Y, h: L3}
+  - {t: Y, h: L4}
   - F
   - G
   - C
@@ -19,8 +19,8 @@ layers:
   - {t: O, h: LALT}
   - {t: E, h: LCTRL}
   - {t: U, h: LSFT}
-  - {t: I, h: L1}
-  - {t: D, h: L4}
+  - {t: I, h: L3}
+  - {t: D, h: L1}
   - {t: H, h: LSFT}
   - T
   - N
@@ -39,7 +39,7 @@ layers:
   - {t: SPC, h: L2}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - SC SENT
+  - {t: ENT, h: LSFT}
   - {t: BSPC, h: L1}
   L1:
   - '`'
