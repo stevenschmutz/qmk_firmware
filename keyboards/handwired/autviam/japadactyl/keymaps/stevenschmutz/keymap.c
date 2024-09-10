@@ -45,16 +45,19 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, CKC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L,
+        LT(4,KC_QUOT), KC_COMM, KC_DOT, KC_P, LT(4,KC_Y),                         KC_F, KC_G, KC_C, KC_R, LT(1,KC_L),
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , KC_T , KC_N , KC_S,
 
-      KC_SCLN, KC_Q, KC_J, KC_K, CKC_X,                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
+      LT(2,KC_SCLN), KC_Q, KC_J, KC_K, LT(2,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                  LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC)
+                 LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC)
 
                 ),
-        [_SYMBOL] = LAYOUT_split_3x5_3(
+ 
+
+
+    [_SYMBOL] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_GRV, KC_CIRC, KC_AT, KC_DLR, KC_TILD,                                 KC_AMPR, KC_EXLM, KC_PIPE, KC_UNDS, KC_HASH,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -163,8 +166,6 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         //SMTD_MT(CKC_T, KC_T, KC_T, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
 
-        SMTD_LT(CKC_Y, KC_Y, _ART_MOU)
-        SMTD_LT(CKC_X, KC_X, _NAV)
         //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
