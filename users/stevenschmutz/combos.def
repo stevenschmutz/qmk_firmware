@@ -5,7 +5,7 @@ COMB(jkSpace,      KC_SPC,    KC_J,    KC_K)
 //COMB(oeAlt,      KC_LALT,   CKC_O,    CKC_E)
 COMB(dotpeeSCR,  KC_PSCR,   KC_DOT,  KC_P)
 //COMB(euCtl,      KC_LCTL,   CKC_E,    CKC_U)
-COMB(anotherEnt,  KC_ENT,   KC_COMMA,  KC_DOT)
+
 COMB(anotherPercentag,  KC_PERC,  KC_COMMA,  CKC_O)
 COMB(anotherTab,  KC_TAB,  KC_Q,  KC_J)
 COMB(anotherDollar,  KC_DLR,  KC_P,  CKC_U)
@@ -16,6 +16,12 @@ COMB(anotherTilde,  KC_TILD,  CKC_O,  KC_Q)
 COMB(anotherAt,  KC_AT, LT(4,KC_Y),  LT(3,KC_I))
 COMB(anotherUnderscore,  KC_UNDS,  LT(3,KC_I),  LT(2,KC_X))
 COMB(onlyESC,  KC_ESC,   CKC_U, CKC_H)
+COMB(a_gt,  KC_GT,   LT(4,KC_QUOT), KC_COMM)
+COMB(a_lt,  KC_LT,   KC_COMMA,  KC_DOT)
+COMB(leftBracket,  KC_LPRN, CKC_U, LT(3,KC_I) )
+
+
+ 
 //COMB(anotherQuest,  KC_QUES,  LT(_ART_MOU,KC_X), KC_K)
 
 //Right hand
