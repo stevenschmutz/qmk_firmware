@@ -2,16 +2,14 @@ COMB(Equal,      KC_EQUAL,  KC_0,    KC_4)
 
 //Left hand
 COMB(jkSpace,      KC_SPC,    KC_J,    KC_K)
-//COMB(oeAlt,      KC_LALT,   CKC_O,    CKC_E)
 COMB(dotpeeSCR,  KC_PSCR,   KC_DOT,  KC_P)
-//COMB(euCtl,      KC_LCTL,   CKC_E,    CKC_U)
-
 COMB(commaohPercentag,  KC_PERC,  KC_COMMA,  CKC_O)
-COMB(qjTab,  KC_TAB,  KC_Q,  KC_J)
+COMB(qjkTab,  KC_TAB,  KC_Q,  KC_J,KC_K)
 COMB(pySqrSt,  KC_LBRC,  KC_P,  LT(4,KC_Y))
 COMB(puAt,  KC_AT,  KC_P,  CKC_U)
 COMB(yiDollar,  KC_DLR, LT(4,KC_Y),  LT(3,KC_I))
 COMB(ukEqual,  KC_EQL,  CKC_U,  KC_K)
+COMB(kxCurly,  KC_LCBR, LT(2,KC_X) ,  KC_K)
 COMB(doteeHash,  KC_HASH,  KC_DOT,  CKC_E)
 COMB(ejSlash,  KC_BSLS,  CKC_E,  KC_J)
 COMB(oqTilde,  KC_TILD,  CKC_O,  KC_Q)
@@ -20,15 +18,14 @@ COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
 COMB(commquoteLt,  KC_LT,   LT(4,KC_QUOT), KC_COMM)
 COMB(commadotGt,  KC_GT,   KC_COMMA,  KC_DOT)
 COMB(uitBracket,  KC_LPRN, CKC_U, LT(3,KC_I) )
+COMB(sclnqBacktic,KC_GRV ,LT(2,KC_SCLN) , KC_Q )
 
-
- 
-//COMB(anotherQuest,  KC_QUES,  LT(_ART_MOU,KC_X), KC_K)
 
 //Right hand
 COMB(fgSqrEnd,  KC_RBRC,  KC_F,  KC_G)
 COMB(wmColon,  KC_COLON,    KC_W,    KC_M)
-COMB(kbReturn,  KC_ENT, KC_M, KC_B)
+COMB(mwvReturn,  KC_ENT, KC_M, KC_W,KC_V)
+COMB(bmCurly,  KC_RCBR, KC_M, KC_B)
 COMB(gcDel,      KC_DEL,    KC_G,    KC_C)
 COMB(crBkpsc,  KC_BSPC, KC_C, KC_R)
 COMB(ghPlus,  KC_PLUS, KC_G, CKC_H)
@@ -37,12 +34,11 @@ COMB(ctMultiply,  KC_ASTR, KC_C, KC_T)
 COMB(twDivide,  KC_SLASH, KC_T, KC_W)
 COMB(rnAmp,  KC_AMPR, KC_R, KC_N)
 COMB(nvPipe,  KC_PIPE, KC_N, KC_V)
-//COMB(anotherBracketOpen,  KC_LPRN, KC_T, CKC_H)
-//COMB(anotherSquareOpen,  KC_LCBR, KC_M, KC_W)
-//COMB(anotherBracketClosed,  KC_RPRN, KC_T, KC_N)
-//COMB(anotherSquareClosed,  KC_RCBR, KC_V, KC_W)
 COMB(fdExcl,  KC_EXLM, KC_F, CKC_D)
 COMB(bdQues,  KC_QUES, KC_B, CKC_D)
+COMB(vzKappie,  KC_CIRC, KC_V, RSFT_T(KC_Z))
+
+//Random other stuff
 SUBS(oeuTest, SS_LCTL("ac"), CKC_O, CKC_E, CKC_U)
 SUBS(helloWorld, "QMK is pretty rad eh?", CKC_H, KC_J)
 
