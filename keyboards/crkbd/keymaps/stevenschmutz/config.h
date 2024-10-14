@@ -20,6 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
+
 //#define USE_MATRIX_I2C
 
 /* Select hand configuration */
@@ -30,6 +33,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
-
+#define MAX_DEFERRED_EXECUTORS 10 
 #define COMBO_VARIABLE_LEN
 #define COMBO_TERM 50
