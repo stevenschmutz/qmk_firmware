@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         LT(4,KC_QUOT), KC_COMM, KC_DOT, KC_P, LT(4,KC_Y),                         KC_F, KC_G, KC_C, KC_R, LT(1,KC_L),
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , CKC_T , KC_N , KC_S,
+       CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
       LT(2,KC_SCLN), KC_Q, KC_J, KC_K, LT(2,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -167,7 +167,7 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_U, KC_U, KC_LSFT, 2)
         //SMTD_MT(CKC_S, KC_S, KC_S, 2)
         //SMTD_MT(CKC_N, KC_N, KC_N, 2)
-        SMTD_MT(CKC_T, KC_T, KC_LEFT_CTRL, 2)
+        SMTD_MT(CKC_N, KC_N, KC_LEFT_CTRL, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
         //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
