@@ -1,8 +1,9 @@
 # Build Options
 #   change yes to no to disable
 #
-EXTRAFLAGS += -flto
 DEFAULT_FOLDER = crkbd/rev1
 DEFERRED_EXEC_ENABLE = yes
-RGBLIGHT_SUPPORTED = yes
-RGB_MATRIX_SUPPORTED = yes
+LTO_ENABLE = yes
+CONSOLE_ENABLE = no
+COMMAND_ENABLE = no
+EXTRAKEY_ENABLE = no

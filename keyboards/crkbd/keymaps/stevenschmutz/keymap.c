@@ -19,19 +19,9 @@ enum custom_keycodes {
     CKC_O,
     CKC_E,
     CKC_U,
-    CKC_S,
     CKC_N,
-    CKC_T,
     CKC_H,
-    CKC_M,
-    CKC_K,
-    CKC_I,
-    CKC_Y,
-    CKC_X,
     CKC_D,
-    CKC_ESC,
-    CKC_SPC,
-
     SMTD_KEYCODES_END,
     CTRL_TICK,
 
@@ -122,11 +112,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
         SMTD_MT(CKC_A, KC_A, KC_LEFT_GUI, 2)
-            SMTD_MT(CKC_O, KC_O, KC_LEFT_ALT, 2)
-            SMTD_MT(CKC_E, KC_E, KC_LEFT_CTRL, 2)
-            SMTD_MT(CKC_U, KC_U, KC_LSFT, 2)
-            SMTD_MT(CKC_N, KC_N, KC_LEFT_CTRL, 2)
-            SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
-            SMTD_LT(CKC_D, KC_D, _SYMBOL)
+        SMTD_MT(CKC_O, KC_O, KC_LEFT_ALT, 2)
+        SMTD_MT(CKC_E, KC_E, KC_LEFT_CTRL, 2)
+        SMTD_MT(CKC_U, KC_U, KC_LSFT, 2)
+        SMTD_MT(CKC_N, KC_N, KC_LEFT_CTRL, 2)
+        SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
+        SMTD_LT(CKC_D, KC_D, _SYMBOL)
     }
 }
