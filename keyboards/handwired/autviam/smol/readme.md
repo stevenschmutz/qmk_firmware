@@ -10,11 +10,14 @@ Low-profile split keyboard with 36 keys using RP2040 Zero controllers.
 
 Make example for this keyboard (after setting up your build environment):
 
-    make smol:default
+    make handwired/autviam/smol:default
+
+    THIS ONLY SEEMS TO WORK ON THE Vial-QMK build from zzeng
+
 
 Flashing example for this keyboard:
 
-    make smol:default:flash
+    make handwired/autviam/smol:default:flash
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
