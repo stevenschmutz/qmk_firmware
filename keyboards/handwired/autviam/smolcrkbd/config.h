@@ -14,47 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+
 #define SERIAL_USART_FULL_DUPLEX
 #define SERIAL_USART_PIN_SWAP
 #define SERIAL_USART_TX_PIN GP0
 #define SERIAL_USART_RX_PIN GP1
 
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
-
-#ifdef RGB_MATRIX_ENABLE
-#    define DRIVER_LED_TOTAL RGBLED_NUM
-#endif
-#pragma once
-
-#ifndef BOOTMAGIC_ROW
-#    define BOOTMAGIC_ROW 0
-#endif
-#ifndef BOOTMAGIC_COLUMN
-#    define BOOTMAGIC_COLUMN 1
-#endif
-
-#ifndef BOOTMAGIC_ROW_RIGHT
-#    define BOOTMAGIC_ROW_RIGHT 4
-#endif
-#ifndef BOOTMAGIC_COLUMN_RIGHT
-#    define BOOTMAGIC_COLUMN_RIGHT 1
-#endif
-
-#ifdef RGBLIGHT_ENABLE
-#    ifndef RGBLIGHT_LIMIT_VAL
-#        define RGBLIGHT_LIMIT_VAL 120
-#    endif
-#endif
-
-#ifdef RGB_MATRIX_ENABLE
-#    ifndef RGB_MATRIX_MAXIMUM_BRIGHTNESS
-#        define RGB_MATRIX_MAXIMUM_BRIGHTNESS 120
-#    endif
-#endif
-
-#ifdef OLED_ENABLE
-    #ifndef OLED_FONT_H
-        #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-    #endif
-#endif

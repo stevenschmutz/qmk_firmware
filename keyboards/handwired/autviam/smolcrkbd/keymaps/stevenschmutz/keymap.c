@@ -110,16 +110,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 }
 
 
-#ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    // clang-format off
-    [_DVORAK] =   { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_SYMBOL] =  { ENCODER_CCW_CW(KC_MPRV, KC_MNXT)  },
-    [_NAV] =  { ENCODER_CCW_CW(KC_MPRV, KC_MNXT)  },
-    [_NUMERIC] =  { ENCODER_CCW_CW(KC_MPRV, KC_MNXT)  }
-    // clang-format on
-};
-#endif // ENCODER_MAP_ENABLE
 
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
