@@ -1,0 +1,2 @@
+COMB(jkEsc,      KC_ESC,          KC_J, KC_K)
+SUBS(helloWorld, "QMK is pretty rad eh?", KC_H, KC_J)
