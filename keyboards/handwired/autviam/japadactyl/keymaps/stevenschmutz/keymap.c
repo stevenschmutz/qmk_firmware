@@ -1,5 +1,22 @@
 #include QMK_KEYBOARD_H
 
+// Each layer gets a name for readability, which is then used in the keymap matrix below.
+// The underscores don't mean anything - you can have a layer called STUFF or any other name.
+// Layer names don't all need to be of the same length, obviously, and you can also skip them
+// entirely and just use numbers.
+enum layers {
+    _DVORAK,
+    _SYMBOL,
+    _NAV,
+    _NUMERIC,
+  _ART_MOU
+};
+
+
+#include "sm_td.h"
+#include "aliases.c"
+#include "g/keymap_combo.h"
+
 enum custom_keycodes {
   SMTD_KEYCODES_BEGIN = SAFE_RANGE,
     CKC_A,
@@ -23,23 +40,6 @@ enum custom_keycodes {
     CTRL_TICK,
 
 };
-
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
-enum layers {
-    _DVORAK,
-    _SYMBOL,
-    _NAV,
-    _NUMERIC,
-  _ART_MOU
-};
-
-
-#include "sm_td.h"
-#include "aliases.c"
-#include "g/keymap_combo.h"
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
