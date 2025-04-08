@@ -1,22 +1,5 @@
 #include QMK_KEYBOARD_H
 
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
-enum layers {
-    _DVORAK,
-    _SYMBOL,
-    _NAV,
-    _NUMERIC,
-  _ART_MOU
-};
-
-
-#include "sm_td.h"
-#include "aliases.c"
-#include "g/keymap_combo.h"
-
 enum custom_keycodes {
   SMTD_KEYCODES_BEGIN = SAFE_RANGE,
     CKC_A,
@@ -41,23 +24,37 @@ enum custom_keycodes {
 
 };
 
+// Each layer gets a name for readability, which is then used in the keymap matrix below.
+// The underscores don't mean anything - you can have a layer called STUFF or any other name.
+// Layer names don't all need to be of the same length, obviously, and you can also skip them
+// entirely and just use numbers.
+enum layers {
+    _DVORAK,
+    _SYMBOL,
+    _NAV,
+    _NUMERIC,
+  _ART_MOU
+};
+
+
+#include "sm_td.h"
+#include "aliases.c"
+#include "g/keymap_combo.h"
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LT(4,KC_QUOT), KC_COMM, KC_DOT, KC_P, LT(4,KC_Y),                         KC_F, KC_G, KC_C, KC_R, LT(1,KC_L),
+        LGUI_T(KC_QUOT), KC_COMM, KC_DOT, KC_P, CKC_Y,                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
+       CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , KC_T , KC_N , KC_S,
 
-      LT(2,KC_SCLN), KC_Q, KC_J, KC_K, LT(2,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
+      KC_SCLN, KC_Q, KC_J, KC_K, CKC_X,                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC)
+                  LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC)
 
                 ),
- 
-
-
-    [_SYMBOL] = LAYOUT_split_3x5_3(
+        [_SYMBOL] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_GRV, KC_CIRC, KC_AT, KC_DLR, KC_TILD,                                 KC_AMPR, KC_EXLM, KC_PIPE, KC_UNDS, KC_HASH,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -93,11 +90,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ART_MOU] = LAYOUT_split_3x5_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                KC_MS_BTN4, MOU_1_1, MOU_1_2, MOU_1_3, MOU_1_4,
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_MS_BTN4, MOU_1_1, MOU_1_2, MOU_1_3, MOU_1_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_MS_BTN5, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
+             KC_NO,KC_NO,KC_NO,KC_NO,TG(_ART_MOU),                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
@@ -163,9 +160,11 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_U, KC_U, KC_LSFT, 2)
         //SMTD_MT(CKC_S, KC_S, KC_S, 2)
         //SMTD_MT(CKC_N, KC_N, KC_N, 2)
+        //SMTD_MT(CKC_T, KC_T, KC_T, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
-        SMTD_MT(CKC_N, KC_N, KC_LEFT_CTRL, 2)
 
+        SMTD_LT(CKC_Y, KC_Y, _ART_MOU)
+        SMTD_LT(CKC_X, KC_X, _NAV)
         //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)

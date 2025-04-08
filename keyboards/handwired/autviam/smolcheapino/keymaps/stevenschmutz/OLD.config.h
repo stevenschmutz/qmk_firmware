@@ -25,9 +25,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Select hand configuration */
 
 #define MASTER_LEFT
-#define MAX_DEFERRED_EXECUTORS 10 
+// #define MASTER_RIGHT
+// #define EE_HANDS
+
+//#define QUICK_TAP_TERM 0
+//#define TAPPING_TERM 100
+
 #define COMBO_VARIABLE_LEN
 #define COMBO_TERM 50
-// Pick good defaults for enabling homerow modifiers
-#define TAPPING_TERM 230
-#define SMTD_GLOBAL_RELEASE_TERM 20
+
+
+
+/* Encoder config */
+/*#ifdef ENCODER_ENABLE */
+#   define ENCODERS_PAD_A { GP2 }
+#   define ENCODERS_PAD_B { GP3 }
+#   define ENCODERS_PAD_A_RIGHT { }
+#   define ENCODERS_PAD_B_RIGHT { }
+
+#   define ENCODER_RESOLUTIONS { 2 }
+
+/* For 4x encoders you also can assign default position if encoder skips pulses when it changes */
+/* direction. For example, if your encoder send high level on both pins by default, define this: */
+#   define ENCODER_DEFAULT_POS 0x3
+
+/*#endif*/
