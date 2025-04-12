@@ -9,4 +9,5 @@ DEFERRED_EXEC_ENABLE = yes
 SRC += encoder.c
 SRC += matrix.c
 SRC += features/orbital_mouse.c
+SRC += features/sentence_case.c
 MOUSE_ENABLE = yes
