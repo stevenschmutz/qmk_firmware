@@ -1,8 +1,7 @@
 COMB(Equal,      KC_EQUAL,  KC_0,    KC_4)
 
 //Left hand
-COMB(jkSpace,      KC_SPC,    KC_J,    KC_K)
-COMB(wvEnter,      KC_ENT,    KC_W,    KC_V)
+COMB(qkSpace,      KC_SPC,    KC_Q,    KC_K)
 COMB(dotpeeSCR,  KC_PSCR,   KC_DOT,  KC_P)
 COMB(commaoHash,  KC_HASH,  KC_COMMA,  CKC_O)
 COMB(doteePercent,  KC_PERC,  KC_DOT,  CKC_E)
@@ -40,6 +39,7 @@ COMB(bdQues,  KC_QUES, KC_B, CKC_D)
 COMB(vzKappie,  KC_CIRC, KC_V, KC_Z)
 COMB(righthandUp,  KC_UP, KC_L, KC_S)
 COMB(righthandDown,  KC_DOWN, KC_Z, KC_S)
+COMB(mvEnter,      KC_ENT,    KC_M,    KC_V)
 
 //Random other stuff
 SUBS(oeuTest, SS_LCTL("ac"), CKC_O, CKC_E, CKC_U)
