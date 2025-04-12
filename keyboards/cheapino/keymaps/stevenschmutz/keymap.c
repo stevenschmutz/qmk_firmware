@@ -105,17 +105,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ART_MOU] = LAYOUT_split_3x5_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                OM_W_U , OM_BTNS, OM_U   , OM_DBLS,KC_TRNS,
-
-
-
-
-
-            
+             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                OM_W_U , OM_BTNS, OM_U   , OM_DBLS,OM_BTN5,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                OM_W_D , OM_L   , OM_D   , OM_R   , OM_SLOW,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,TG(_ART_MOU),                                         OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3,
+             KC_NO,KC_NO,KC_NO,KC_NO,TG(_ART_MOU),                                         OM_RELS, OM_HLDS, OM_BTN1, OM_BTN3, OM_BTN2,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
@@ -131,7 +125,7 @@ bool oled_task_user(void) {
             oled_write_P(PSTR("DVORAK\n"), false);
             break;
         case _SYMBOL:
-            oled_write_P(PSTR("SYMBOL\n"), false);
+           oled_write_P(PSTR("SYMBOL\n"), false);
             break;
         case _NAV:
             oled_write_P(PSTR("NAV\n"), false);
