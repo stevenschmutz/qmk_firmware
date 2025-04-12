@@ -16,12 +16,14 @@ enum custom_keycodes {
     CKC_Y,
     CKC_X,
     CKC_D,
+    CKC_J,
+    CKC_Q,
     CKC_ESC,
     CKC_SPC,
 
     SMTD_KEYCODES_END,
-    CTRL_TICK,
     CTRL_COPY,
+    CTRL_TICK,
     CTRL_PASTE
 };
 
@@ -59,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
-      KC_SCLN, KC_Q, KC_J, KC_K, LT(2,KC_X),                             KC_B, KC_M, KC_W, KC_V, KC_Z,
+      KC_SCLN, CKC_Q, CKC_J, CKC_K, LT(2,KC_X),                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                  CW_TOGG, LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, OSM(MOD_LSFT)
 
@@ -182,5 +184,10 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
         SMTD_LT(CKC_D, KC_D, _SYMBOL)
-    }
+    
+        SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)
+        SMTD_MT(CKC_K, KC_K, KC_LSFT, 2)
+        SMTD_MT(CKC_Q, KC_Q, KC_LEFT_ALT, 2)
+        SMTD_MT(CKC_J, KC_J, KC_LEFT_CTRL, 2)
+      }
 }
