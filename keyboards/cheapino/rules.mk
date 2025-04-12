@@ -8,3 +8,5 @@ RGBLIGHT_ENABLE = yes
 DEFERRED_EXEC_ENABLE = yes
 SRC += encoder.c
 SRC += matrix.c
+SRC += features/orbital_mouse.c
+MOUSE_ENABLE = yes

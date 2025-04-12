@@ -40,6 +40,7 @@ enum layers {
   _ART_MOU
 };
 
+#include "features/orbital_mouse.h"
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
@@ -104,11 +105,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ART_MOU] = LAYOUT_split_3x5_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                KC_MS_BTN4, MOU_1_1, MOU_1_2, MOU_1_3, MOU_1_4,
+             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                OM_W_U , OM_BTNS, OM_U   , OM_DBLS,KC_TRNS,
+
+
+
+
+
+            
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_MS_BTN5, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                OM_W_D , OM_L   , OM_D   , OM_R   , OM_SLOW,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,TG(_ART_MOU),                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
+             KC_NO,KC_NO,KC_NO,KC_NO,TG(_ART_MOU),                                         OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
@@ -151,6 +158,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         return false;
     }
 
+    if (!process_orbital_mouse(keycode, record)) { 
+     return false; 
+    }
+
+
  switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
       if (record->event.pressed) {
@@ -190,4 +202,11 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_Q, KC_Q, KC_LEFT_ALT, 2)
         SMTD_MT(CKC_J, KC_J, KC_LEFT_CTRL, 2)
       }
+}
+
+
+void housekeeping_task_user(void) {
+  orbital_mouse_task();
+
+  // Other tasks ...
 }
