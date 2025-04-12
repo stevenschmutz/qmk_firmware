@@ -19,8 +19,9 @@ COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
 COMB(commquoteLt,  KC_LT,   LT(4,KC_QUOT), KC_COMM)
 COMB(commadotGt,  KC_GT,   KC_COMMA,  KC_DOT)
 COMB(uitBracket,  KC_LPRN, CKC_U, LT(3,KC_I) )
-COMB(sclnqBacktic,KC_GRV ,LT(2,KC_SCLN) , KC_Q )
-
+COMB(sclnqBacktic,KC_GRV , KC_SCLN , KC_Q )
+COMB(leftDEl,      KC_DEL, CKC_A, KC_QUOT  )
+COMB(leftBkpsc,  KC_BSPC, CKC_A, KC_SCLN)
 
 //Right hand
 COMB(fgSqrEnd,  KC_RBRC,  KC_F,  KC_G)
