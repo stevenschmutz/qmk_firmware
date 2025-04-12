@@ -107,43 +107,43 @@ void set_orbital_mouse_angle(uint8_t angle);
 // characters, which seems unlikely to be missed.
 enum {
   /** Move forward. */
-  OM_U = MS_UP,
+  OM_U = KC_MS_UP,
   /** Move backward. */
-  OM_D = MS_DOWN,
+  OM_D = KC_MS_DOWN,
   /** Steer left (counter-clockwise). */
-  OM_L = MS_LEFT,
+  OM_L = KC_MS_LEFT,
   /** Steer right (clockwise). */
-  OM_R = MS_RGHT,
+  OM_R = KC_MS_RIGHT,
   /** Mouse wheel up. */
-  OM_W_U = MS_WHLU,
+  OM_W_U = KC_WH_U,
   /** Mouse wheel down. */
-  OM_W_D = MS_WHLD,
+  OM_W_D = KC_WH_D,
   /** Mouse wheel left. */
-  OM_W_L = MS_WHLL,
+  OM_W_L = KC_WH_L,
   /** Mouse wheel right. */
-  OM_W_R = MS_WHLR,
+  OM_W_R = KC_WH_R,
   /** Press mouse button 1. */
-  OM_BTN1 = MS_BTN1,
+  OM_BTN1 = KC_BTN1,
   /** Press mouse button 2. */
-  OM_BTN2 = MS_BTN2,
+  OM_BTN2 = KC_BTN2,
   /** Press mouse button 3. */
-  OM_BTN3 = MS_BTN3,
+  OM_BTN3 = KC_BTN3,
   /** Press mouse button 4. */
-  OM_BTN4 = MS_BTN4,
+  OM_BTN4 = KC_BTN4,
   /** Press mouse button 5. */
-  OM_BTN5 = MS_BTN5,
+  OM_BTN5 = KC_BTN5,
   /** Press mouse button 6. */
-  OM_BTN6 = MS_BTN6,
+  OM_BTN6 = KC_BTN6,
   /** Press mouse button 7. */
-  OM_BTN7 = MS_BTN7,
+  OM_BTN7 = KC_BTN7,
   /** Press mouse button 8. */
-  OM_BTN8 = MS_BTN8,
+  OM_BTN8 = KC_BTN8,
   /** While held, cursor movement and turning are slower. */
-  OM_SLOW = MS_ACL0,
+  OM_SLOW = KC_ACL0,
   /** Press the selected mouse button. */
-  OM_BTNS = MS_ACL1,
+  OM_BTNS = KC_ACL1,
   /** Double click the selected mouse button. */
-  OM_DBLS = MS_ACL2,
+  OM_DBLS = KC_ACL2,
   ORBITAL_MOUSE_KEYCODE_RANGE_START = UC(0x41),
   /** Hold the selected mouse button. */
   OM_HLDS = ORBITAL_MOUSE_KEYCODE_RANGE_START,
