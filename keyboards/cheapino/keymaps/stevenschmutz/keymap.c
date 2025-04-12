@@ -21,7 +21,8 @@ enum custom_keycodes {
 
     SMTD_KEYCODES_END,
     CTRL_TICK,
-
+    CTRL_COPY,
+    CTRL_PASTE
 };
 
 
@@ -152,6 +153,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     case CTRL_TICK:  // Types ctrl + backtick
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("`"));
+      }
+     case CTRL_COPY:  // Types ctrl + C
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("c"));
+      }
+    case CTRL_PASTE:  // Types ctrl + V
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("v"));
       }
       return false;
   }

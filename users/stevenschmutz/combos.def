@@ -21,6 +21,9 @@ COMB(uitBracket,  KC_LPRN, CKC_U, LT(3,KC_I) )
 COMB(sclnqBacktic,KC_GRV , KC_SCLN , KC_Q )
 COMB(leftDEl,      KC_DEL, CKC_A, KC_QUOT  )
 COMB(leftBkpsc,  KC_BSPC, CKC_A, KC_SCLN)
+COMB(leftPaste,  CTRL_PASTE, KC_J, KC_K)
+COMB(leftCopy,  CTRL_COPY, KC_J, KC_Q)
+
 
 //Right hand
 COMB(fgSqrEnd,  KC_RBRC,  KC_F,  KC_G)
