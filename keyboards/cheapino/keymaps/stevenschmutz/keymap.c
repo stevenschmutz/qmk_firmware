@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                OM_W_D , OM_L   , OM_D   , OM_R   , OM_SLOW,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,TG(_ART_MOU),                                         OM_RELS, OM_HLDS, OM_BTN1, OM_BTN3, OM_BTN2,
+             KC_NO,KC_NO,KC_NO,KC_NO,TO(_DVORAK),                                         OM_RELS, OM_HLDS, OM_BTN1, OM_BTN3, OM_BTN2,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
