@@ -166,15 +166,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("`"));
       }
-     case CTRL_COPY:  // Types ctrl + C
+        return false;
+        break;
+
+    case CTRL_COPY:  // Types ctrl + C
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("c"));
       }
+          return false;
+        break;
     case CTRL_PASTE:  // Types ctrl + V
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("v"));
       }
-      return false;
+        return false;
+        break;
   }
   return true;
 }
