@@ -22,8 +22,8 @@ enum custom_keycodes {
     CKC_SPC,
 
     SMTD_KEYCODES_END,
-    CTRL_COPY,
     CTRL_TICK,
+    CTRL_COPY,
     CTRL_PASTE
 };
 
@@ -40,11 +40,11 @@ enum layers {
   _ART_MOU
 };
 
-#include "features/orbital_mouse.h"
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
 #include "features/sentence_case.h"
+#include "features/orbital_mouse.h"
 
 /*
 // copied from https://beta.docs.qmk.fm/faqs/faq_debug#which-matrix-position-is-this-keypress
@@ -56,6 +56,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 */
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
