@@ -189,18 +189,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
         SMTD_MT(CKC_A, KC_A, KC_LEFT_GUI, 2)
-        SMTD_MT(CKC_O, KC_O, KC_LEFT_ALT, 2)
-        SMTD_MT(CKC_E, KC_E, KC_LEFT_CTRL, 2)
-        SMTD_MT(CKC_U, KC_U, KC_LSFT, 2)
+        SMTD_MT(CKC_O, KC_O, KC_O, 2)
+        SMTD_MT(CKC_E, KC_E, KC_E, 2)
+        SMTD_MT(CKC_U, KC_U, KC_U, 2)
         //SMTD_MT(CKC_S, KC_S, KC_S, 2)
         //SMTD_MT(CKC_N, KC_N, KC_N, 2)
-        SMTD_MT(CKC_N, KC_N, KC_LEFT_CTRL, 2)
+        SMTD_MT(CKC_N, KC_N, KC_N, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
         //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
         SMTD_LT(CKC_D, KC_D, _SYMBOL)
-    
+   
         SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)
         SMTD_MT(CKC_K, KC_K, KC_LSFT, 2)
         SMTD_MT(CKC_Q, KC_Q, KC_LEFT_ALT, 2)
