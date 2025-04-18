@@ -1,22 +1,5 @@
 #include QMK_KEYBOARD_H
 
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
-enum layers {
-    _DVORAK,
-    _SYMBOL,
-    _NAV,
-    _NUMERIC,
-  _ART_MOU
-};
-
-
-#include "sm_td.h"
-#include "aliases.c"
-#include "g/keymap_combo.h"
-
 enum custom_keycodes {
   SMTD_KEYCODES_BEGIN = SAFE_RANGE,
     CKC_A,
@@ -33,29 +16,48 @@ enum custom_keycodes {
     CKC_Y,
     CKC_X,
     CKC_D,
+    CKC_J,
+    CKC_Q,    
     CKC_ESC,
     CKC_SPC,
-
     SMTD_KEYCODES_END,
     CTRL_TICK,
+    CTRL_COPY,
+    CTRL_PASTE,
+};
 
+// Each layer gets a name for readability, which is then used in the keymap matrix below.
+// The underscores don't mean anything - you can have a layer called STUFF or any other name.
+// Layer names don't all need to be of the same length, obviously, and you can also skip them
+// entirely and just use numbers.
+enum layers {
+    _DVORAK,
+    _SYMBOL,
+    _NAV,
+    _NUMERIC,
+  _ART_MOU
 };
 
 
+#include "sm_td.h"
+#include "aliases.c"
+#include "g/keymap_combo.h"
+#include "features/sentence_case.h"
+#include "features/orbital_mouse.h"
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[_DVORAK] = LAYOUT_split_3x5_3(
+    [_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LT(4,KC_QUOT), KC_COMM, KC_DOT, KC_P, LT(4,KC_Y),                         KC_F, KC_G, KC_C, KC_R, LT(1,KC_L),
+        KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(4,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
-      LT(2,KC_SCLN), KC_Q, KC_J, KC_K, LT(2,KC_X),                             KC_B, KC_M, KC_W, KC_V, RSFT_T(KC_Z),
+      KC_SCLN, CKC_Q, CKC_J, CKC_K, LT(2,KC_X),                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 LSFT_T(KC_TAB), LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, LT(1,KC_BSPC)
+                 CW_TOGG, LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, OSM(MOD_LSFT)
 
                 ),
  
-
 
     [_SYMBOL] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -68,18 +70,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_TRNS, KC_TRNS, KC_TRNS,                             KC_TRNS, KC_TRNS, QK_BOOT),
 
 
-	[_NAV] = LAYOUT_split_3x5_3(
+    [_NAV] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                             KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP,
+ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                             KC_NO, KC_HOME, KC_UP,  KC_END,KC_PGUP,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_MUTE, KC_VOLD, KC_VOLU, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+ KC_MUTE, KC_VOLD, KC_VOLU, KC_F2, CTRL_TICK,                                   KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
             QK_BOOT,KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
 
 
-	[_NUMERIC] = LAYOUT_split_3x5_3(
+    [_NUMERIC] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,                                     KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -93,16 +95,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ART_MOU] = LAYOUT_split_3x5_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                KC_MS_BTN4, MOU_1_1, MOU_1_2, MOU_1_3, MOU_1_4,
+             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                OM_W_U , OM_BTNS, OM_U   , OM_DBLS,OM_BTN5,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_MS_BTN5, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                OM_W_D , OM_L   , OM_D   , OM_R   , OM_SLOW,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
+             KC_NO,KC_NO,KC_NO,KC_NO,TO(_DVORAK),                                         OM_RELS, OM_HLDS, OM_BTN1, OM_BTN3, OM_BTN2,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
 };
-
 #ifdef OLED_ENABLE
 bool oled_task_user(void) {
     // Host Keyboard Layer Status
@@ -140,35 +141,69 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         return false;
     }
 
+    if (!process_orbital_mouse(keycode, record)) { 
+     return false; 
+    }
+
+    if (!process_sentence_case(keycode, record)) { 
+        return false; 
+    }
+
 
     // If console is enabled, it will print the matrix position and status of each key pressed
 #ifdef CONSOLE_ENABLE
     uprintf("KL: kc: 0x%04X,row: %2u,  col: %2u, pressed: %u, time: %5u, int: %u, count: %u\n", keycode, record->event.key.row,record->event.key.col,  record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
 #endif
-  switch (keycode) {
+switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("`"));
       }
-      return false;
-  }
-  return true;
-}
+        return false;
+        break;
 
+    case CTRL_COPY:  // Types ctrl + C
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("c"));
+      }
+          return false;
+        break;
+    case CTRL_PASTE:  // Types ctrl + V
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("v"));
+      }
+        return false;
+        break;
+  }
+    return true;
+}
+ 
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
+ 
     switch (keycode) {
         SMTD_MT(CKC_A, KC_A, KC_LEFT_GUI, 2)
-        SMTD_MT(CKC_O, KC_O, KC_LEFT_ALT, 2)
-        SMTD_MT(CKC_E, KC_E, KC_LEFT_CTRL, 2)
-        SMTD_MT(CKC_U, KC_U, KC_LSFT, 2)
+        SMTD_MT(CKC_O, KC_O, KC_O, 2)
+        SMTD_MT(CKC_E, KC_E, KC_E, 2)
+        SMTD_MT(CKC_U, KC_U, KC_U, 2)
         //SMTD_MT(CKC_S, KC_S, KC_S, 2)
         //SMTD_MT(CKC_N, KC_N, KC_N, 2)
+        SMTD_MT(CKC_N, KC_N, KC_N, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
-        SMTD_MT(CKC_N, KC_N, KC_LEFT_CTRL, 2)
-
         //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
         SMTD_LT(CKC_D, KC_D, _SYMBOL)
-    }
+   
+        SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)
+        SMTD_MT(CKC_K, KC_K, KC_LSFT, 2)
+        SMTD_MT(CKC_Q, KC_Q, KC_LEFT_ALT, 2)
+        SMTD_MT(CKC_J, KC_J, KC_LEFT_CTRL, 2)
+      }
+
+ }
+
+void housekeeping_task_user(void) {
+  orbital_mouse_task();
+
+  // Other tasks ...
 }
