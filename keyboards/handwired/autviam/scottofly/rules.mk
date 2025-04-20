@@ -5,6 +5,7 @@ CUSTOM_MATRIX = lite
 WS2812_DRIVER = vendor
 RGBLIGHT_ENABLE = yes
 DEFERRED_EXEC_ENABLE = yes
+VPATH  +=  keyboards/gboards/
 SRC += encoder.c
 SRC += matrix.c
 SRC += features/sentence_case.c
