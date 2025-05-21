@@ -23,6 +23,7 @@ enum custom_keycodes {
 
     SMTD_KEYCODES_END,
     CTRL_TICK,
+    CTRL_CUT,
     CTRL_COPY,
     CTRL_PASTE
 };
@@ -168,6 +169,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         SEND_STRING(SS_LCTL("`"));
       }
         return false;
+        break;
+
+    case CTRL_CUT:  // Types ctrl + x
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("x"));
+      }
+          return false;
         break;
 
     case CTRL_COPY:  // Types ctrl + C

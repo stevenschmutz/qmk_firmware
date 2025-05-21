@@ -22,7 +22,8 @@ COMB(sclnqBacktic,KC_GRV , KC_SCLN , CKC_Q )
 COMB(leftDEl,      KC_DEL, CKC_A, KC_QUOT  )
 COMB(leftBkpsc,  KC_BSPC, CKC_A, KC_SCLN)
 COMB(leftPaste,  CTRL_PASTE, CKC_J, CKC_K)
-COMB(leftCopy,  CTRL_COPY, CKC_J, CKC_Q)
+COMB(leftCopy,  CTRL_COPY, CKC_U, CKC_E)
+COMB(leftCut,  CTRL_CUT, CKC_J, CKC_Q)
 
 
 //Right hand

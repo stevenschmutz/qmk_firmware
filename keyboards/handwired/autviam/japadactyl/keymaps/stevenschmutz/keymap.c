@@ -23,6 +23,7 @@ enum custom_keycodes {
     SMTD_KEYCODES_END,
     CTRL_TICK,
     CTRL_COPY,
+    CTRL_CUT,
     CTRL_PASTE,
 };
 
@@ -162,6 +163,13 @@ switch (keycode) {
         return false;
         break;
 
+    case CTRL_CUT:  // Types ctrl + x
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("x"));
+      }
+          return false;
+        break;
+ 
     case CTRL_COPY:  // Types ctrl + C
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("c"));
