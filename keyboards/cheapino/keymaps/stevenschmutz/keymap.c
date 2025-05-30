@@ -44,7 +44,6 @@ enum layers {
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
-#include "features/sentence_case.h"
 
 /*
 // copied from https://beta.docs.qmk.fm/faqs/faq_debug#which-matrix-position-is-this-keypress
@@ -165,9 +164,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         return false;
     }
 
-    if (!process_sentence_case(keycode, record)) { 
-        return false; 
-    }
 
  switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
