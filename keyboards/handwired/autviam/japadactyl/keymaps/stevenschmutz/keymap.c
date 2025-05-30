@@ -48,38 +48,16 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(4,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
+        KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(_ART_MOU,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
+       CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
-      KC_SCLN, CKC_Q, CKC_J, CKC_K, LT(2,KC_X),                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
+      KC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 CW_TOGG, LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, OSM(MOD_LSFT)
+                 CW_TOGG, KC_SPC, KC_TRNS,                   KC_TRNS, SC_SENT, MOD_LSFT
 
                 ),
  
-
-    [_SYMBOL] = LAYOUT_split_3x5_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_GRV, KC_CIRC, KC_AT, KC_DLR, KC_TILD,                                 KC_AMPR, KC_EXLM, KC_PIPE, KC_UNDS, KC_HASH,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN, KC_SLSH,                              KC_HASH, KC_RPRN, KC_RCBR, KC_RBRC, KC_BSLS,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_QUES, KC_GRV, KC_PERC, KC_QUES,                                 KC_TRNS, KC_BSLS, KC_COLN, KC_TRNS, KC_TRNS,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                         KC_TRNS, KC_TRNS, KC_TRNS,                             KC_TRNS, KC_TRNS, QK_BOOT),
-
-
-    [_NAV] = LAYOUT_split_3x5_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                             KC_NO, KC_HOME, KC_UP,  KC_END,KC_PGUP,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_MUTE, KC_VOLD, KC_VOLU, KC_F2, CTRL_TICK,                                   KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            QK_BOOT,KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
-
 
     [_NUMERIC] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -108,7 +86,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-;
 #ifdef OLED_ENABLE
 bool oled_task_user(void) {
     // Host Keyboard Layer Status
