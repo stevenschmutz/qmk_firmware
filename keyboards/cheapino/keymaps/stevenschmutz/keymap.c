@@ -22,6 +22,7 @@ enum custom_keycodes {
     CKC_SPC,
 
     SMTD_KEYCODES_END,
+    QK_LAYER_LOCK,
     CTRL_TICK,
     CTRL_CUT,
     CTRL_COPY,
@@ -35,15 +36,16 @@ enum custom_keycodes {
 // entirely and just use numbers.
 enum layers {
     _DVORAK,
-    _SYMBOL,
     _NAV,
+    _SYMBOL,
     _NUMERIC,
-  _ART_MOU
+    _ART_MOU
 };
 
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
+#include "features/layer_lock.h"
 
 /*
 // copied from https://beta.docs.qmk.fm/faqs/faq_debug#which-matrix-position-is-this-keypress
@@ -56,6 +58,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 */
 
+/* Layer lock
+https://getreuer.info/posts/keyboards/layer-lock/index.html (in use)
+https://docs.qmk.fm/features/layer_lock#how-do-i-enable-layer-lock (newer version)
+
+CW_TOGG <= capitilise word with _
+*/
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x5_3(
@@ -66,20 +75,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
       KC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 CW_TOGG, KC_SPC, KC_TRNS,                   KC_TRNS, SC_SENT, MOD_LSFT
+                 QK_LAYER_LOCK, KC_SPC, KC_TRNS,                   KC_TRNS, SC_SENT, MOD_LSFT
 
                 ),
- 
 
-    [_NUMERIC] = LAYOUT_split_3x5_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,                                     KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_NO, KC_F5, KC_F6, KC_F7, KC_F8,                                       KC_0, KC_4, KC_5, KC_6, KC_DOT,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4,                                       KC_MINS, KC_1, KC_2, KC_3, KC_ASTR,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-               KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_TRNS),
+
+      [_NAV] = LAYOUT_split_3x5_3(
+          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                             KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP,
+          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+         KC_MUTE, KC_VOLD, KC_VOLU, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+         KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
+          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+                  KC_TRNS,KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
+
+
+     [_NUMERIC] = LAYOUT_split_3x5_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,                                     KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH,
+        //,------------------------------------.                    ,-----------------------------------------------------.
+       KC_MUTE, KC_VOLD, KC_VOLU, KC_F2, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+              KC_TRNS,KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
 
 
 
@@ -90,14 +110,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_MS_BTN5, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
+             KC_NO,KC_NO,KC_NO,KC_NO,TO(_DVORAK),                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
+              //,------------------------ -----------------------------.                    ,-----------------------------------------------------.
+                        KC_TRNS,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
 
 
 };
-
 #ifdef OLED_ENABLE
 bool oled_task_user(void) {
     // Host Keyboard Layer Status
@@ -134,7 +153,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     if (!process_smtd(keycode, record)) {
         return false;
     }
-
+    if (!process_layer_lock(keycode, record, QK_LAYER_LOCK)) { 
+      return false; 
+    }
 
  switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
@@ -192,6 +213,6 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
 
 
 void housekeeping_task_user(void) {
-
+  layer_lock_task();
   // Other tasks ...
 }
