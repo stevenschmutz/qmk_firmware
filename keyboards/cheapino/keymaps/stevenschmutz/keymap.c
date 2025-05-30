@@ -72,16 +72,16 @@ CW_TOGG <= capitilise word with _
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y,                                       KC_F, KC_G, KC_C, KC_R, KC_L,
+        KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(_ART_MOU,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       CKC_A, CKC_O, CKC_E , CKC_U, KC_I,                                             LT(_NAV,KC_D) , CKC_H , KC_T , CKC_N , KC_S,
+       CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
-      KC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
+      KC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-               QK_CAPS_WORD_TOGGLE  , KC_SPC, KC_TRNS,                                    KC_TRNS,  LT(_NUMERIC,KC_ENT), TO(_ART_MOU)
+                 KC_TAB, LT(_NAV,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, KC_LSFT
 
                 ),
-
+ 
 
       [_NAV] = LAYOUT_split_3x5_3(
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
          KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                  QK_LAYER_LOCK,KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
+                  KC_TRNS,KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, QK_LAYER_LOCK),
 
 
 
@@ -104,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4,                                       KC_MINS, KC_1, KC_2, KC_3, KC_ASTR,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-               QK_LAYER_LOCK, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_TRNS),
+               KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, QK_LAYER_LOCK),
 
 
 
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,TO(_DVORAK),                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
               //,------------------------ -----------------------------.                    ,-----------------------------------------------------.
-                        QK_LAYER_LOCK,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
+                        KC_TRNS,KC_TRNS,KC_NO,                                  KC_NO,KC_TRNS,QK_LAYER_LOCK),
 
 
 
@@ -204,6 +204,7 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         //SMTD_MT(CKC_N, KC_N, KC_N, 2)
         SMTD_MT(CKC_N, KC_N, KC_N, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
+        SMTD_MT(CKC_D, KC_D, KC_D, 2)
         //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
