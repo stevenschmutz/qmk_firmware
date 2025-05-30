@@ -43,7 +43,7 @@ enum layers {
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
-#include "features/sentence_case.h"
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x5_3(
@@ -96,19 +96,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ART_MOU] = LAYOUT_split_3x5_3(
 
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-
              KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                KC_MS_BTN4, MOU_1_1, MOU_1_2, MOU_1_3, MOU_1_4,
-
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_MS_BTN5, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,
-
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
-
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
 
@@ -151,10 +144,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
     if (!process_smtd(keycode, record)) {
         return false;
-    }
-
-    if (!process_sentence_case(keycode, record)) { 
-        return false; 
     }
 
 
