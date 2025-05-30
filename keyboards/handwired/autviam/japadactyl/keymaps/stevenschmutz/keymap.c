@@ -44,7 +44,6 @@ enum layers {
 #include "aliases.c"
 #include "g/keymap_combo.h"
 #include "features/sentence_case.h"
-#include "features/orbital_mouse.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x5_3(
@@ -95,16 +94,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [_ART_MOU] = LAYOUT_split_3x5_3(
+
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                OM_W_U , OM_BTNS, OM_U   , OM_DBLS,OM_BTN5,
+
+             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                KC_MS_BTN4, MOU_1_1, MOU_1_2, MOU_1_3, MOU_1_4,
+
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                OM_W_D , OM_L   , OM_D   , OM_R   , OM_SLOW,
+
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_MS_BTN5, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,
+
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,TO(_DVORAK),                                         OM_RELS, OM_HLDS, OM_BTN1, OM_BTN3, OM_BTN2,
+
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
+
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
 
+
+
 };
+
+;
 #ifdef OLED_ENABLE
 bool oled_task_user(void) {
     // Host Keyboard Layer Status
@@ -140,10 +151,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
     if (!process_smtd(keycode, record)) {
         return false;
-    }
-
-    if (!process_orbital_mouse(keycode, record)) { 
-     return false; 
     }
 
     if (!process_sentence_case(keycode, record)) { 
@@ -211,7 +218,6 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
  }
 
 void housekeeping_task_user(void) {
-  orbital_mouse_task();
 
   // Other tasks ...
 }
