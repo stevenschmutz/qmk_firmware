@@ -25,7 +25,7 @@
 #define WS2812_BYTE_ORDER WS2812_BYTE_ORDER_RGB
 #define RGB_MATRIX_DEFAULT_VAL 32
 
-
+#define LAYER_LOCK_IDLE_TIMEOUT 60000
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 230
 #define SMTD_GLOBAL_RELEASE_TERM 20

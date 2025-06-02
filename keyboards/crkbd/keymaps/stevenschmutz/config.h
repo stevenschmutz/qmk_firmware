@@ -31,3 +31,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 230
 #define SMTD_GLOBAL_RELEASE_TERM 20
+
+
+#define LAYER_LOCK_IDLE_TIMEOUT 60000
+#define NO_ACTION_MACRO //space saving 
+#define NO_ACTION_FUNCTION //space saving
+
+    #ifndef NO_DEBUG
+    #define NO_DEBUG
+    #endif // !NO_DEBUG
+    #if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
+    #define NO_PRINT
+    #endif // !NO_PRINT

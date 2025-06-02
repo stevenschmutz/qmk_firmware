@@ -22,6 +22,7 @@ enum custom_keycodes {
     CKC_SPC,
 
     SMTD_KEYCODES_END,
+    QK_LAYER_LOCK,
     CTRL_TICK,
     CTRL_CUT,
     CTRL_COPY,
@@ -35,15 +36,16 @@ enum custom_keycodes {
 // entirely and just use numbers.
 enum layers {
     _DVORAK,
-    _SYMBOL,
     _NAV,
+    _SYMBOL,
     _NUMERIC,
-  _ART_MOU
+    _ART_MOU
 };
 
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
+#include "features/layer_lock.h"
 
 /*
 // copied from https://beta.docs.qmk.fm/faqs/faq_debug#which-matrix-position-is-this-keypress
@@ -56,66 +58,51 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 */
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[_DVORAK] = LAYOUT_split_3x5_3(
-        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(4,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
-        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       CKC_A, CKC_O, CKC_E , CKC_U, LT(3,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
+/* 
 
-      KC_SCLN, CKC_Q, CKC_J, CKC_K, LT(2,KC_X),                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
+Layer lock
+https://getreuer.info/posts/keyboards/layer-lock/index.html (in use)
+https://docs.qmk.fm/features/layer_lock#how-do-i-enable-layer-lock (newer version)
+
+Caps-Word
+CW_TOGG <= capitilise word with _
+*/
+
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [_DVORAK] = LAYOUT_split_3x5_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
+
+      KC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 CW_TOGG, LT(2,KC_SPC), KC_TRNS,                   KC_TRNS, SC_SENT, OSM(MOD_LSFT)
+                 KC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO, SC_SENT, KC_ESC
 
                 ),
- 
 
-	[_SYMBOL] = LAYOUT_split_3x5_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_GRV, KC_CIRC, KC_AT, KC_DLR, KC_TILD,                                 KC_AMPR, KC_EXLM, KC_PIPE, KC_UNDS, KC_HASH,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN, KC_SLSH,                              KC_HASH, KC_RPRN, KC_RCBR, KC_RBRC, KC_BSLS,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_QUES, KC_GRV, KC_PERC, KC_QUES,                                 KC_TRNS, KC_BSLS, KC_COLN, KC_TRNS, KC_TRNS,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                         KC_TRNS, KC_TRNS, KC_TRNS,                             KC_TRNS, KC_TRNS, QK_BOOT),
-
-
-	[_NAV] = LAYOUT_split_3x5_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                             KC_NO, KC_HOME, KC_UP,  KC_END,KC_PGUP,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_MUTE, KC_VOLD, KC_VOLU, KC_F2, CTRL_TICK,                                   KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            QK_BOOT,KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_TRNS, KC_TRNS),
-
-
-	[_NUMERIC] = LAYOUT_split_3x5_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,                                     KC_PLUS, KC_7, KC_8, KC_9, KC_SLSH,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_NO, KC_F5, KC_F6, KC_F7, KC_F8,                                       KC_0, KC_4, KC_5, KC_6, KC_DOT,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4,                                       KC_MINS, KC_1, KC_2, KC_3, KC_ASTR,
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-               KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_TRNS),
+      [_NAV] = LAYOUT_split_3x5_3(
+          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+               KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, 
+          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+         KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+          //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
+         KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
+          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+                  KC_TRNS,KC_SPC, KC_NO,                                             KC_NO, KC_TRNS, QK_LAYER_LOCK), 
 
 
 
-
-[_ART_MOU] = LAYOUT_split_3x5_3(
-            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,MOU_1_1,MOU_1_3,KC_NO,                                                KC_MS_BTN4, MOU_1_1, MOU_1_2, MOU_1_3, MOU_1_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_MS_BTN5, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO,KC_NO,KC_MS_BTN3,KC_NO,KC_NO,
-              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO,KC_NO),
-
-
+    [_NUMERIC] = LAYOUT_split_3x5_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+ KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4,                                     KC_PLUS,  KC_7, KC_8, KC_9, KC_SLSH,
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+ KC_LSFT, KC_F5, KC_F6, KC_F7, KC_F8,                                       KC_0, KC_4, KC_5, KC_6, KC_DOT,
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+ KC_TRNS, KC_F9, KC_F10, KC_F11, KC_F12,                                       KC_MINS, KC_1, KC_2, KC_3, KC_ASTR,
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+               KC_TRNS, KC_SPC, KC_NO,                                         KC_NO, KC_TRNS, QK_LAYER_LOCK),
 
 };
 
@@ -155,7 +142,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     if (!process_smtd(keycode, record)) {
         return false;
     }
-
+    if (!process_layer_lock(keycode, record, QK_LAYER_LOCK)) { 
+      return false; 
+    }
 
  switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
@@ -199,11 +188,10 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         //SMTD_MT(CKC_N, KC_N, KC_N, 2)
         SMTD_MT(CKC_N, KC_N, KC_N, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
+        SMTD_MT(CKC_D, KC_D, KC_D, 2)
         //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
-        SMTD_LT(CKC_D, KC_D, _SYMBOL)
-   
         SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)
         SMTD_MT(CKC_K, KC_K, KC_LSFT, 2)
         SMTD_MT(CKC_Q, KC_Q, KC_LEFT_ALT, 2)
@@ -213,6 +201,6 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
 
 
 void housekeeping_task_user(void) {
-
+  layer_lock_task();
   // Other tasks ...
 }
