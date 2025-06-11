@@ -79,13 +79,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
       KC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 KC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO, SC_SENT, KC_ESC
+                 KC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO, SC_SENT, CW_TOGG
 
                 ),
 
       [_NAV] = LAYOUT_split_3x5_3(
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-               KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, 
+          KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, 
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
          KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
           //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
