@@ -23,8 +23,10 @@
         "pid": "0x0006",
         "vid": "0x1424"
     },
+    "community_layouts": ["ortho_4x10"],
+ 
     "layouts": {
-        "LAYOUT": {
+        "LAYOUT_ortho_4x10": {
             "layout": [
                 { "matrix": [4, 0], "x": 0, "y": 0 },
                 { "matrix": [4, 1], "x": 1, "y": 0 },

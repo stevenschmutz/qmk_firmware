@@ -1,11 +1,8 @@
-// Copyright 2023 dotleon (@dotleon)
+// Copyright 2023 Thomas Haukland (@tompi)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
 
-#define VIAL_KEYBOARD_UID {0x96, 0x6A, 0xD2, 0x07, 0x7E, 0x9D, 0x25, 0x4A}
-#define VIAL_UNLOCK_COMBO_ROWS { 4, 2 }
-#define VIAL_UNLOCK_COMBO_COLS { 0, 9 }
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
@@ -21,3 +18,13 @@
 //#define NO_ACTION_LAYER
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
+#define LAYER_LOCK_IDLE_TIMEOUT 60000
+// Pick good defaults for enabling homerow modifiers
+#define TAPPING_TERM 230
+#define SMTD_GLOBAL_RELEASE_TERM 20
+
+
+#define MAX_DEFERRED_EXECUTORS 10
