@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
       KC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_TAB, LT(_NAV,KC_SPC),                   SC_SENT, CW_TOGG),
+        KC_TAB, LT(_NAV,KC_SPC),                   SC_SENT, LT(_NUMERIC,CW_TOGG)),
 
       [_NAV] = LAYOUT_ortho_4x10(
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -92,7 +92,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_TRNS,KC_SPC,                                              KC_TRNS, QK_LAYER_LOCK),
 
 
-
     [_NUMERIC] = LAYOUT_ortho_4x10(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4,                                     KC_PLUS,  KC_7, KC_8, KC_9, KC_SLSH,
@@ -101,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_MINS, KC_1, KC_2, KC_3, KC_ASTR,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            KC_TRNS, KC_SPC,                                KC_TRNS, QK_LAYER_LOCK),
+            QK_LAYER_LOCK, KC_SPC,                                KC_TRNS, QK_LAYER_LOCK),
 
 };
 
