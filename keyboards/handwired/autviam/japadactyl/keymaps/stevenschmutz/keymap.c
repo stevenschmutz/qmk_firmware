@@ -18,6 +18,7 @@ enum custom_keycodes {
     CKC_D,
     CKC_J,
     CKC_Q,
+    CKC_SCLN,
     CKC_ESC,
     CKC_SPC,
 
@@ -77,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
-      KC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
+      CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                  KC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO, SC_SENT, LT(_NUMERIC,CW_TOGG)
 
@@ -189,6 +190,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
         SMTD_MT(CKC_A, KC_A, KC_LEFT_GUI, 2)
+        SMTD_MT(CKC_SCLN, KC_SCLN, KC_LEFT_GUI, 2)
         SMTD_MT(CKC_O, KC_O, KC_O, 2)
         SMTD_MT(CKC_E, KC_E, KC_E, 2)
         SMTD_MT(CKC_U, KC_U, KC_U, 2)
