@@ -51,7 +51,57 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
           return false;
         break;
+
+    case CTRL_FIND:  // Types ctrl + f
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("f"));
+      }
+          return false;
+        break;
+
+    case CTRL_UNDO:  // Types ctrl + z
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("z"));
+      }
+          return false;
+        break;
+
+    case SHIFT_CTRL_COPY:  // Types ctrl + Shift+c
+      if (record->event.pressed) {
+        SEND_STRING(SS_LSFT(SS_LCTL("c")));
+      }
+          return false;
+        break;
+
+
+    case SHIFT_CTRL_PASTE:  // Types ctrl + shift + v
+      if (record->event.pressed) {
+        SEND_STRING(SS_LSFT(SS_LCTL("v")));
+      }
+          return false;
+        break;
+   
+    case SHIFT_CTRL_HOME:  // Types ctrl + shift + home
+      if (record->event.pressed) {
+        SEND_STRING(SS_LSFT(SS_LCTL(SS_TAP(X_HOME))));
+      }
+          return false;
+        break;
+   
+    case SHIFT_CTRL_END:  // Types ctrl + shift + home
+      if (record->event.pressed) {
+        SEND_STRING(SS_LSFT(SS_LCTL(SS_TAP(X_END))));
+      }
+          return false;
+        break;
+   
+    
    }
+
+
+
+
+
 
   return process_record_keymap(keycode, record);
 }

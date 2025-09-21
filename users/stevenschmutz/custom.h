@@ -20,6 +20,7 @@ enum custom_keycodes {
     CKC_SCLN,
     CKC_ESC,
     CKC_SPC,
+ 
 
     SMTD_KEYCODES_END,
     QK_LAYER_LOCK,
@@ -27,5 +28,11 @@ enum custom_keycodes {
     CTRL_CUT,
     CTRL_COPY,
     CTRL_SAVE,
-    CTRL_PASTE
+    CTRL_PASTE,
+    CTRL_FIND,
+    CTRL_UNDO,
+    SHIFT_CTRL_COPY,
+    SHIFT_CTRL_PASTE,
+    SHIFT_CTRL_HOME,
+    SHIFT_CTRL_END,
 };
