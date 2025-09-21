@@ -31,6 +31,8 @@ enum custom_keycodes {
     CTRL_PASTE,
     CTRL_FIND,
     CTRL_UNDO,
+    CTRL_C,
+    CTRL_R,        
     SHIFT_CTRL_COPY,
     SHIFT_CTRL_PASTE,
     SHIFT_CTRL_HOME,
