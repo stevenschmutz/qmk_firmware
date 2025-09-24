@@ -37,4 +37,5 @@ enum custom_keycodes {
     SHIFT_CTRL_PASTE,
     SHIFT_CTRL_HOME,
     SHIFT_CTRL_END,
+    SHORTCUT_QU,
 };
