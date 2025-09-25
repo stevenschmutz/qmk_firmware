@@ -29,7 +29,7 @@ COMB(numBkpsc,  KC_BSPC, KC_8, KC_9 )
 
 COMB(leftPaste,  CTRL_PASTE, CKC_J, CKC_K)
 COMB(leftCopy,  CTRL_COPY, CKC_U, CKC_E)
-COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E)
+COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E, CKC_Q)
 COMB(shiftCopy,  SHIFT_CTRL_COPY, CKC_U, DOT_COPY)
 COMB(leftCut,  CTRL_CUT, CKC_J, CKC_Q)
 
