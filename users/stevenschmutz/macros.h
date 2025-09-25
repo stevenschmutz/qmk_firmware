@@ -6,7 +6,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 }
 
 
-
 // Helper for implementing tap vs. long-press keys. Given a tap-hold
 // key event, replaces the hold function with `long_press_keycode`.
 // From : https://getreuer.info/posts/keyboards/triggers/index.html
@@ -32,7 +31,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
 
- 
+ const uint8_t mods = get_mods();
+ const uint8_t oneshot_mods = get_oneshot_mods();
+
 
  switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
@@ -41,6 +42,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
         return false;
         break;
+
+
+    case BRACES:  // Types [], {}, or <> and puts cursor between braces.
+    if (record->event.pressed) {
+      clear_oneshot_mods();  // Temporarily disable mods.
+      unregister_mods(MOD_MASK_CSAG);
+      if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {
+        SEND_STRING("{}");
+      } else if ((mods | oneshot_mods) & MOD_MASK_CTRL) {
+        SEND_STRING("<>");
+      } else {
+        SEND_STRING("[]");
+      }
+      tap_code(KC_LEFT);  // Move cursor between braces.
+      register_mods(mods);  // Restore mods.
+
+    }            
+  return false;
+  break;
 
     case PEE_PASTE:  // Comma on tap, Ctrl+C on long press.
       return process_tap_or_long_press_key(record, C(KC_V));
@@ -142,6 +162,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
           return false;
         break;
+
+
+
 
       return true;
    }
