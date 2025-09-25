@@ -42,16 +42,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
         break;
 
-  case PEE_COPY:  // Comma on tap, Ctrl+C on long press.
-      return process_tap_or_long_press_key(record, C(KC_C));
+    case PEE_PASTE:  // Comma on tap, Ctrl+C on long press.
+      return process_tap_or_long_press_key(record, C(KC_V));
       break;
 
-  case DOT_PASTE:  // Dot on tap, Ctrl+V on long press.
-      return process_tap_or_long_press_key(record, C(KC_V));
+   case DOT_COPY:  // Dot on tap, Ctrl+V on long press.
+      return process_tap_or_long_press_key(record, C(KC_C));
     break;
 
     case COMMA_CUT:  // Dot on tap, Ctrl+X on long press.
       return process_tap_or_long_press_key(record, C(KC_X));
+    break; 
+
+
+    case ALT_DOWN:  // Dot on tap, Ctrl+X on long press.
+      return process_tap_or_long_press_key(record, A(KC_DOWN));
     break;
   
     case CTRL_CUT:  // Types ctrl + x
