@@ -5,6 +5,23 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+
+
+// Helper for implementing tap vs. long-press keys. Given a tap-hold
+// key event, replaces the hold function with `long_press_keycode`.
+// From : https://getreuer.info/posts/keyboards/triggers/index.html
+static bool process_tap_or_long_press_key (
+    keyrecord_t* record, uint16_t long_press_keycode) {
+  if (record->tap.count == 0) {  // Key is being held.
+    if (record->event.pressed) {
+      tap_code16(long_press_keycode);
+    }
+    return false;  // Skip default handling.
+  }
+  return true;  // Continue default handling.
+}
+
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
    if (!process_smtd(keycode, record)) {
@@ -25,16 +42,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
         break;
 
-    case SHORTCUT_QU:  // Types qu
-        if (record->tap.count) {  // On tap.
-            if (record->event.pressed) {  // On press.
-                SEND_STRING("qu");
-            }
-            return false;  // Skip default handling.
-        }
-        break;
+  case PEE_COPY:  // Comma on tap, Ctrl+C on long press.
+      return process_tap_or_long_press_key(record, C(KC_C));
+      break;
 
-case CTRL_CUT:  // Types ctrl + x
+  case DOT_PASTE:  // Dot on tap, Ctrl+V on long press.
+      return process_tap_or_long_press_key(record, C(KC_V));
+    break;
+
+    case COMMA_CUT:  // Dot on tap, Ctrl+X on long press.
+      return process_tap_or_long_press_key(record, C(KC_X));
+    break;
+  
+    case CTRL_CUT:  // Types ctrl + x
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("x"));
       }
@@ -118,7 +138,7 @@ case CTRL_CUT:  // Types ctrl + x
           return false;
         break;
 
-  
+      return true;
    }
 
 

@@ -19,7 +19,7 @@ enum layers {
 #include "aliases.c"
 #include "g/keymap_combo.h"
 #include "features/layer_lock.h"
-#include "macros.h"
+
 
 /*
 // copied from https://beta.docs.qmk.fm/faqs/faq_debug#which-matrix-position-is-this-keypress
@@ -40,13 +40,15 @@ https://docs.qmk.fm/features/layer_lock#how-do-i-enable-layer-lock (newer versio
 
 Caps-Word
 CW_TOGG <= capitilise word with _
+
+https://getreuer.info/posts/keyboards/triggers/index.html
 */
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
+        KC_QUOT, COMMA_CUT, DOT_PASTE, PEE_COPY, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
@@ -110,8 +112,7 @@ bool oled_task_user(void) {
 }
 #endif
 
-
-
+#include "macros.h"
 
 void housekeeping_task_user(void) {
   layer_lock_task();

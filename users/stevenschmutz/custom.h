@@ -20,9 +20,8 @@ enum custom_keycodes {
     CKC_SCLN,
     CKC_ESC,
     CKC_SPC,
- 
-
     SMTD_KEYCODES_END,
+
     QK_LAYER_LOCK,
     CTRL_TICK,
     CTRL_CUT,
@@ -39,3 +38,9 @@ enum custom_keycodes {
     SHIFT_CTRL_END,
     SHORTCUT_QU,
 };
+
+// from https://getreuer.info/posts/keyboards/triggers/index.html
+#define PEE_COPY LT(0, KC_P)
+#define COMMA_CUT LT(0, KC_COMM)
+#define DOT_PASTE LT(0, KC_DOT)
+#define SHORTCUT_QU LT(0, CKC_Q)
