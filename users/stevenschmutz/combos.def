@@ -34,7 +34,8 @@ COMB(shiftCopy,  SHIFT_CTRL_COPY, CKC_U, DOT_COPY)
 COMB(leftCut,  CTRL_CUT, CKC_J, CKC_Q)
 
 //Right hand
-COMB(fgSqrEnd,  BRACES,  KC_F,  KC_G)
+COMB(fgcSmartBraces,  BRACES,  KC_F,  KC_G, KC_C)
+COMB(fgSqrEnd,  KC_RBRC,  KC_F,  KC_G)
 COMB(wmColon,  KC_COLON,    KC_W,    CKC_M)
 COMB(bmCurly,  KC_RCBR, CKC_M, KC_B)
 COMB(gcDel,      KC_DEL,    KC_G,    KC_C)
