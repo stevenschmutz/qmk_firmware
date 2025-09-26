@@ -63,6 +63,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return false;
   break;
 
+    case ENTER_VARIATIONS:  // Types shift_enter or alt_enter.
+    if (record->event.pressed) {
+      clear_oneshot_mods();  // Temporarily disable mods.
+      unregister_mods(MOD_MASK_CSAG);
+      if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {
+        SEND_STRING(SS_LSFT(SS_TAP(X_ENT)));
+      } else if ((mods | oneshot_mods) & MOD_MASK_CTRL) {
+        SEND_STRING(SS_LALT(SS_TAP(X_ENT)));
+      } else {
+        SEND_STRING("}");
+      }
+      register_mods(mods);  // Restore mods.
+    }            
+  return false;
+  break;
+
     case KC_BSPC: {
       static uint16_t registered_key = KC_NO;
       if (record->event.pressed) {  // On key press.
