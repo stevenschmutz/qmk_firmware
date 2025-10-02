@@ -47,11 +47,11 @@ https://docs.qmk.fm/features/layer_lock#how-do-i-enable-layer-lock (newer versio
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO, KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,KC_NO,
+       KC_NO, KC_QUOT, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                        CKC_D , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
 
-      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                                     KC_B, CKC_M, KC_W, KC_V, KC_Z,KC_NO,
+      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                                     KC_B, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
                  KC_NO,  KC_TAB, LT(_NAV,KC_SPC),                                   SC_SENT, LT(_NUMERIC,CW_TOGG), KC_NO
 

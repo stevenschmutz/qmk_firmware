@@ -44,11 +44,11 @@ CW_TOGG <= capitilise word with _
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_ortho_4x10(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_QUOT, KC_COMM, KC_DOT, KC_P, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
+        KC_QUOT, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
-      CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, KC_Z,
+      CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, ALT_DOWN,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         LSFT_T(KC_TAB), LT(_NAV,KC_SPC),                   SC_SENT, MO(_NUMERIC)
 
