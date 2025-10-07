@@ -111,12 +111,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 
 
-
     case PEE_PASTE:  // Comma on tap, Ctrl+C on long press.
+      layer_state_set_user(get_highest_layer(layer_state)); //Change the colour back to the current level
       return process_tap_or_long_press_key(record, C(KC_V));
       break;
 
    case DOT_COPY:  // Dot on tap, Ctrl+V on long press.
+      rgblight_sethsv(HSV_GOLD);  //Change the led to show it's been copied
       return process_tap_or_long_press_key(record, C(KC_C));
     break;
 
