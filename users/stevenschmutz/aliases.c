@@ -30,7 +30,7 @@
 #define CUS_2_2 KC_MNXT
 #define CUS_2_3 KC_VOLD
 #define CUS_2_4 KC_TRNS
-#define SYM_1_1 KC_COLN
+#define SYM_1_1 KC_COLON
 #define SYM_1_2 KC_LPRN
 #define SYM_1_3 KC_LBRC
 #define SYM_1_4 KC_LCBR
