@@ -11,10 +11,10 @@ COMB(pySqrSt,  KC_LBRC,  PEE_PASTE,  LT(_NAV,KC_Y))
 COMB(puAt,  KC_AT,  PEE_PASTE,  CKC_U)
 COMB(yiDollar,  KC_DLR, LT(_NAV,KC_Y),  LT(3,KC_I))
 COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
-COMB(kxCurly,  KC_LCBR, KC_X ,  CKC_K)
+COMB(kxCurly,  KC_LCBR, LT(_ART_BASE,KC_X) ,  CKC_K)
 COMB(ejSlash,  KC_BSLS,  CKC_E,  CKC_J)
 COMB(oqTilde,  KC_TILD,  CKC_O,  CKC_Q)
-COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  KC_X)
+COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  LT(_ART_BASE,KC_X))
 COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
 COMB(commquoteLt,  KC_LT,   KC_QUOT, COMMA_CUT)
 COMB(commadotGt,  KC_GT,   COMMA_CUT,  DOT_COPY)
@@ -63,3 +63,6 @@ COMB(mwvzEnd,      KC_END, CKC_M, KC_W,KC_V,ALT_DOWN)
 
 //Random other stuff
 
+
+// Include Artsey
+#include "artsey.def"
