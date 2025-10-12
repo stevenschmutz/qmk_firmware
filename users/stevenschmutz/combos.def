@@ -12,7 +12,7 @@ COMB(puAt,  KC_AT,  PEE_PASTE,  CKC_U)
 COMB(yiDollar,  KC_DLR, LT(_NAV,KC_Y),  LT(3,KC_I))
 COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
 
-#ifdef ARTSEY_ENABLE
+#if ARTSEY_ENABLE == yes
 	COMB(kxCurly,  KC_LCBR, LT(_ART_BASE,KC_X) ,  CKC_K)
 #else
 	COMB(kxCurly,  KC_LCBR, KC_X ,  CKC_K)
@@ -21,7 +21,7 @@ COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
 COMB(ejSlash,  KC_BSLS,  CKC_E,  CKC_J)
 COMB(oqTilde,  KC_TILD,  CKC_O,  CKC_Q)
 
-#ifdef ARTSEY_ENABLE
+#if ARTSEY_ENABLE == yes
 	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  LT(_ART_BASE,KC_X))
 #else
 	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  KC_X)
@@ -75,8 +75,7 @@ COMB(mwvRight,      KC_RIGHT, CKC_M, KC_W,    KC_V)
 COMB(mwvzEnd,      KC_END, CKC_M, KC_W,KC_V,ALT_DOWN)
 
 //Random other stuff
-
-#ifdef ARTSEY_ENABLE
+#if ARTSEY_ENABLE == yes
 	// Include Artsey
 	#include "artsey.def"
 #endif

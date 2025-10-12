@@ -36,9 +36,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint8_t mods = get_mods();
 const uint8_t oneshot_mods = get_oneshot_mods();
 
+#ifdef TAIPO_ENABLE
    if (IS_LAYER_ON(_TAIPO)) {
         return taipo_process_record_user(keycode, record);
     }
+#endif
+
 
  switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick

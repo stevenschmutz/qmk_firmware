@@ -213,7 +213,9 @@ void housekeeping_task_user(void) {
   // Other tasks ...
 }
 
+#ifdef TAIPO_ENABLE
 
 void matrix_scan_user(void) {
     taipo_matrix_scan_user();
 }
+#endif
