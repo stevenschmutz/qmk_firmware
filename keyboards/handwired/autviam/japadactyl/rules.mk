@@ -10,3 +10,4 @@ SRC += matrix.c
 MOUSE_ENABLE = yes
 SRC += features/layer_lock.c
 LAYER_LOCK_ENABLE = yes
+SRC += taipo.c
