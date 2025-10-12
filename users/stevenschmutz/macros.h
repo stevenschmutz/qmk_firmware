@@ -36,8 +36,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint8_t mods = get_mods();
 const uint8_t oneshot_mods = get_oneshot_mods();
 
-#ifdef TAIPO_ENABLE
-   if (IS_LAYER_ON(_TAIPO)) {
+#if TAIPO_ENABLE == yes
+   if (IS_LAYER_ON(_ART_BASE)) {
         return taipo_process_record_user(keycode, record);
     }
 #endif
@@ -125,7 +125,7 @@ const uint8_t oneshot_mods = get_oneshot_mods();
       break;
 
    case DOT_COPY:  // Dot on tap, Ctrl+V on long press.
-  #ifdef  OLED_ENABLE
+  #if OLED_ENABLE == yes
       rgblight_sethsv(HSV_GOLD);  //Change the led to show it's been copied
   #endif
       

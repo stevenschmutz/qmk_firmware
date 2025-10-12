@@ -1,6 +1,6 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-#ifdef TAIPO_ENABLE
+#if TAIPO_ENABLE == yes
 #    include "taipo.h"
 #endif
