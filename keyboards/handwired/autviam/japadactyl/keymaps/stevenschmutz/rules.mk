@@ -4,7 +4,7 @@ OLED_DRIVER = ssd1306
 OLED_ENABLE = yes
 OLED_TRANSPORT = i2c
 CONSOLE_ENABLE = yes
-
+ARTSEY_ENABLE = yes
 
 VPATH  +=  keyboards/gboards/
 # COMBO_ENABLE=yes

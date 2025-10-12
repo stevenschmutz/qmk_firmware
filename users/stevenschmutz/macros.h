@@ -117,7 +117,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
 
    case DOT_COPY:  // Dot on tap, Ctrl+V on long press.
+  #ifdef  OLED_ENABLE
       rgblight_sethsv(HSV_GOLD);  //Change the led to show it's been copied
+  #endif
+      
       return process_tap_or_long_press_key(record, C(KC_C));
     break;
 
