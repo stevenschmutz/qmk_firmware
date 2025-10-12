@@ -21,7 +21,10 @@ static bool process_tap_or_long_press_key (
 }
 
 
+
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
 
    if (!process_smtd(keycode, record)) {
         return false;
@@ -30,10 +33,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false; 
     }
 
+const uint8_t mods = get_mods();
+const uint8_t oneshot_mods = get_oneshot_mods();
 
- const uint8_t mods = get_mods();
- const uint8_t oneshot_mods = get_oneshot_mods();
-
+   if (IS_LAYER_ON(_TAIPO)) {
+        return taipo_process_record_user(keycode, record);
+    }
 
  switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
