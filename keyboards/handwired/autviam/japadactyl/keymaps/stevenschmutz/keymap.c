@@ -18,11 +18,12 @@ enum layers {
     _ART_PUNC,
     _ART_NAV,
     _ART_SYM,
+      _TAIPO,
 
 };
-
 #include "sm_td.h"
 #include "aliases.c"
+#include "dlip.h"
 #include "g/keymap_combo.h"
 #include "features/layer_lock.h"
 #include "macros.h"
@@ -84,6 +85,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                QK_LAYER_LOCK, KC_SPC, KC_NO,                                         KC_NO, KC_TRNS, QK_LAYER_LOCK),
 
+[_TAIPO] = LAYOUT_split_3x5_3(
+            //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
+              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+             TP_TLP,        TP_TLR,    TP_TLM,       TP_TLI,KC_NO,                          KC_NO, BASE_1_1, BASE_1_2, BASE_1_3, BASE_1_4,
+              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+             TP_BLP,        TP_BLR,    TP_BLM,       TP_BLI,KC_NO,                          KC_NO, BASE_2_1, BASE_2_2, BASE_2_3, BASE_2_4,
+              //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+                        TP_LIT,       TP_LOT,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
 
 
 
@@ -91,11 +101,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                          KC_NO, BASE_1_1, BASE_1_2, BASE_1_3, BASE_1_4,
+             TP_TLP,        TP_TLR,    TP_TLM,       TP_TLI,KC_NO,                          KC_NO, BASE_1_1, BASE_1_2, BASE_1_3, BASE_1_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, BASE_2_1, BASE_2_2, BASE_2_3, BASE_2_4,
+             TP_BLP,        TP_BLR,    TP_BLM,       TP_BLI,KC_NO,                          KC_NO, BASE_2_1, BASE_2_2, BASE_2_3, BASE_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                        TP_LIT,       TP_LOT,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
 
 
 
@@ -197,7 +207,13 @@ bool oled_task_user(void) {
 #endif
 
 
+
 void housekeeping_task_user(void) {
   layer_lock_task();
   // Other tasks ...
+}
+
+
+void matrix_scan_user(void) {
+    taipo_matrix_scan_user();
 }

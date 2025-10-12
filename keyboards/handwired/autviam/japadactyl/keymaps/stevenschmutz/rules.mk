@@ -5,6 +5,7 @@ OLED_ENABLE = yes
 OLED_TRANSPORT = i2c
 CONSOLE_ENABLE = yes
 ARTSEY_ENABLE = yes
+TAIPO_ENABLE = yes
 
 VPATH  +=  keyboards/gboards/
 # COMBO_ENABLE=yes
