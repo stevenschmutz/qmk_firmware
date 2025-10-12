@@ -1,19 +1,42 @@
 COMB(Equal,      KC_EQUAL,  KC_0,    KC_4)
 
 //Left hand
-COMB(qkSpace,      KC_SPC,    CKC_Q,    CKC_K)
+#if ARTSEY_ENABLE == yes
+	COMB(qkSpace,      KC_SPC,    CKC_Q,    LT(_ART_BASE,KC_K))
+#else
+	COMB(qkSpace,      KC_SPC,    CKC_Q,    CKC_K)	
+#endif
+
 COMB(dotpeeSCR,  KC_PSCR,   DOT_COPY,  PEE_PASTE)
 COMB(commaoHash,  KC_HASH,  COMMA_CUT,  CKC_O)
 COMB(doteePercent,  KC_PERC,  DOT_COPY,  CKC_E)
-COMB(qjkLeft,  KC_LEFT,  CKC_Q,  CKC_J,CKC_K)
-COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,CKC_K)
+
+
+#if ARTSEY_ENABLE == yes
+	COMB(qjkLeft,  KC_LEFT,  CKC_Q,  CKC_J,LT(_ART_BASE,KC_K))
+#else
+	COMB(qjkLeft,  KC_LEFT,  CKC_Q,  CKC_J,CKC_K)
+#endif 
+
+#if ARTSEY_ENABLE == yes
+	COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,LT(_ART_BASE,KC_K))	
+#else
+	COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,CKC_K)
+#endif
+
 COMB(pySqrSt,  KC_LBRC,  PEE_PASTE,  LT(_NAV,KC_Y))
 COMB(puAt,  KC_AT,  PEE_PASTE,  CKC_U)
 COMB(yiDollar,  KC_DLR, LT(_NAV,KC_Y),  LT(3,KC_I))
-COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
+
 
 #if ARTSEY_ENABLE == yes
-	COMB(kxCurly,  KC_LCBR, LT(_ART_BASE,KC_X) ,  CKC_K)
+COMB(ukEqual,  KC_EQL,  CKC_U,  LT(_ART_BASE,KC_K))
+#else
+COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
+#endif
+
+#if ARTSEY_ENABLE == yes
+	COMB(kxCurly,  KC_LCBR, LT(_TAIPO,KC_X) ,  LT(_ART_BASE,KC_K))
 #else
 	COMB(kxCurly,  KC_LCBR, KC_X ,  CKC_K)
 #endif
@@ -22,7 +45,7 @@ COMB(ejSlash,  KC_BSLS,  CKC_E,  CKC_J)
 COMB(oqTilde,  KC_TILD,  CKC_O,  CKC_Q)
 
 #if ARTSEY_ENABLE == yes
-	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  LT(_ART_BASE,KC_X))
+	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  LT(_TAIPO,KC_X))
 #else
 	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  KC_X)
 #endif
@@ -40,9 +63,21 @@ COMB(END,  SHIFT_CTRL_END, CKC_A, CKC_SCLN)
 COMB(navBkpsc,  KC_BSPC, KC_UP, KC_END)
 COMB(numBkpsc,  KC_BSPC, KC_8, KC_9 )
 
-COMB(leftPaste,  CTRL_PASTE, CKC_J, CKC_K)
+
+#if ARTSEY_ENABLE == yes
+	COMB(leftPaste,  CTRL_PASTE, CKC_J, LT(_ART_BASE,KC_K))
+#else
+	COMB(leftPaste,  CTRL_PASTE, CKC_J, CKC_K)
+#endif
+
 COMB(leftCopy,  CTRL_COPY, CKC_U, CKC_E)
+
+#if ARTSEY_ENABLE == yes
+COMB(shiftPaste,  SHIFT_CTRL_PASTE, LT(_ART_BASE,KC_K), CKC_E, CKC_Q)
+#else
 COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E, CKC_Q)
+#endif
+
 COMB(shiftCopy,  SHIFT_CTRL_COPY, CKC_U, DOT_COPY)
 COMB(leftCut,  CTRL_CUT, CKC_J, CKC_Q)
 

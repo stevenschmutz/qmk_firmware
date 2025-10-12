@@ -37,7 +37,7 @@ const uint8_t mods = get_mods();
 const uint8_t oneshot_mods = get_oneshot_mods();
 
 #if TAIPO_ENABLE == yes
-   if (IS_LAYER_ON(_ART_BASE)) {
+   if (IS_LAYER_ON(_TAIPO)) {
         return taipo_process_record_user(keycode, record);
     }
 #endif
