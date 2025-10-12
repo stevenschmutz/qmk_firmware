@@ -3,7 +3,7 @@
 #define BASE_1_3 KC_T
 #define BASE_1_4 LT(_ART_NUM,KC_S)
 #define BASE_2_1 LT(_ART_PUNC,KC_E)
-#define BASE_2_2 KC_Y
+#define BASE_2_2 KC_N
 #define BASE_2_3 KC_I
 #define BASE_2_4 LT(_ART_CUS,KC_O)
 #define NUM_1_1 KC_1
@@ -34,7 +34,7 @@
 #define SYM_1_2 KC_LPRN
 #define SYM_1_3 KC_LBRC
 #define SYM_1_4 KC_LCBR
-#define SYM_2_1 KC_TRNS
+#define SYM_2_1 KC_COLON
 #define SYM_2_2 KC_RPRN
 #define SYM_2_3 KC_RBRC
 #define SYM_2_4 KC_RCBR
