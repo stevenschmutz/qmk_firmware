@@ -1,42 +1,22 @@
 COMB(Equal,      KC_EQUAL,  KC_0,    KC_4)
 
 //Left hand
-#if ARTSEY_ENABLE == yes
-	COMB(qkSpace,      KC_SPC,    CKC_Q,    LT(_ART_BASE,KC_K))
-#else
-	COMB(qkSpace,      KC_SPC,    CKC_Q,    CKC_K)	
-#endif
-
+COMB(qkSpace,      KC_SPC,    CKC_Q,    CKC_K)	
 COMB(dotpeeSCR,  KC_PSCR,   DOT_COPY,  PEE_PASTE)
 COMB(commaoHash,  KC_HASH,  COMMA_CUT,  CKC_O)
 COMB(doteePercent,  KC_PERC,  DOT_COPY,  CKC_E)
+COMB(qjkLeft,  KC_LEFT,  CKC_Q,  CKC_J,CKC_K)
 
-
-#if ARTSEY_ENABLE == yes
-	COMB(qjkLeft,  KC_LEFT,  CKC_Q,  CKC_J,LT(_ART_BASE,KC_K))
-#else
-	COMB(qjkLeft,  KC_LEFT,  CKC_Q,  CKC_J,CKC_K)
-#endif 
-
-#if ARTSEY_ENABLE == yes
-	COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,LT(_ART_BASE,KC_K))	
-#else
-	COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,CKC_K)
-#endif
+COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,CKC_K)
 
 COMB(pySqrSt,  KC_LBRC,  PEE_PASTE,  LT(_NAV,KC_Y))
 COMB(puAt,  KC_AT,  PEE_PASTE,  CKC_U)
 COMB(yiDollar,  KC_DLR, LT(_NAV,KC_Y),  LT(3,KC_I))
 
-
-#if ARTSEY_ENABLE == yes
-COMB(ukEqual,  KC_EQL,  CKC_U,  LT(_ART_BASE,KC_K))
-#else
 COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
-#endif
 
 #if ARTSEY_ENABLE == yes
-	COMB(kxCurly,  KC_LCBR, LT(_TAIPO,KC_X) ,  LT(_ART_BASE,KC_K))
+	COMB(kxCurly,  KC_LCBR, LT(_TAIPO,KC_X) ,  CKC_K)
 #else
 	COMB(kxCurly,  KC_LCBR, KC_X ,  CKC_K)
 #endif
@@ -52,31 +32,32 @@ COMB(oqTilde,  KC_TILD,  CKC_O,  CKC_Q)
 
 
 COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
+
+#if ARTSEY_ENABLE == yes
+COMB(commquoteLt,  KC_LT,   LT(_ART_BASE,KC_QUOT), COMMA_CUT)
+#else
 COMB(commquoteLt,  KC_LT,   KC_QUOT, COMMA_CUT)
+#endif
+
+
 COMB(commadotGt,  KC_GT,   COMMA_CUT,  DOT_COPY)
 COMB(uitBracket,  KC_LPRN, CKC_U, LT(3,KC_I) )
 COMB(sclnqBacktic,KC_GRV , CKC_SCLN , CKC_Q )
+
+#if TAIPO_ENABLE == yes
+COMB(HOME,      SHIFT_CTRL_HOME, CKC_A, LT(_ART_BASE,KC_QUOT)  )
+#else
 COMB(HOME,      SHIFT_CTRL_HOME, CKC_A, KC_QUOT  )
+#endif
+
 COMB(navDEl,      KC_DEL,  KC_HOME, KC_UP )
 COMB(numDEl,      KC_DEL,  KC_7, KC_8 )
 COMB(END,  SHIFT_CTRL_END, CKC_A, CKC_SCLN)
 COMB(navBkpsc,  KC_BSPC, KC_UP, KC_END)
 COMB(numBkpsc,  KC_BSPC, KC_8, KC_9 )
-
-
-#if ARTSEY_ENABLE == yes
-	COMB(leftPaste,  CTRL_PASTE, CKC_J, LT(_ART_BASE,KC_K))
-#else
-	COMB(leftPaste,  CTRL_PASTE, CKC_J, CKC_K)
-#endif
-
+COMB(leftPaste,  CTRL_PASTE, CKC_J, CKC_K)
 COMB(leftCopy,  CTRL_COPY, CKC_U, CKC_E)
-
-#if ARTSEY_ENABLE == yes
-COMB(shiftPaste,  SHIFT_CTRL_PASTE, LT(_ART_BASE,KC_K), CKC_E, CKC_Q)
-#else
 COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E, CKC_Q)
-#endif
 
 COMB(shiftCopy,  SHIFT_CTRL_COPY, CKC_U, DOT_COPY)
 COMB(leftCut,  CTRL_CUT, CKC_J, CKC_Q)
