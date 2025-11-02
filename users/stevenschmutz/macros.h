@@ -232,10 +232,6 @@ const uint8_t oneshot_mods = get_oneshot_mods();
    }
 
 
-
-
-
-
   return process_record_keymap(keycode, record);
 }
 
