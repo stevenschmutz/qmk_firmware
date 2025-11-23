@@ -55,10 +55,7 @@ COMB(numDEl,      KC_DEL,  KC_7, KC_8 )
 COMB(END,  SHIFT_CTRL_END, CKC_A, CKC_SCLN)
 COMB(navBkpsc,  KC_BSPC, KC_UP, KC_END)
 COMB(numBkpsc,  KC_BSPC, KC_8, KC_9 )
-COMB(leftPaste,  CTRL_PASTE, CKC_J, CKC_K)
-COMB(leftCopy,  CTRL_COPY, CKC_U, CKC_E)
 COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E, CKC_Q)
-
 COMB(shiftCopy,  SHIFT_CTRL_COPY, CKC_U, DOT_COPY)
 COMB(leftCut,  CTRL_CUT, CKC_J, CKC_Q)
 
@@ -89,6 +86,7 @@ COMB(grCTRLR,      CTRL_R, KC_G,    KC_R)
 COMB(thFIND,      CTRL_FIND, KC_T,    CKC_D)
 COMB(mwvRight,      KC_RIGHT, CKC_M, KC_W,    KC_V)
 COMB(mwvzEnd,      KC_END, CKC_M, KC_W,KC_V,ALT_DOWN)
+COMB(jkSelectAll,      CTRL_ALL, CKC_J , CKC_K)
 
 //Random other stuff
 #if ARTSEY_ENABLE == yes
