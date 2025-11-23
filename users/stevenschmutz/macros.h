@@ -254,8 +254,6 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_N, KC_N, KC_N, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
         SMTD_MT(CKC_D, KC_D, KC_D, 2)
-        //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
-        //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
         //SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)   
         SMTD_MT(CKC_M, KC_M, KC_M, 2)   
