@@ -21,7 +21,10 @@ static bool process_tap_or_long_press_key (
 }
 
 
+
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
 
    if (!process_smtd(keycode, record)) {
         return false;
@@ -30,9 +33,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false; 
     }
 
+const uint8_t mods = get_mods();
+const uint8_t oneshot_mods = get_oneshot_mods();
 
- const uint8_t mods = get_mods();
- const uint8_t oneshot_mods = get_oneshot_mods();
+#if TAIPO_ENABLE == yes
+   if (IS_LAYER_ON(_TAIPO)) {
+        return taipo_process_record_user(keycode, record);
+    }
+#endif
 
 
  switch (keycode) {
@@ -117,7 +125,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
 
    case DOT_COPY:  // Dot on tap, Ctrl+V on long press.
-  #ifdef  OLED_ENABLE
+  #if OLED_ENABLE == yes
       rgblight_sethsv(HSV_GOLD);  //Change the led to show it's been copied
   #endif
       
@@ -136,6 +144,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case CTRL_CUT:  // Types ctrl + x
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("x"));
+      }
+          return false;
+        break;
+         
+    case CTRL_ALL:  // Types ctrl + a
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("a"));
       }
           return false;
         break;
@@ -224,10 +239,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
    }
 
 
-
-
-
-
   return process_record_keymap(keycode, record);
 }
 
@@ -243,12 +254,12 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_N, KC_N, KC_N, 2)
         SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
         SMTD_MT(CKC_D, KC_D, KC_D, 2)
-        //SMTD_LT(CKC_K, KC_K, _SECOND_SYMBOLS)
-        //SMTD_LT(CKC_M, KC_M, _SECOND_SYMBOLS)
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
-        SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)
-        SMTD_MT(CKC_K, KC_K, KC_LSFT, 2)
+        //SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)   
+        SMTD_MT(CKC_M, KC_M, KC_M, 2)   
+        SMTD_MT(CKC_K, KC_K, KC_K, 2)
         SMTD_MT(CKC_Q, KC_Q, KC_LALT, 2)
         SMTD_MT(CKC_J, KC_J, KC_LEFT_CTRL, 2)
+        SMTD_MT(CKC_TAB, KC_TAB, KC_LSFT, 2)
       }
 }

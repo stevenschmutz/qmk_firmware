@@ -12,3 +12,5 @@ MOUSE_ENABLE = no
 MOUSEKEY_ENABLE = no
 SRC += features/layer_lock.c
 LAYER_LOCK_ENABLE = yes
+ARTSEY_ENABLE = no
+TAIPO_ENABLE = no
