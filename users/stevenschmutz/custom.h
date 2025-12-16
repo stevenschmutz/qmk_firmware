@@ -77,6 +77,7 @@ enum custom_keycodes {
     SHIFT_CTRL_HOME,
     SHIFT_CTRL_END,
     BRACES,
+    QUOTE_BOLD,
     ENTER_VARIATIONS,
 };
 
