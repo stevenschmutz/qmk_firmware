@@ -53,7 +53,7 @@ CW_TOGG <= capitilise word with _
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LT(_ART_BASE,KC_QUOT), COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
+        QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 

@@ -57,9 +57,9 @@ const uint8_t oneshot_mods = get_oneshot_mods();
       clear_oneshot_mods();  // Temporarily disable mods.
       unregister_mods(MOD_MASK_CSAG);
       if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {
-        SEND_STRING("{}");
-      } else if ((mods | oneshot_mods) & MOD_MASK_CTRL) {
         SEND_STRING("[]");
+      } else if ((mods | oneshot_mods) & MOD_MASK_CTRL) {
+        SEND_STRING("{}");
       } else if ((mods | oneshot_mods) & MOD_MASK_ALT) {
         SEND_STRING("<>");
       } else {
@@ -131,8 +131,12 @@ const uint8_t oneshot_mods = get_oneshot_mods();
       
       return process_tap_or_long_press_key(record, C(KC_C));
     break;
+    
+   case QUOTE_BOLD:  // Dot on tap, Ctrl+X on long press.
+      return process_tap_or_long_press_key(record, C(KC_B));
+    break; 
 
-    case COMMA_CUT:  // Dot on tap, Ctrl+X on long press.
+    case COMMA_CUT:  // Comma on tap, Ctrl+X on long press.
       return process_tap_or_long_press_key(record, C(KC_X));
     break; 
 
