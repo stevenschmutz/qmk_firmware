@@ -83,6 +83,7 @@ enum custom_keycodes {
 
 // from https://getreuer.info/posts/keyboards/triggers/index.html
 #define PEE_PASTE LT(0, KC_P)
+#define QUOTE_BOLD LT(0, KC_QUOT)
 #define COMMA_CUT LT(0, KC_COMM)
 #define DOT_COPY LT(0, KC_DOT)
 #define ALT_DOWN LT(0, KC_Z)

@@ -34,7 +34,7 @@ COMB(oqTilde,  KC_TILD,  CKC_O,  CKC_Q)
 COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
 
 #if ARTSEY_ENABLE == yes
-COMB(commquoteLt,  KC_LT,   LT(_ART_BASE,KC_QUOT), COMMA_CUT)
+COMB(commquoteLt,  KC_LT,   QUOTE_BOLD, COMMA_CUT)
 #else
 COMB(commquoteLt,  KC_LT,   KC_QUOT, COMMA_CUT)
 #endif
@@ -45,7 +45,7 @@ COMB(uitBracket,  KC_LPRN, CKC_U, LT(3,KC_I) )
 COMB(sclnqBacktic,KC_GRV , CKC_SCLN , CKC_Q )
 
 #if TAIPO_ENABLE == yes
-COMB(HOME,      SHIFT_CTRL_HOME, CKC_A, LT(_ART_BASE,KC_QUOT)  )
+COMB(HOME,      SHIFT_CTRL_HOME, CKC_A, QUOTE_BOLD  )
 #else
 COMB(HOME,      SHIFT_CTRL_HOME, CKC_A, KC_QUOT  )
 #endif

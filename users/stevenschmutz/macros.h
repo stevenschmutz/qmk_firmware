@@ -132,7 +132,7 @@ const uint8_t oneshot_mods = get_oneshot_mods();
       return process_tap_or_long_press_key(record, C(KC_C));
     break;
     
-   case QUOTE_BOLD:  // Dot on tap, Ctrl+X on long press.
+   case QUOTE_BOLD:  // Quote on tap, Ctrl+B on long press.
       return process_tap_or_long_press_key(record, C(KC_B));
     break; 
 
