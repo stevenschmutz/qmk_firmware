@@ -50,7 +50,7 @@ https://docs.qmk.fm/features/layer_lock#how-do-i-enable-layer-lock (newer versio
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO, KC_QUOT, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,KC_NO,
+       KC_NO, QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                        CKC_D , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
 
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
       [_NAV] = LAYOUT_split_3x6_3(
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-            KC_NO,   KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, KC_NO,
+           KC_NO,   KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, KC_NO,
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_NO, KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,KC_NO,
           //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
