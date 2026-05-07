@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
          KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                  KC_TRNS,KC_SPC, KC_NO,                                             KC_NO, KC_TRNS, QK_LAYER_LOCK), 
+                  KC_TRNS,KC_SPC, KC_NO,                                             KC_NO, KC_TRNS, KC_NO), 
 
 
 
