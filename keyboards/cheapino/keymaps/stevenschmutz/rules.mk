@@ -4,8 +4,8 @@ OLED_DRIVER = ssd1306
 OLED_ENABLE = yes
 OLED_TRANSPORT = i2c
 ENCODER_MAP_ENABLE = yes
-ARTSEY_ENABLE = yes
-TAIPO_ENABLE = yes
+ARTSEY_ENABLE = no
+TAIPO_ENABLE = no
 
 
 VPATH  +=  keyboards/gboards/
