@@ -8,7 +8,8 @@
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
 enum layers {
-    _DVORAK,
+    _ALPHA1,
+    _ALPHA2,
     _NAV,
     _SYMBOL,
     _NUMERIC,
@@ -16,10 +17,6 @@ enum layers {
 
 #include "sm_td.h"
 #include "aliases.c"
-/*
-#include "dlip.h"
-*/
-
 #include "g/keymap_combo.h"
 #include "features/layer_lock.h"
 #include "macros.h"
@@ -48,19 +45,42 @@ https://docs.qmk.fm/features/layer_lock#how-do-i-enable-layer-lock (newer versio
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_DVORAK] = LAYOUT_split_3x6_3(
+    [_ALPHA1] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO, QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,KC_NO,
+       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                        CKC_D , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
+       KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, KC_NO,                        KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
 
-      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                                     KC_B, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
+      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_NO,                                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
+      //,-----------------------------------------------------.                    -----------------------------------------------------.
+                 KC_NO,  KC_TAB, LT(_NAV,KC_SPC),                                   SC_SENT, LT(_ALPHA2,CW_TOGG), KC_NO
+
+                ),
+
+/*
+ * Keys to place :
+ *LT(_NAV,KC_Y),                         KC_F 
+LT(_NUMERIC,KC_I),                        CKC_D
+ KC_X,                                     KC_B,
+
+*/
+
+
+    [_ALPHA2] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_NO, QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, KC_NO,                    KC_NO, KC_G, KC_C, KC_R, KC_L,KC_NO,
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, KC_NO,                                    KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
+
+      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_NO,                                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
                  KC_NO,  KC_TAB, LT(_NAV,KC_SPC),                                   SC_SENT, LT(_NUMERIC,CW_TOGG), KC_NO
 
                 ),
 
-      [_NAV] = LAYOUT_split_3x6_3(
+       [_NAV] = LAYOUT_split_3x6_3(
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
            KC_NO,   KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, KC_NO,
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
