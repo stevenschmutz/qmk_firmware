@@ -47,13 +47,13 @@ https://docs.qmk.fm/features/layer_lock#how-do-i-enable-layer-lock (newer versio
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ALPHA1] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
+                       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, KC_NO,                        KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
+                       KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, KC_NO,                      KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
 
-      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_NO,                                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
+                      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
-                 KC_NO,  KC_TAB, LT(_NAV,KC_SPC),                                   SC_SENT, LT(_ALPHA2,CW_TOGG), KC_NO
+                                 KC_NO,  KC_TAB, LT(_NAV,KC_SPC),                     SC_SENT, LT(_ALPHA2,CW_TOGG), KC_NO
 
                 ),
 
@@ -68,15 +68,14 @@ LT(_NUMERIC,KC_I),                        CKC_D
 
     [_ALPHA2] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
+                       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_NO, QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, KC_NO,                    KC_NO, KC_G, KC_C, KC_R, KC_L,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, KC_NO,                                    KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
+                            KC_NO,KC_4, KC_3, KC_2 , KC_1, KC_NO,                   KC_NO , KC_0 , KC_6 , KC_7 , KC_8,KC_NO,
 
-      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_NO,                                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
-                 KC_NO,  KC_TAB, LT(_NAV,KC_SPC),                                   SC_SENT, LT(_NUMERIC,CW_TOGG), KC_NO
+                 KC_NO,  KC_TAB, LT(_NAV,KC_SPC),                                   SC_SENT, KC_TRNS, KC_NO
 
                 ),
 
