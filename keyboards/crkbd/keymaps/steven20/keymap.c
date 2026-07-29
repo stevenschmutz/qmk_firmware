@@ -70,10 +70,9 @@ LT(_NUMERIC,KC_I),                        CKC_D
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO, QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, KC_NO,                    KC_NO, KC_G, KC_C, KC_R, KC_L,KC_NO,
+                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                            KC_NO,KC_4, KC_3, KC_2 , KC_1, KC_NO,                   KC_NO , KC_0 , KC_6 , KC_7 , KC_8,KC_NO,
-
+                       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
                  KC_NO,  KC_TAB, LT(_NAV,KC_SPC),                                   SC_SENT, KC_TRNS, KC_NO
 

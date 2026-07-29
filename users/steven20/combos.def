@@ -1,4 +1,6 @@
 
+COMB(key_DEL,  KC_DEL, KC_S,ALT_DOWN)
+COMB(key_Backspace,  KC_BSPC, KC_T , CKC_N)
 
 
 COMB(key_i,      KC_I,  CKC_U,    CKC_E)
@@ -18,3 +20,18 @@ COMB(key_KC_G,   KC_G,  CKC_H,CKC_M)
 COMB(key_KC_C,   KC_C,  KC_T,KC_W)
 COMB(key_KC_R,   KC_R,  CKC_N,KC_V)
 COMB(key_KC_L,  KC_L, KC_S,ALT_DOWN)
+
+COMB(wvCTRSAVE,      CTRL_SAVE, KC_W,    KC_V)
+COMB(vzUNDO,      CTRL_UNDO, CKC_M,    KC_V)
+//ESC
+COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
+
+
+//COMB(key_UP,  KC_UP, KC_S,ALT_DOWN)
+//COMB(key_DOWN,  KC_DOWN, KC_S,ALT_DOWN)
+COMB(key_LEFT,  KC_LEFT, CKC_Q, CKC_J, CKC_K)
+COMB(key_RIGHT,  KC_RIGHT, CKC_M, KC_W, KC_V,ALT_DOWN)
+COMB(key_HOME,  KC_HOME, CKC_SCLN, CKC_Q, CKC_J, CKC_K)
+COMB(key_END,  KC_END, CKC_M, KC_W, KC_V)
+
+
