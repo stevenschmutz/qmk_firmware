@@ -77,9 +77,7 @@ enum custom_keycodes {
     SHIFT_CTRL_HOME,
     SHIFT_CTRL_END,
     SHIFT_ENTER,
-    BRACES,
     QUOTE_BOLD,
-    ENTER_VARIATIONS,
 };
 
 // from https://getreuer.info/posts/keyboards/triggers/index.html

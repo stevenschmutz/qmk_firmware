@@ -35,3 +35,6 @@ COMB(key_HOME,  KC_HOME, CKC_SCLN, CKC_Q, CKC_J, CKC_K)
 COMB(key_END,  KC_END, CKC_M, KC_W, KC_V)
 
 
+#include "artsey.def"
+
+
