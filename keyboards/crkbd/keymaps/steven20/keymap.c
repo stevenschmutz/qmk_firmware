@@ -71,21 +71,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
        KC_NO,  KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                 LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,KC_NO,
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 KC_NO,  KC_TRNS,KC_SPC,                                              KC_TRNS, QK_LAYER_LOCK, KC_NO
+                 KC_NO,  QK_LAYER_LOCK,KC_TRNS,                                              KC_TRNS, KC_NO, KC_NO
                  ),
 
 */
-
 
     [_ART_BASE] = LAYOUT_split_3x6_3 (
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,TP_TLP,        TP_TLR,    TP_TLM,       TP_TLI,KC_NO,                          KC_NO, BASE_1_1, BASE_1_2, BASE_1_3, BASE_1_4,KC_NO,
+             KC_NO,KC_NO,        KC_NO,    LT(_ART_SYM,KC_NO),       LT(_ART_NUM,KC_NO),KC_NO,                           KC_NO, BASE_1_1, BASE_1_2, BASE_1_3, BASE_1_4,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,TP_BLP,        TP_BLR,    TP_BLM,       TP_BLI,KC_NO,                          KC_NO, BASE_2_1, BASE_2_2, BASE_2_3, BASE_2_4,KC_NO,
+             KC_NO,KC_NO,        KC_NO,    KC_NO,       LT(_ART_PUNC,KC_NO),KC_NO,                          KC_NO, BASE_2_1, BASE_2_2, BASE_2_3, BASE_2_4,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        TP_LIT,       TP_LOT,KC_NO,                                  QK_LAYER_LOCK,KC_NO,KC_NO),
+                        KC_NO,QK_LAYER_LOCK,LT(_ART_NAV,KC_NO),                                              KC_NO,KC_NO,KC_NO),
 
 
 
@@ -97,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, NUM_2_1, NUM_2_2, NUM_2_3, NUM_2_4,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                              QK_LAYER_LOCK,KC_NO,KC_NO),
+                        KC_NO,QK_LAYER_LOCK,KC_NO,                                              KC_NO,KC_NO,KC_NO),
 
  /*   [_ART_CUS] = LAYOUT_split_3x6_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -118,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, PUNC_2_1, PUNC_2_2, PUNC_2_3, PUNC_2_4,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  QK_LAYER_LOCK,KC_NO,KC_NO),
+                        KC_NO,QK_LAYER_LOCK,KC_NO,                                              KC_NO,KC_NO,KC_NO),
 
 
 /*    [_ART_MOU] = LAYOUT_split_3x6_3(
@@ -139,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, NAV_2_1, NAV_2_2, NAV_2_3, NAV_2_4,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  QK_LAYER_LOCK,KC_NO,KC_NO),
+                        KC_NO,QK_LAYER_LOCK,KC_NO,                                              KC_NO,KC_NO,KC_NO),
 
     [_ART_SYM] = LAYOUT_split_3x6_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -149,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, SYM_2_1, SYM_2_2, SYM_2_3, SYM_2_4,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  QK_LAYER_LOCK,KC_NO,KC_NO),
+                        KC_NO,QK_LAYER_LOCK,KC_NO,                                              KC_NO,KC_NO,KC_NO),
 
 
 
