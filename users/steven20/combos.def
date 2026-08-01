@@ -8,14 +8,14 @@ COMB(key_d,      KC_D,  CKC_H,    KC_T)
 COMB(key_x,      KC_X,  CKC_J,    CKC_K)
 COMB(key_b,      KC_B,  CKC_M,    KC_W)
 
-COMB(key_y,      KC_Y, CKC_E,    CKC_U, CKC_J,CKC_K)
+COMB(key_y,      KC_Y, CKC_O, CKC_E , CKC_U )
 COMB(key_QUOTE_BOLD  , QUOTE_BOLD, CKC_A,CKC_SCLN)
 COMB(key_COMMA_CUT  , COMMA_CUT,CKC_O,CKC_Q )
 COMB(key_DOT_COPY  , DOT_COPY, CKC_E,CKC_J)
 COMB(key_PEE_PASTE  , PEE_PASTE, CKC_U,CKC_K )
 
 
-COMB(key_f,      KC_F,  CKC_H,    KC_T, CKC_M,KC_W)
+COMB(key_f,      KC_F,  CKC_H , KC_T , CKC_N )
 COMB(key_KC_G,   KC_G,  CKC_H,CKC_M)
 COMB(key_KC_C,   KC_C,  KC_T,KC_W)
 COMB(key_KC_R,   KC_R,  CKC_N,KC_V)
