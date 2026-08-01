@@ -1,4 +1,3 @@
-#if ARTSEY_ENABLE == yes
 
 	#define BASE_1_1 LT(_ART_SYM,KC_A)
 	#define BASE_1_2 KC_R
