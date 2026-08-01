@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                       KC_NO,CKC_A, CKC_O,  LT(_ART_SYM,CKC_E) , LT(_ART_NUM,CKC_U), KC_NO,                      KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
+                       KC_NO,CKC_A, CKC_O,  LT(_ART_SYM,KC_E) , LT(_ART_NUM,KC_U), KC_NO,                      KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
 
-                      KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_PUNC,CKC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
+                      KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_PUNC,KC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
                                  KC_NO,  KC_TAB, LT(_ART_NAV,KC_SPC),                            SC_SENT, LT(_ART_BASE,CW_TOGG), KC_NO
 
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-             KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                          KC_NO, NAV_1_1, NAV_1_2, NAV_1_3, NAV_1_4,KC_NO,
+             KC_NO,KC_NO,KC_NO,KC_NO,CTRL_TICK,KC_NO,                                          KC_NO, NAV_1_1, NAV_1_2, NAV_1_3, NAV_1_4,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, NAV_2_1, NAV_2_2, NAV_2_3, NAV_2_4,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.

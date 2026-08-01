@@ -3,16 +3,23 @@ COMB(key_DEL,  KC_DEL, KC_S,ALT_DOWN)
 COMB(key_Backspace,  KC_BSPC, KC_T , CKC_N)
 
 
-COMB(key_i,      KC_I,  CKC_U,    CKC_E)
+/*
+  , 
+ 
+LT(_ART_PUNC,KC_K)
+*/
+
+
+COMB(key_i,      KC_I,  LT(_ART_NUM,KC_U),    LT(_ART_SYM,KC_E))
 COMB(key_d,      KC_D,  CKC_H,    KC_T)
-COMB(key_x,      KC_X,  CKC_J,    CKC_K)
+COMB(key_x,      KC_X,  CKC_J,    LT(_ART_PUNC,KC_K))
 COMB(key_b,      KC_B,  CKC_M,    KC_W)
 
-COMB(key_y,      KC_Y, CKC_O, CKC_E , CKC_U )
+COMB(key_y,      KC_Y, CKC_O, LT(_ART_SYM,KC_E) , LT(_ART_NUM,KC_U) )
 COMB(key_QUOTE_BOLD  , QUOTE_BOLD, CKC_A,CKC_SCLN)
 COMB(key_COMMA_CUT  , COMMA_CUT,CKC_O,CKC_Q )
-COMB(key_DOT_COPY  , DOT_COPY, CKC_E,CKC_J)
-COMB(key_PEE_PASTE  , PEE_PASTE, CKC_U,CKC_K )
+COMB(key_DOT_COPY  ,  DOT_COPY, LT(_ART_SYM,KC_E),CKC_J)
+COMB(key_PEE_PASTE  , PEE_PASTE, LT(_ART_NUM,KC_U),LT(_ART_PUNC,KC_K) )
 
 
 COMB(key_f,      KC_F,  CKC_H , KC_T , CKC_N )
@@ -24,14 +31,14 @@ COMB(key_KC_L,  KC_L, KC_S,ALT_DOWN)
 COMB(wvCTRSAVE,      CTRL_SAVE, KC_W,    KC_V)
 COMB(vzUNDO,      CTRL_UNDO, CKC_M,    KC_V)
 //ESC
-COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
+COMB(uhESC,  KC_ESC,   LT(_ART_NUM,KC_U), CKC_H)
 
 
 //COMB(key_UP,  KC_UP, KC_S,ALT_DOWN)
 //COMB(key_DOWN,  KC_DOWN, KC_S,ALT_DOWN)
-COMB(key_LEFT,  KC_LEFT, CKC_Q, CKC_J, CKC_K)
+COMB(key_LEFT,  KC_LEFT, CKC_Q, CKC_J, LT(_ART_PUNC,KC_K))
 COMB(key_RIGHT,  KC_RIGHT, CKC_M, KC_W, KC_V,ALT_DOWN)
-COMB(key_HOME,  KC_HOME, CKC_SCLN, CKC_Q, CKC_J, CKC_K)
+COMB(key_HOME,  KC_HOME, CKC_SCLN, CKC_Q, CKC_J, LT(_ART_PUNC,KC_K))
 COMB(key_END,  KC_END, CKC_M, KC_W, KC_V)
 
 

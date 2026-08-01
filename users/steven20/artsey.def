@@ -44,8 +44,8 @@ COMB(artsey_dollar,KC_DLR,SYM_2_1,SYM_2_2)
 //PUNCTUATION COMBOS
 COMB(artsey_underscore,KC_UNDS,PUNC_1_1,PUNC_1_2)
 COMB(artsey_pipe,KC_PIPE,PUNC_1_2,PUNC_1_3)
-COMB(artsey_backslash,KC_SLASH,PUNC_2_1,PUNC_2_2)
-COMB(artsey_forwardslash,KC_PSLS,PUNC_2_2,PUNC_2_3)
+COMB(artsey_backslash,KC_BSLS,PUNC_2_1,PUNC_2_2)
+COMB(artsey_forwardslash,KC_SLASH,PUNC_2_2,PUNC_2_3)
 
 //NUMBER COMBOS
 COMB(artsey_7,KC_7,NUM_1_1,NUM_1_2)
