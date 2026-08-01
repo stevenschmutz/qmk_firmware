@@ -17,15 +17,15 @@
 #define NUM_2_3 KC_6
 #define NUM_2_4 KC_PLUS
 
-// PUNCTUATION
-#define PUNC_1_1 KC_HASH
-#define PUNC_1_2 KC_EQL
-#define PUNC_1_3 KC_GRV
-#define PUNC_1_4 KC_NO
-#define PUNC_2_1 KC_AT
-#define PUNC_2_2 KC_TILDE
-#define PUNC_2_3 KC_AMPR
-#define PUNC_2_4 KC_NO
+// SUMBOL
+#define SYM_1_1 KC_HASH
+#define SYM_1_2 KC_EQL
+#define SYM_1_3 KC_GRV
+#define SYM_1_4 KC_NO
+#define SYM_2_1 KC_AT
+#define SYM_2_2 KC_TILDE
+#define SYM_2_3 KC_AMPR
+#define SYM_2_4 KC_NO
 /*#define CUS_1_1 KC_MPLY
 #define CUS_1_2 KC_MUTE
 #define CUS_1_3 KC_VOLU
@@ -35,15 +35,15 @@
 #define CUS_2_3 KC_VOLD
 #define CUS_2_4 KC_TRNS*/
 
-// SYMBOL
-#define SYM_1_1 KC_LPRN
-#define SYM_1_2 KC_LBRC
-#define SYM_1_3 KC_LCBR
-#define SYM_1_4 KC_LT
-#define SYM_2_1 KC_RPRN
-#define SYM_2_2 KC_RBRC
-#define SYM_2_3 KC_RCBR
-#define SYM_2_4 KC_GT
+// PUNC
+#define PUNC_1_1 KC_LPRN
+#define PUNC_1_2 KC_LBRC
+#define PUNC_1_3 KC_LCBR
+#define PUNC_1_4 KC_LT
+#define PUNC_2_1 KC_RPRN
+#define PUNC_2_2 KC_RBRC
+#define PUNC_2_3 KC_RCBR
+#define PUNC_2_4 KC_GT
 
 /*#define MOU_1_1 KC_BTN1
 #define MOU_1_2 KC_MS_U

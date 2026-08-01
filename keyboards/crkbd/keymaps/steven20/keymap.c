@@ -47,17 +47,16 @@ https://docs.qmk.fm/features/layer_lock#how-do-i-enable-layer-lock (newer versio
 
 */
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ALPHA1] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                       KC_NO,CKC_A, CKC_O, CKC_E , CKC_U, KC_NO,                      KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
+                       KC_NO,CKC_A, CKC_O,  LT(_ART_SYM,CKC_E) , LT(_ART_NUM,CKC_U), KC_NO,                      KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
 
-                      KC_NO,CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
+                      KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_PUNC,CKC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
-                                 KC_NO,  KC_TAB, KC_SPC,                            SC_SENT, LT(_ART_BASE,CW_TOGG), KC_NO
+                                 KC_NO,  KC_TAB, LT(_ART_NAV,KC_SPC),                            SC_SENT, LT(_ART_BASE,CW_TOGG), KC_NO
 
                 ),
 

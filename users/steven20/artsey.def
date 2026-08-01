@@ -10,7 +10,7 @@ SUBS(artsey_you,"you",BASE_2_2,BASE_2_3,BASE_2_4)
 COMB(artsey_h,KC_H,BASE_2_1,BASE_2_3)
 COMB(artsey_q,KC_Q,BASE_1_1,BASE_1_3,BASE_1_4)
 COMB(artsey_u,KC_U,BASE_2_2,BASE_2_3)
-COMB(artsey_c,KC_C,BASE_2_1,BASE_2_2)
+//COMB(artsey_c,KC_C,BASE_2_1,BASE_2_2)
 COMB(artsey_k,KC_K,BASE_2_2,BASE_2_4)
 COMB(artsey_b,KC_B,BASE_2_1,BASE_2_4)
 COMB(artsey_w,KC_W,BASE_1_1,BASE_1_4)
@@ -42,7 +42,7 @@ COMB(artsey_dollar,KC_DLR,SYM_2_1,SYM_2_2)
 
 
 //PUNCTUATION COMBOS
-COMB(artsey_underscoce,KC_UNDS,PUNC_1_1,PUNC_1_2)
+COMB(artsey_underscore,KC_UNDS,PUNC_1_1,PUNC_1_2)
 COMB(artsey_pipe,KC_PIPE,PUNC_1_2,PUNC_1_3)
 COMB(artsey_backslash,KC_SLASH,PUNC_2_1,PUNC_2_2)
 COMB(artsey_forwardslash,KC_PSLS,PUNC_2_2,PUNC_2_3)
@@ -64,7 +64,7 @@ COMB(artsey_period,KC_DOT,BASE_1_1,BASE_2_2)
 COMB(artsey_slash,KC_SLSH,BASE_1_1,BASE_2_4)
 COMB(artsey_tab,KC_TAB,BASE_1_1,BASE_1_2,BASE_1_3,BASE_2_4)
 COMB(artsey_os_shift,OSM(MOD_LSFT),BASE_2_1,BASE_1_2,BASE_1_3,BASE_1_4)
-
+COMB(artsey_colon,KC_COLON,BASE_2_1,BASE_2_2)
 
 
 COMB(artsey_ctrl,KC_LCTL,BASE_1_4,BASE_2_1)
