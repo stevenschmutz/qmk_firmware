@@ -47,14 +47,14 @@
 
 
 // LEFT
-#define LEFT_1_1 KC_NO
-#define LEFT_1_2 KC_NO
-#define LEFT_1_3 KC_NO
-#define LEFT_1_4 KC_NO
-#define LEFT_2_1 KC_NO
-#define LEFT_2_2 KC_NO
-#define LEFT_2_3 KC_NO
-#define LEFT_2_4 KC_NO
+#define LEFT_1_1 KC_1
+#define LEFT_1_2 KC_2
+#define LEFT_1_3 KC_3
+#define LEFT_1_4 KC_4
+#define LEFT_2_1 KC_5
+#define LEFT_2_2 KC_6
+#define LEFT_2_3 KC_7
+#define LEFT_2_4 KC_8
 
 /*#define MOU_1_1 KC_BTN1
 #define MOU_1_2 KC_MS_U
