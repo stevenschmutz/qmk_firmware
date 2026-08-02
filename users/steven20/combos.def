@@ -3,13 +3,6 @@ COMB(key_DEL,  KC_DEL, KC_S,ALT_DOWN)
 COMB(key_Backspace,  KC_BSPC, KC_T , CKC_N)
 
 
-/*
-  , 
- 
-LT(_ART_PUNC,KC_K)
-*/
-
-
 COMB(key_i,      KC_I,  LT(_ART_NUM,KC_U),    LT(_ART_SYM,KC_E))
 COMB(key_d,      KC_D,  CKC_H,    KC_T)
 COMB(key_x,      KC_X,  CKC_J,    LT(_ART_PUNC,KC_K))
