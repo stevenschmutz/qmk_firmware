@@ -1,4 +1,4 @@
-
+// ////TODOSMS Fix the Shift DEL
 COMB(key_DEL,  KC_DEL, KC_S,ALT_DOWN)
 COMB(key_Backspace,  KC_BSPC, KC_T , CKC_N)
 
