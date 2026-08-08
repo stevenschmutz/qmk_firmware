@@ -54,6 +54,7 @@ enum custom_keycodes {
     CTRL_R,        
     SHIFT_ENTER,
     QUOTE_BOLD,
+    SHOW_WORKSPACES
 };
 
 // from https://getreuer.info/posts/keyboards/triggers/index.html

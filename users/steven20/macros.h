@@ -42,11 +42,44 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
         break;
 
+    case SHOW_WORKSPACES:  // Types ctrl + alt + up arrow
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_LALT(SS_TAP(X_UP))));
+      }
+        return false;
+        break;   
+
+    case KC_BSPC: {
+      static uint16_t registered_key = KC_NO;
+      if (record->event.pressed) {  // On key press.
+        const uint8_t mods = get_mods();
+#ifndef NO_ACTION_ONESHOT
+        uint8_t shift_mods = (mods | get_oneshot_mods()) & MOD_MASK_SHIFT;
+#else
+        uint8_t shift_mods = mods & MOD_MASK_SHIFT;
+#endif  // NO_ACTION_ONESHOT
+        if (shift_mods) {  // At least one shift key is held.
+          registered_key = KC_DEL;
+          // If one shift is held, clear it from the mods. But if both
+          // shifts are held, leave as is to send Shift + Del.
+          if (shift_mods != MOD_MASK_SHIFT) {
+#ifndef NO_ACTION_ONESHOT
+            del_oneshot_mods(MOD_MASK_SHIFT);
+#endif  // NO_ACTION_ONESHOT
+            unregister_mods(MOD_MASK_SHIFT);
+          }
+        } else {
+          registered_key = KC_BSPC;
+        }
+
+        register_code(registered_key);
+        set_mods(mods);
+      } else {  // On key release.
+        unregister_code(registered_key);
+      }
+    } return false;
 
 
-
-
-   
 
 
     case PEE_PASTE:  // Comma on tap, Ctrl+C on long press.
@@ -140,7 +173,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   return process_record_keymap(keycode, record);
 }
-
+//HOME ROW MODS
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
         SMTD_MT(CKC_A, KC_A, KC_LEFT_GUI, 2)
