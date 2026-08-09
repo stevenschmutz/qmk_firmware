@@ -50,11 +50,11 @@
 #define LEFT_1_1 KC_F1
 #define LEFT_1_2 KC_F5
 #define LEFT_1_3 SHOW_WORKSPACES
-#define LEFT_1_4 KC_NO
+#define LEFT_1_4 KC_1
 #define LEFT_2_1 KC_F2
 #define LEFT_2_2 KC_F11
-#define LEFT_2_3 KC_NO
-#define LEFT_2_4 KC_NO
+#define LEFT_2_3 KC_2
+#define LEFT_2_4 KC_3
 
 /*#define MOU_1_1 KC_BTN1
 #define MOU_1_2 KC_MS_U
