@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                       KC_NO,CKC_A, CKC_O,  LT(_ART_SYM,KC_E) , LT(_ART_NUM,KC_U), KC_NO,                      KC_NO , CKC_H , KC_T , CKC_N , KC_S,KC_NO,
+                       KC_NO,CKC_A, CKC_O,  LT(_ART_SYM,KC_E) , LT(_ART_NUM,KC_U), KC_NO,                      KC_NO , TD_GEE_AITCH , TD_CEE_TEE , TD_ARR_EN , TD_EL_ES,KC_NO,
 
                       KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_PUNC,KC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
@@ -169,8 +169,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for Esc, twice for Caps Lock
   [TD_ESC_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
   [TD_CEE_TEE]  = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_T),
-  [TD_GEE_AITCH]  = ACTION_TAP_DANCE_DOUBLE(KC_G, KC_H),
-  [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_R, KC_N),
+  [TD_GEE_AITCH]  = ACTION_TAP_DANCE_DOUBLE(KC_G, CKC_H),
+  [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_R, CKC_H),
   [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_S),
 
 // Other declarations would go here, separated by commas, if you have them
