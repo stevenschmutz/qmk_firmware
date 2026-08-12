@@ -3,3 +3,4 @@ VPATH  +=  keyboards/gboards/
 
 ARTSEY_ENABLE = no
 TAIPO_ENABLE = no
+TAP_DANCE_ENABLE=yes
