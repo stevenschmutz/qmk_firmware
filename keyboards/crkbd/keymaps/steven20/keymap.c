@@ -2,7 +2,6 @@
 #include "custom.h"
 
 
-
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
@@ -19,11 +18,30 @@ enum layers {
     _ART_SYM,    
 };
 
+
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
 #include "features/layer_lock.h"
 #include "macros.h"
+
+
+//Tap dance enums
+enum {
+    TD_CEE_TEE,
+    TD_GEE_AITCH,
+    TD_ARR_EN,
+    TD_EL_ES,
+};
+
+// Tap dance actions
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_CEE_TEE]   = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_T),
+    [TD_GEE_AITCH] = ACTION_TAP_DANCE_DOUBLE(KC_G, KC_H),
+    [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_R, CKC_H),
+    [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_S)
+};
+
 
 /*
 // copied from https://beta.docs.qmk.fm/faqs/faq_debug#which-matrix-position-is-this-keypress
@@ -52,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                       KC_NO,CKC_A, CKC_O,  LT(_ART_SYM,KC_E) , LT(_ART_NUM,KC_U), KC_NO,                      KC_NO , TD_GEE_AITCH , TD_CEE_TEE , TD_ARR_EN , TD_EL_ES,KC_NO,
+                       KC_NO,CKC_A, CKC_O,  LT(_ART_SYM,KC_E) , LT(_ART_NUM,KC_U), KC_NO,        KC_NO , TD(TD_GEE_AITCH) , TD(TD_CEE_TEE) , TD(TD_ARR_EN), TD(TD_EL_ES),KC_NO,
 
                       KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_PUNC,KC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
@@ -153,29 +171,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 };
-
-
-//Tap Dance Declarations
-enum {
-    TD_ESC_CAPS = 0,
-    TD_CEE_TEE = 0,
-    TD_GEE_AITCH =0,
-    TD_ARR_EN =0,
-    TD_EL_ES =0,
-};
-
-//Tap Dance Definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
-  //Tap once for Esc, twice for Caps Lock
-  [TD_ESC_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
-  [TD_CEE_TEE]  = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_T),
-  [TD_GEE_AITCH]  = ACTION_TAP_DANCE_DOUBLE(KC_G, CKC_H),
-  [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_R, CKC_H),
-  [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_S),
-
-// Other declarations would go here, separated by commas, if you have them
-};
-
 
 void housekeeping_task_user(void) {
   layer_lock_task();
