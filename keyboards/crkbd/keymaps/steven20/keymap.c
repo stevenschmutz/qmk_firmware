@@ -36,10 +36,10 @@ enum {
 
 // Tap dance actions
 tap_dance_action_t tap_dance_actions[] = {
-    [TD_CEE_TEE]   = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_T),
-    [TD_GEE_AITCH] = ACTION_TAP_DANCE_DOUBLE(KC_G, KC_H),
-    [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_R, CKC_H),
-    [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_S)
+    [TD_CEE_TEE]   = ACTION_TAP_DANCE_DOUBLE( KC_T,KC_C),
+    [TD_GEE_AITCH] = ACTION_TAP_DANCE_DOUBLE( KC_H,KC_G),
+    [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_N,KC_R),
+    [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_S, KC_L)
 };
 
 
