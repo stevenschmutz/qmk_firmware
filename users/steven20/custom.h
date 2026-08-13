@@ -40,6 +40,13 @@ enum custom_keycodes {
     KC_MOD_ACS,
     KC_MOD_GACS,
 
+    // TD_ESC_CAPS,
+    // TD_CEE_TEE,
+    // TD_GEE_AITCH,
+    // TD_ARR_EN,
+    // TD_EL_ES,
+
+
 
     QK_LAYER_LOCK,
     CTRL_TICK,

@@ -195,3 +195,13 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_TAB, KC_TAB, KC_LSFT, 2)
       }
 }
+
+/* Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+ [TD_CEE_TEE]  = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_T),
+  [TD_GEE_AITCH]  = ACTION_TAP_DANCE_DOUBLE(KC_G, CKC_H),
+  [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_R, CKC_H),
+  [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_S)
+};
+*/
+
