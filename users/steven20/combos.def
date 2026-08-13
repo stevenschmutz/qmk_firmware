@@ -1,10 +1,10 @@
-// ////TODOSMS Fix the Shift DEL
-COMB(key_DEL,  KC_DEL, KC_S,ALT_DOWN)
-COMB(key_Backspace,  KC_BSPC, KC_T , CKC_N)
+
+//COMB(key_DEL,  KC_DEL, TD(TD_EL_ES),ALT_DOWN)
+COMB(key_Backspace,  KC_BSPC, TD(TD_CEE_TEE) , TD(TD_ARR_EN))
 
 
 COMB(key_i,      KC_I,  LT(_ART_NUM,KC_U),    LT(_ART_SYM,KC_E))
-COMB(key_d,      KC_D,  CKC_H,    KC_T)
+COMB(key_d,      KC_D,  TD(TD_GEE_AITCH),    TD(TD_CEE_TEE))
 COMB(key_x,      KC_X,  CKC_J,    LT(_ART_PUNC,KC_K))
 COMB(key_b,      KC_B,  CKC_M,    KC_W)
 
@@ -15,16 +15,18 @@ COMB(key_DOT_COPY  ,  DOT_COPY, LT(_ART_SYM,KC_E),CKC_J)
 COMB(key_PEE_PASTE  , PEE_PASTE, LT(_ART_NUM,KC_U),LT(_ART_PUNC,KC_K) )
 
 
-COMB(key_f,      KC_F,  CKC_H , KC_T , CKC_N )
-COMB(key_KC_G,   KC_G,  CKC_H,CKC_M)
-COMB(key_KC_C,   KC_C,  KC_T,KC_W)
-COMB(key_KC_R,   KC_R,  CKC_N,KC_V)
-COMB(key_KC_L,  KC_L, KC_S,ALT_DOWN)
+COMB(key_f,      KC_F,  TD(TD_GEE_AITCH) , TD(TD_CEE_TEE) , TD(TD_ARR_EN) )
+COMB(key_KC_G,   KC_G,  TD(TD_GEE_AITCH),CKC_M)
+COMB(key_KC_C,   KC_C,  TD(TD_CEE_TEE),KC_W)
+COMB(key_KC_R,   KC_R,  TD(TD_ARR_EN),KC_V)
+COMB(key_KC_L,  KC_L, TD(TD_EL_ES),ALT_DOWN)
+
+
 
 COMB(wvCTRSAVE,      CTRL_SAVE, KC_W,    KC_V)
 COMB(vzUNDO,      CTRL_UNDO, CKC_M,    KC_V)
 //ESC
-COMB(uhESC,  KC_ESC,   LT(_ART_NUM,KC_U), CKC_H)
+COMB(uhESC,  KC_ESC,   LT(_ART_NUM,KC_U), TD(TD_GEE_AITCH))
 
 
 //COMB(key_UP,  KC_UP, KC_S,ALT_DOWN)

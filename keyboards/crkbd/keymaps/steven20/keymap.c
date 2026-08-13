@@ -18,14 +18,6 @@ enum layers {
     _ART_SYM,    
 };
 
-
-#include "sm_td.h"
-#include "aliases.c"
-#include "g/keymap_combo.h"
-#include "features/layer_lock.h"
-#include "macros.h"
-
-
 //Tap dance enums
 enum {
     TD_CEE_TEE,
@@ -34,12 +26,21 @@ enum {
     TD_EL_ES,
 };
 
+
+#include "sm_td.h"
+#include "aliases.c"
+#include "g/keymap_combo.h"
+#include "features/layer_lock.h"
+#include "macros.h"
+
+
+
 // Tap dance actions
 tap_dance_action_t tap_dance_actions[] = {
     [TD_CEE_TEE]   = ACTION_TAP_DANCE_DOUBLE( KC_T,KC_C),
     [TD_GEE_AITCH] = ACTION_TAP_DANCE_DOUBLE( KC_H,KC_G),
     [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_N,KC_R),
-    [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_S, KC_L)
+    [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_S, KC_L),
 };
 
 
