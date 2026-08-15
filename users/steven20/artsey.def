@@ -39,6 +39,7 @@ COMB(artsey_quest,KC_QUES,BASE_1_4,BASE_2_4)
 //SYMBOL COMBOS
 COMB(artsey_percentage,KC_PERC,SYM_1_1,SYM_1_2)
 COMB(artsey_dollar,KC_DLR,SYM_2_1,SYM_2_2)
+COMB(vzKappie,  KC_CIRC, SYM_2_3,SYM_2_2)
 
 //LEFT COMBOS
 COMB(artsey_printscreen,KC_PSCR,LEFT_1_1, LEFT_1_2)

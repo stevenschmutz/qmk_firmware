@@ -13,7 +13,7 @@ enum layers {
     _ART_BASE,
     _ART_NUM,
     _ART_CUS,
-    _ART_PUNC,
+    _ART_PARA,
     _ART_NAV,
     _ART_SYM,    
 };
@@ -54,10 +54,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                        KC_NO,TD(TD_QUOTE_A_BOLD), TD(TD_COMMA_OH_CUT),
-                          TD(TD_DOT_EE_LAYER_ART_SYM) ,TD(TD_PEE_U_LAYER_ART_NUM), KC_NO,
+                          TD(TD_DOT_EE_LAYER_PARA) ,TD(TD_PEE_U_LAYER_NUM), KC_NO,
                                                                                     KC_NO , TD(TD_GEE_AITCH) , TD(TD_CEE_TEE) , TD(TD_ARR_EN), TD(TD_EL_ES),KC_NO,
 
-                      KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_PUNC,KC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
+                      KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_SYM,KC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
                                  KC_NO,  KC_TAB, LT(_ART_NAV,KC_SPC),                            SC_SENT, LT(_ART_BASE,CW_TOGG), KC_NO
 
@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
 
 */
-    [_ART_PUNC] = LAYOUT_split_3x6_3(
+    [_ART_PARA] = LAYOUT_split_3x6_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                                KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
