@@ -18,50 +18,13 @@ enum layers {
     _ART_SYM,    
 };
 
-//Tap dance enums
-enum {
-    TD_CEE_TEE,
-    TD_GEE_AITCH,
-    TD_ARR_EN,
-    TD_EL_ES,
-   TD_ESC_LAYER,
-};
-
 
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
 #include "features/layer_lock.h"
 #include "macros.h"
-
-// Single tap = ESC, Double tap = CAPS, Hold = Layer 1
-void esc_layer_finished(tap_dance_state_t *state, void *user_data) {
-    if (state->pressed) {
-        layer_on(1);  // Held down -> activate layer 1
-    } else if (state->count == 1) {
-        tap_code(KC_ESC);
-    } else if (state->count >= 2) {
-        tap_code(KC_CAPS);
-    }
-}
-
-void esc_layer_reset(tap_dance_state_t *state, void *user_data) {
-    layer_off(1);  // Release the hold -> turn layer 1 back off
-}
-
-// Tap dance actions
-tap_dance_action_t tap_dance_actions[] = {
-    [TD_CEE_TEE]   = ACTION_TAP_DANCE_DOUBLE( KC_T,KC_C),
-    [TD_GEE_AITCH] = ACTION_TAP_DANCE_DOUBLE( KC_H,KC_G),
-    [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_N,KC_R),
-    [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_S, KC_L),
-    [TD_ESC_LAYER] = ACTION_TAP_DANCE_FN_ADVANCED(
-        NULL,
-        esc_layer_finished,
-        esc_layer_reset
-    ),
-};
-
+#include "tapdance.ref"
 
 /*
 // copied from https://beta.docs.qmk.fm/faqs/faq_debug#which-matrix-position-is-this-keypress

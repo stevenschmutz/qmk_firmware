@@ -64,6 +64,15 @@ enum custom_keycodes {
     SHOW_WORKSPACES
 };
 
+//Tap dance enums
+enum {
+    TD_CEE_TEE,
+    TD_GEE_AITCH,
+    TD_ARR_EN,
+    TD_EL_ES,
+   TD_ESC_LAYER,
+};
+
 // from https://getreuer.info/posts/keyboards/triggers/index.html
 #define PEE_PASTE LT(0, KC_P)
 #define QUOTE_BOLD LT(0, KC_QUOT)
