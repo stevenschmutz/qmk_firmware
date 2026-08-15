@@ -17,7 +17,7 @@
 #define NUM_2_3 KC_6
 #define NUM_2_4 KC_PLUS
 
-// SUMBOL
+// SYMBOL
 #define SYM_1_1 KC_HASH
 #define SYM_1_2 KC_EQL
 #define SYM_1_3 KC_GRV
@@ -39,11 +39,11 @@
 #define PUNC_1_1 KC_LPRN
 #define PUNC_1_2 KC_LBRC
 #define PUNC_1_3 KC_LCBR
-#define PUNC_1_4 KC_LT
+#define PUNC_1_4 KC_NO
 #define PUNC_2_1 KC_RPRN
 #define PUNC_2_2 KC_RBRC
 #define PUNC_2_3 KC_RCBR
-#define PUNC_2_4 KC_GT
+#define PUNC_2_4 KC_NO
 
 
 // LEFT
