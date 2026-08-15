@@ -34,6 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #define LAYER_LOCK_IDLE_TIMEOUT 60000
+#define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
 #define NO_ACTION_MACRO //space saving 
 #define NO_ACTION_FUNCTION //space saving
 
