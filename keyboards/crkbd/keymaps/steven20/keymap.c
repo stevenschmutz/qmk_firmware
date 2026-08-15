@@ -53,7 +53,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                       KC_NO,CKC_A, CKC_O,  LT(_ART_SYM,KC_E) , LT(_ART_NUM,KC_U), KC_NO,        KC_NO , TD(TD_GEE_AITCH) , TD(TD_CEE_TEE) , TD(TD_ARR_EN), TD(TD_EL_ES),KC_NO,
+                       KC_NO,TD(TD_QUOTE_A_BOLD), TD(TD_COMMA_OH_CUT),
+                          TD(TD_DOT_EE_LAYER_ART_SYM) ,TD(TD_PEE_U_LAYER_ART_NUM), KC_NO,
+                                                                                    KC_NO , TD(TD_GEE_AITCH) , TD(TD_CEE_TEE) , TD(TD_ARR_EN), TD(TD_EL_ES),KC_NO,
 
                       KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_PUNC,KC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.

@@ -1,13 +1,45 @@
 // Single tap = ESC, Double tap = CAPS, Hold = Layer 1
 void esc_layer_finished(tap_dance_state_t *state, void *user_data) {
     if (state->pressed) {
-        layer_on(1);  // Held down -> activate layer 1
-    } else if (state->count == 1) {
+        layer_on(1);  // Held down -> layer-1
+    }  else if (state->count == 1) {
         tap_code(KC_ESC);
     } else if (state->count >= 2) {
         tap_code(KC_CAPS);
     }
 }
+
+
+// Single tap = A, Double tap = QUOTE, Hold = Layer 1
+void quote_ay_bold_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        tap_code16(C(KC_B));  // Held down -> ctrl+b
+    } else if (state->count == 1) {
+        tap_code(KC_A);
+    } else if (state->count >= 2) {
+        tap_code(KC_QUOT);
+    }
+}
+
+void quote_ay_bold_reset(tap_dance_state_t *state, void *user_data) {
+    ;  // Release the ctrl-bold
+}
+
+// Single tap = O, Double tap = COMMA, Hold = ctrl+x
+void comma_oh_cut_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        tap_code16(C(KC_X));  // Held down -> ctrl+x
+    } else if (state->count == 1) {
+        tap_code(KC_O);
+    } else if (state->count >= 2) {
+        tap_code(KC_COMM);
+    }
+}
+
+void comma_oh_cut_reset(tap_dance_state_t *state, void *user_data) {
+    ;  // Release the ctrl-cut
+}
+
 
 void esc_layer_reset(tap_dance_state_t *state, void *user_data) {
     layer_off(1);  // Release the hold -> turn layer 1 back off
@@ -24,6 +56,14 @@ tap_dance_action_t tap_dance_actions[] = {
         esc_layer_finished,
         esc_layer_reset
     ),
+    [TD_QUOTE_A_BOLD] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        quote_ay_bold_finished,
+        quote_ay_bold_reset
+    ),
+    [TD_COMMA_OH_CUT] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        comma_oh_cut_finished,
+        comma_oh_cut_reset
+    ),
 };
-
-

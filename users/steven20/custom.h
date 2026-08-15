@@ -70,7 +70,12 @@ enum {
     TD_GEE_AITCH,
     TD_ARR_EN,
     TD_EL_ES,
-   TD_ESC_LAYER,
+    TD_ESC_LAYER,
+    TD_QUOTE_A_BOLD,
+    TD_COMMA_OH_CUT,
+    TD_DOT_EE_LAYER_ART_SYM,
+    TD_PEE_U_LAYER_ART_NUM,
+
 };
 
 // from https://getreuer.info/posts/keyboards/triggers/index.html
