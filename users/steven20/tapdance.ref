@@ -40,6 +40,36 @@ void comma_oh_cut_reset(tap_dance_state_t *state, void *user_data) {
     ;  // Release the ctrl-cut
 }
 
+// Single tap = U, Double tap = P, Hold = _ART_NUM layer
+void pee_u_layer_art_num_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        layer_on(_ART_NUM);  // Held down -> _ART_NUM layer
+    } else if (state->count == 1) {
+        tap_code(KC_U);
+    } else if (state->count >= 2) {
+        tap_code(KC_P);
+    }
+}
+
+void pee_u_layer_art_num_reset(tap_dance_state_t *state, void *user_data) {
+    layer_off(_ART_NUM);  // Release the hold -> turn _ART_NUM layer back off
+}
+
+// Single tap = E, Double tap = DOT, Hold = _ART_SYM layer
+void dot_ee_layer_art_sym_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        layer_on(_ART_SYM);  // Held down -> _ART_SYM layer
+    } else if (state->count == 1) {
+        tap_code(KC_E);
+    } else if (state->count >= 2) {
+        tap_code(KC_DOT);
+    }
+}
+
+void dot_ee_layer_art_sym_reset(tap_dance_state_t *state, void *user_data) {
+    layer_off(_ART_SYM);  // Release the hold -> turn _ART_SYM layer back off
+}
+
 
 void esc_layer_reset(tap_dance_state_t *state, void *user_data) {
     layer_off(1);  // Release the hold -> turn layer 1 back off
@@ -65,5 +95,15 @@ tap_dance_action_t tap_dance_actions[] = {
         NULL,
         comma_oh_cut_finished,
         comma_oh_cut_reset
+    ),
+    [TD_PEE_U_LAYER_ART_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        pee_u_layer_art_num_finished,
+        pee_u_layer_art_num_reset
+    ),
+    [TD_DOT_EE_LAYER_ART_SYM] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        dot_ee_layer_art_sym_finished,
+        dot_ee_layer_art_sym_reset
     ),
 };
