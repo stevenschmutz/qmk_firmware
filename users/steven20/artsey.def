@@ -41,7 +41,7 @@ COMB(artsey_percentage,KC_PERC,SYM_1_1,SYM_1_2)
 COMB(artsey_dollar,KC_DLR,SYM_2_1,SYM_2_2)
 COMB(vzKappie,  KC_CIRC, SYM_1_3,SYM_1_2)
 COMB(artsey_tilde,KC_TILDE,SYM_2_3,SYM_2_2)
-COMB(artsey_gbp,  UC(0x00A3), SYM_1_3,SYM_1_4)
+
 
 
 //LEFT COMBOS

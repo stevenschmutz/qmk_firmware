@@ -23,7 +23,7 @@
 #define SYM_1_1 KC_HASH
 #define SYM_1_2 KC_EQL
 #define SYM_1_3 KC_GRV
-#define SYM_1_4 KC_NO
+#define SYM_1_4 UC(0x00A3)
 
 #define SYM_2_1 KC_AT
 #define SYM_2_2 KC_PAST 
