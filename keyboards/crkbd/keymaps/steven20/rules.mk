@@ -4,3 +4,7 @@ VPATH  +=  keyboards/gboards/
 ARTSEY_ENABLE = no
 TAIPO_ENABLE = no
 UNICODE_ENABLE = yes
+OLED_ENABLE = no
+GRAVE_ESC_ENABLE = no
+SPACE_CADET_ENABLE = no
+MAGIC_ENABLE = no
