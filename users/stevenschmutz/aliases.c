@@ -55,5 +55,3 @@
 	#define NAV_2_2 KC_DOWN
 	#define NAV_2_3 KC_RIGHT
 	#define NAV_2_4 KC_PGDN
-
-#endif

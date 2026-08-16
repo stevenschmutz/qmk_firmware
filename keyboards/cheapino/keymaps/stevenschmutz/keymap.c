@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
       CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                            KC_B, CKC_M, KC_W, KC_V, ALT_DOWN,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 CKC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO, SC_SENT, LT(_NUMERIC,CW_TOGG)
+                 CKC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO,RSFT_T(KC_ENT), LT(_NUMERIC,KC_DOT)
 
                 ),
 

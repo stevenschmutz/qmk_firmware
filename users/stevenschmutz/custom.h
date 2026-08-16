@@ -82,6 +82,21 @@ enum custom_keycodes {
     ENTER_VARIATIONS,
 };
 
+//Tap dance enums
+enum {
+    TD_CEE_TEE,
+    TD_GEE_AITCH,
+    TD_ARR_EN,
+    TD_EL_ES,
+    TD_ESC_LAYER,
+    TD_QUOTE_A_BOLD,
+    TD_COMMA_OH_CUT,
+    TD_DOT_EE_LAYER_PARA,
+    TD_PEE_U_LAYER_NUM,
+
+};
+
+
 // from https://getreuer.info/posts/keyboards/triggers/index.html
 #define PEE_PASTE LT(0, KC_P)
 #define QUOTE_BOLD LT(0, KC_QUOT)

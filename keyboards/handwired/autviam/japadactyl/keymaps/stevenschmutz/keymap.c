@@ -27,6 +27,7 @@ enum layers {
 #include "g/keymap_combo.h"
 #include "features/layer_lock.h"
 #include "macros.h"
+#include "tapdance.ref"
 
 /*
 // copied from https://beta.docs.qmk.fm/faqs/faq_debug#which-matrix-position-is-this-keypress
@@ -59,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
       CKC_SCLN, CKC_Q, CKC_J, CKC_K, LT(_TAIPO,KC_X),                             KC_B, CKC_M, KC_W, KC_V, ALT_DOWN,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 CKC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO, SC_SENT, LT(_NUMERIC,CW_TOGG)
+                 CKC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO, RSFT_T(KC_ENT), LT(_NUMERIC,KC_DOT)
 
                 ),
 
