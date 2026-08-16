@@ -55,14 +55,15 @@ void pee_u_layer_art_num_reset(tap_dance_state_t *state, void *user_data) {
     layer_off(_ART_NUM);  // Release the hold -> turn _ART_NUM layer back off
 }
 
-// Single tap = E, Double tap = DOT, Hold = _ART_SYM layer
+// Single tap = E, Double tap = EE, Hold = _ART_SYM layer
 void dot_ee_layer_art_para_finished(tap_dance_state_t *state, void *user_data) {
     if (state->pressed) {
         layer_on(_ART_PARA);  // Held down -> _ART_SYM layer
     } else if (state->count == 1) {
         tap_code(KC_E);
     } else if (state->count >= 2) {
-        tap_code(KC_DOT);
+        tap_code(KC_E);
+        tap_code(KC_E);
     }
 }
 
@@ -75,12 +76,36 @@ void esc_layer_reset(tap_dance_state_t *state, void *user_data) {
     layer_off(1);  // Release the hold -> turn layer 1 back off
 }
 
+// Single tap = S, Double tap = L, Triple tap = LL
+void el_es_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        register_code(KC_S);
+    } else if (state->count == 2) {
+        register_code(KC_L);
+    } else if (state->count >= 3) {
+        tap_code(KC_L);
+        register_code(KC_L);
+    }
+}
+
+void el_es_reset(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        unregister_code(KC_S);
+    } else {
+        unregister_code(KC_L);
+    }
+}
+
 // Tap dance actions
 tap_dance_action_t tap_dance_actions[] = {
     [TD_CEE_TEE]   = ACTION_TAP_DANCE_DOUBLE( KC_T,KC_C),
     [TD_GEE_AITCH] = ACTION_TAP_DANCE_DOUBLE( KC_H,KC_G),
     [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_N,KC_R),
-    [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_S, KC_L),
+    [TD_EL_ES] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        el_es_finished,
+        el_es_reset
+    ),
     [TD_ESC_LAYER] = ACTION_TAP_DANCE_FN_ADVANCED(
         NULL,
         esc_layer_finished,
