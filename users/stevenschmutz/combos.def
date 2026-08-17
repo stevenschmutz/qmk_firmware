@@ -11,7 +11,7 @@ COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,CKC_K)
 
 COMB(pySqrSt,  KC_LBRC,  PEE_PASTE,  LT(_NAV,KC_Y))
 COMB(puAt,  KC_AT,  PEE_PASTE,  CKC_U)
-COMB(yiDollar,  KC_DLR, LT(_NAV,KC_Y),  LT(3,KC_I))
+COMB(yiDollar,  KC_DLR, LT(_NAV,KC_Y),  LT(_NUMERIC,KC_I))
 
 COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
 
@@ -25,9 +25,9 @@ COMB(ejSlash,  KC_BSLS,  CKC_E,  CKC_J)
 COMB(oqTilde,  KC_TILD,  CKC_O,  CKC_Q)
 
 #if ARTSEY_ENABLE != no
-	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  LT(_TAIPO,KC_X))
+	COMB(ixUnderscore,  KC_UNDS,  LT(_NUMERIC,KC_I),  LT(_TAIPO,KC_X))
 #else
-	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  KC_X)
+	COMB(ixUnderscore,  KC_UNDS,  LT(_NUMERIC,KC_I),  KC_X)
 #endif
 
 //ESC
@@ -39,7 +39,7 @@ COMB(euhtShiftEnter,  SHIFT_ENTER, CKC_J, CKC_K, CKC_M,KC_W)
 COMB(commquoteLt,  KC_LT,   QUOTE_BOLD, COMMA_CUT)
 
 COMB(commadotGt,  KC_GT,   COMMA_CUT,  DOT_COPY)
-COMB(uitBracket,  KC_LPRN, CKC_U, LT(3,KC_I) )
+COMB(uitBracket,  KC_LPRN, CKC_U, LT(_NUMERIC,KC_I) )
 COMB(sclnqBacktic,KC_GRV , CKC_SCLN , CKC_Q )
 
 
