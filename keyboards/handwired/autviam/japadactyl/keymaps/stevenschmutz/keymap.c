@@ -66,11 +66,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
       [_NAV] = LAYOUT_split_3x5_3(
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-               KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, 
+               KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+         KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                                     KC_NO, ALT_NAV_1_1, ALT_NAV_1_2, ALT_NAV_1_3, ALT_NAV_1_4,
           //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
-         KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
+         KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                            KC_NO, ALT_NAV_2_1, ALT_NAV_2_2, ALT_NAV_2_3, ALT_NAV_2_4, 
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                   KC_TRNS,KC_SPC, KC_NO,                                             KC_NO, KC_TRNS, QK_LAYER_LOCK), 
 
@@ -78,11 +78,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUMERIC] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4,                                     KC_PLUS,  KC_7, KC_8, KC_9, KC_SLSH,
+ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_F5, KC_F6, KC_F7, KC_F8,KC_TRNS,                                       KC_0, KC_4, KC_5, KC_6, KC_DOT,
+ ALT_LEFT_1_1, ALT_LEFT_1_1, ALT_LEFT_1_1, ALT_LEFT_1_1,KC_NO,                                       KC_NO, ALT_NUM_1_1, ALT_NUM_1_2, ALT_NUM_1_3, ALT_NUM_1_4,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                      KC_MINS, KC_1, KC_2, KC_3, KC_ASTR,
+ ALT_LEFT_1_1, ALT_LEFT_1_1, ALT_LEFT_1_1, ALT_LEFT_1_1, KC_NO,                                      KC_NO, ALT_NUM_2_1, ALT_NUM_2_2, ALT_NUM_2_3, ALT_NUM_2_4,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                QK_LAYER_LOCK, KC_SPC, KC_NO,                                         KC_NO, KC_TRNS, QK_LAYER_LOCK),
 
