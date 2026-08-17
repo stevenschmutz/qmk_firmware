@@ -27,6 +27,7 @@ enum layers {
 #include "g/keymap_combo.h"
 #include "features/layer_lock.h"
 #include "dlip.h"
+#include "tapdance.ref"
 
 
 

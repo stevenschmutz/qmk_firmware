@@ -6,6 +6,7 @@ OLED_TRANSPORT = i2c
 ENCODER_MAP_ENABLE = yes
 ARTSEY_ENABLE = no
 TAIPO_ENABLE = no
+TAP_DANCE_ENABLE = yes
 
 
 VPATH  +=  keyboards/gboards/
