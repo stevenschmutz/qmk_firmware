@@ -80,9 +80,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- ALT_LEFT_1_1, ALT_LEFT_1_1, ALT_LEFT_1_1, ALT_LEFT_1_1,KC_NO,                                       KC_NO, ALT_NUM_1_1, ALT_NUM_1_2, ALT_NUM_1_3, ALT_NUM_1_4,
+ ALT_LEFT_1_4, ALT_LEFT_1_3, ALT_LEFT_1_2, ALT_LEFT_1_1,KC_NO,                                       KC_NO, ALT_NUM_1_1, ALT_NUM_1_2, ALT_NUM_1_3, ALT_NUM_1_4,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- ALT_LEFT_1_1, ALT_LEFT_1_1, ALT_LEFT_1_1, ALT_LEFT_1_1, KC_NO,                                      KC_NO, ALT_NUM_2_1, ALT_NUM_2_2, ALT_NUM_2_3, ALT_NUM_2_4,
+ ALT_LEFT_2_4, ALT_LEFT_2_3, ALT_LEFT_2_2, ALT_LEFT_2_1, KC_NO,                                      KC_NO, ALT_NUM_2_1, ALT_NUM_2_2, ALT_NUM_2_3, ALT_NUM_2_4,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                QK_LAYER_LOCK, KC_SPC, KC_NO,                                         KC_NO, KC_TRNS, QK_LAYER_LOCK),
 

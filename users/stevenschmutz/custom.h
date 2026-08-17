@@ -22,6 +22,8 @@ enum custom_keycodes {
     CKC_SPC,
     CKC_TAB,
     SMTD_KEYCODES_END,
+    SHOW_WORKSPACES,
+
 
     TP_TLP,
     TP_TLR,

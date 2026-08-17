@@ -51,6 +51,13 @@ const uint8_t oneshot_mods = get_oneshot_mods();
         return false;
         break;
 
+   case SHOW_WORKSPACES:  // Types ctrl + alt + up arrow
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_LALT(SS_TAP(X_UP))));
+      }
+        return false;
+        break;   
+
 
     case BRACES:  // Types [], {}, or <> and puts cursor between braces.
     if (record->event.pressed) {
