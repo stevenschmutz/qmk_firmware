@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           TD(TD_DOT_EE_LAYER_PARA) ,TD(TD_PEE_U_LAYER_NUM), KC_NO,
                                                                                     KC_NO , TD(TD_GEE_AITCH) , TD(TD_CEE_TEE) , TD(TD_ARR_EN), TD(TD_EL_ES),KC_NO,
 
-                      KC_NO,CKC_SCLN, CKC_Q, CKC_J,LT(_ART_SYM,KC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
+                      KC_NO,CKC_SCLN, TD(TD_Q_WORKSPACE), CKC_J,LT(_ART_SYM,KC_K), KC_NO,                     KC_NO, CKC_M, KC_W, KC_V, ALT_DOWN,KC_NO,
       //,-----------------------------------------------------.                    -----------------------------------------------------.
                                  KC_NO,  KC_TAB, LT(_ART_NAV,KC_SPC),                            RSFT_T(KC_ENT), LT(_ART_BASE,KC_DOT), KC_NO
 

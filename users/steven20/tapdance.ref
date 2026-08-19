@@ -76,6 +76,21 @@ void esc_layer_reset(tap_dance_state_t *state, void *user_data) {
     layer_off(1);  // Release the hold -> turn layer 1 back off
 }
 
+// Single tap = Q, Double tap = SHOW_WORKSPACES, Hold = Alt
+void q_workspace_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        register_code(KC_LALT);  // Held down -> Alt
+    } else if (state->count == 1) {
+        tap_code(KC_Q);
+    } else if (state->count >= 2) {
+        SEND_STRING(SS_LCTL(SS_LALT(SS_TAP(X_UP))));  // Same as SHOW_WORKSPACES
+    }
+}
+
+void q_workspace_reset(tap_dance_state_t *state, void *user_data) {
+    unregister_code(KC_LALT);  // Release the hold -> Alt back up
+}
+
 // Single tap = S, Double tap = L, Triple tap = LL
 void el_es_finished(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
@@ -97,7 +112,12 @@ void el_es_reset(tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap dance actions
-tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = { 
+    [TD_Q_WORKSPACE] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        q_workspace_finished,
+        q_workspace_reset
+    ),
     [TD_CEE_TEE]   = ACTION_TAP_DANCE_DOUBLE( KC_T,KC_C),
     [TD_GEE_AITCH] = ACTION_TAP_DANCE_DOUBLE( KC_H,KC_G),
     [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_N,KC_R),
