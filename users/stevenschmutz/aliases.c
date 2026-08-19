@@ -95,5 +95,5 @@
 
 #define ALT_LEFT_2_1 KC_F2
 #define ALT_LEFT_2_2 KC_F11
-#define ALT_LEFT_2_3 KC_2
+#define ALT_LEFT_2_3 KC_F12
 #define ALT_LEFT_2_4 KC_3
