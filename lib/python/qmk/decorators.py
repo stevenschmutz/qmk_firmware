@@ -17,7 +17,8 @@ def automagic_keyboard(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         # Ensure that `--keyboard` was not passed and CWD is under `qmk_firmware/keyboards`
-        if cli.config_source[cli._subcommand.__name__]['keyboard'] != 'argument':
+        ##if cli.config_source[cli._subcommand.__name__]['keyboard'] != 'argument':
+        if cli.config_source[cli.subcommand_name]['keyboard'] != 'argument':
             keyboard = find_keyboard_from_dir()
 
             if keyboard:
