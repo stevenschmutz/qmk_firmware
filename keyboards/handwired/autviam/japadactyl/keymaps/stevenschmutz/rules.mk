@@ -20,5 +20,7 @@ ENCODER_MAP_ENABLE = yes
 # RGBLIGHT_ENABLE = no
 TAP_DANCE_ENABLE = yes
 
-
+# Add below for https://github.com/srwi/keypeek
+RAW_ENABLE = yes
+VIA_ENABLE = yes
 
