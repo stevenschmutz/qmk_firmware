@@ -1,19 +1,26 @@
+
 COMB(Equal,      KC_EQUAL,  KC_0,    KC_4)
 
 //Left hand
-COMB(qkSpace,      KC_SPC,    CKC_Q,    CKC_K)	
+COMB(qkSpace,      KC_SPC,    TD(TD_Q_WORKSPACE),    CKC_K)	
 COMB(dotpeeSCR,  KC_PSCR,   DOT_COPY,  PEE_PASTE)
 COMB(commaoHash,  KC_HASH,  COMMA_CUT,  CKC_O)
 COMB(doteePercent,  KC_PERC,  DOT_COPY,  CKC_E)
-COMB(qjkLeft,  KC_LEFT,  CKC_Q,  CKC_J,CKC_K)
+COMB(qjkLeft,  KC_LEFT,  TD(TD_Q_WORKSPACE),  CKC_J,CKC_K)
 
-COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,CKC_K)
+COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, TD(TD_Q_WORKSPACE),  CKC_J,CKC_K)
 
 COMB(pySqrSt,  KC_LBRC,  PEE_PASTE,  LT(_NAV,KC_Y))
 COMB(puAt,  KC_AT,  PEE_PASTE,  CKC_U)
-COMB(yiDollar,  KC_DLR, LT(_NAV,KC_Y),  LT(3,KC_I))
+COMB(puAt2,  KC_AT,  PEE_PASTE,  KC_U)
+COMB(puAt3,  KC_AT,  PEE_PASTE,  LT(_NUMERIC,KC_U))
+
+
+COMB(yiDollar,  KC_DLR, LT(_NAV,KC_Y),  LT(_NUMERIC,KC_I))
 
 COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
+COMB(ukEqual2,  KC_EQL,  KC_U,  CKC_K)
+COMB(ukEqual3,  KC_EQL,  LT(_NUMERIC,KC_U),  CKC_K)
 
 #if ARTSEY_ENABLE != no
 	COMB(kxCurly,  KC_LCBR, LT(_TAIPO,KC_X) ,  CKC_K)
@@ -22,16 +29,18 @@ COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
 #endif
 
 COMB(ejSlash,  KC_BSLS,  CKC_E,  CKC_J)
-COMB(oqTilde,  KC_TILD,  CKC_O,  CKC_Q)
+COMB(oqTilde,  KC_TILD,  CKC_O,  TD(TD_Q_WORKSPACE))
 
 #if ARTSEY_ENABLE != no
-	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  LT(_TAIPO,KC_X))
+	COMB(ixUnderscore,  KC_UNDS,  LT(_NUMERIC,KC_I),  LT(_TAIPO,KC_X))
 #else
-	COMB(ixUnderscore,  KC_UNDS,  LT(3,KC_I),  KC_X)
+	COMB(ixUnderscore,  KC_UNDS,  LT(_NUMERIC,KC_I),  KC_X)
 #endif
 
 //ESC
 COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
+COMB(uhESC2,  KC_ESC,  KC_U, CKC_H)
+COMB(uhESC3,  KC_ESC, LT(_NUMERIC,KC_U) , CKC_H)
 
 //Shift+Enter
 COMB(euhtShiftEnter,  SHIFT_ENTER, CKC_J, CKC_K, CKC_M,KC_W)
@@ -39,8 +48,11 @@ COMB(euhtShiftEnter,  SHIFT_ENTER, CKC_J, CKC_K, CKC_M,KC_W)
 COMB(commquoteLt,  KC_LT,   QUOTE_BOLD, COMMA_CUT)
 
 COMB(commadotGt,  KC_GT,   COMMA_CUT,  DOT_COPY)
-COMB(uitBracket,  KC_LPRN, CKC_U, LT(3,KC_I) )
-COMB(sclnqBacktic,KC_GRV , CKC_SCLN , CKC_Q )
+COMB(uitBracket,  KC_LPRN, CKC_U, LT(_NUMERIC,KC_I) )
+COMB(uitBracket2,  KC_LPRN, KC_U, LT(_NUMERIC,KC_I) )
+COMB(uitBracket3,  KC_LPRN, LT(_NUMERIC,KC_U), LT(_NUMERIC,KC_I) )
+
+COMB(sclnqBacktic,KC_GRV , CKC_SCLN , TD(TD_Q_WORKSPACE) )
 
 
 COMB(HOME,      SHIFT_CTRL_HOME, CKC_A, QUOTE_BOLD  )
@@ -51,9 +63,11 @@ COMB(numDEl,      KC_DEL,  KC_7, KC_8 )
 COMB(END,  SHIFT_CTRL_END, CKC_A, CKC_SCLN)
 COMB(navBkpsc,  KC_BSPC, KC_UP, KC_END)
 COMB(numBkpsc,  KC_BSPC, KC_8, KC_9 )
-COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E, CKC_Q)
+COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E, TD(TD_Q_WORKSPACE))
 COMB(shiftCopy,  SHIFT_CTRL_COPY, CKC_U, DOT_COPY)
-COMB(leftCut,  CTRL_CUT, CKC_J, CKC_Q)
+COMB(shiftCopy2,  SHIFT_CTRL_COPY, KC_U, DOT_COPY)
+COMB(shiftCopy3,  SHIFT_CTRL_COPY, LT(_NUMERIC,KC_U), DOT_COPY)
+COMB(leftCut,  CTRL_CUT, CKC_J, TD(TD_Q_WORKSPACE))
 
 //Right hand
 COMB(dhtSmartBraces,  BRACES,  CKC_D,  CKC_H, KC_T)
@@ -89,3 +103,16 @@ COMB(jkSelectAll,      CTRL_ALL, CKC_J , CKC_K)
 	// Include Artsey
 	#include "artsey.def"
 #endif
+ 
+
+ //WORD COMBOS
+SUBS(artsey_the,"the",ALT_LEFT_1_1,ALT_LEFT_1_2,ALT_LEFT_1_3)
+SUBS(artsey_and,"and",ALT_LEFT_2_1,ALT_LEFT_2_2,ALT_LEFT_2_3)
+SUBS(artsey_from,"from",ALT_LEFT_1_2,ALT_LEFT_1_3,ALT_LEFT_1_4)
+SUBS(artsey_you,"you",ALT_LEFT_2_2,ALT_LEFT_2_3,ALT_LEFT_2_4)
+
+//NUMBER COMBOS
+COMB(artsey_7,KC_7,ALT_NUM_1_1,ALT_NUM_1_2)
+COMB(artsey_8,KC_8,ALT_NUM_1_2,ALT_NUM_1_3)
+COMB(artsey_9,KC_9,ALT_NUM_2_1,ALT_NUM_2_2)
+COMB(artsey_0,KC_0,ALT_NUM_2_2,ALT_NUM_2_3)

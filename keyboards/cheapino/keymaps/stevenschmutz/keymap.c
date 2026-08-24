@@ -27,6 +27,7 @@ enum layers {
 #include "g/keymap_combo.h"
 #include "features/layer_lock.h"
 #include "dlip.h"
+#include "tapdance.ref"
 
 
 
@@ -46,37 +47,37 @@ https://getreuer.info/posts/keyboards/triggers/index.html
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_split_3x5_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
+        QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                   KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       CKC_A, CKC_O, CKC_E , CKC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
-
-      CKC_SCLN, CKC_Q, CKC_J, CKC_K, KC_X,                            KC_B, CKC_M, KC_W, KC_V, ALT_DOWN,
+       CKC_A, CKC_O, CKC_E ,LT(_NUMERIC,KC_U) , LT(_NUMERIC,KC_I),                              CKC_D , CKC_H , KC_T , CKC_N , KC_S,
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      CKC_SCLN, TD(TD_Q_WORKSPACE), CKC_J, CKC_K, KC_X,                                          KC_B, CKC_M, KC_W, KC_V, ALT_DOWN,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                 CKC_TAB, LT(_NAV,KC_SPC), KC_NO,                   KC_NO, SC_SENT, LT(_NUMERIC,CW_TOGG)
+                 KC_NO,CKC_TAB, LT(_NAV,KC_SPC),                   RSFT_T(KC_ENT), LT(_NUMERIC,KC_DOT),KC_NO
 
                 ),
 
       [_NAV] = LAYOUT_split_3x5_3(
-          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-          KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                              KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, 
-          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
-          //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
-         KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                            LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,
-          //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                  KC_TRNS,KC_SPC, KC_NO,                                             KC_NO, KC_TRNS, KC_NO), 
+          //,-----------------------------------------------------.                   ,-----------------------------------------------------.
+          KC_VOLU, MOU_1_3, MOU_1_2,MOU_1_1 , MOU_1_4,                                KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
+          //,-----------------------------------------------------.                   ,-----------------------------------------------------.
+         KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                               KC_NO, ALT_NAV_1_1, ALT_NAV_1_2, ALT_NAV_1_3, ALT_NAV_1_4,
+          //,--------------             ---------------------------------------.      ,-----------------------------------------------------.
+         KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                     KC_NO, ALT_NAV_2_1, ALT_NAV_2_2, ALT_NAV_2_3, ALT_NAV_2_4,
+          //,-----------------------------------------------------.                   ,-----------------------------------------------------.
+                  KC_NO,KC_TRNS,KC_SPC,                                               KC_NO, KC_TRNS, KC_NO), 
 
 
 
     [_NUMERIC] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4,                                     KC_PLUS,  KC_7, KC_8, KC_9, KC_SLSH,
+ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                     KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- KC_F5, KC_F6, KC_F7, KC_F8,KC_TRNS,                                       KC_0, KC_4, KC_5, KC_6, KC_DOT,
+ ALT_LEFT_1_4, ALT_LEFT_1_3, ALT_LEFT_1_2, ALT_LEFT_1_1,KC_NO,          KC_NO, ALT_NUM_1_1, ALT_NUM_1_2, ALT_NUM_1_3, ALT_NUM_1_4,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_MINS, KC_1, KC_2, KC_3, KC_ASTR,
+ ALT_LEFT_2_4, ALT_LEFT_2_3, ALT_LEFT_2_2, ALT_LEFT_2_1, KC_NO,         KC_NO, ALT_NUM_2_1, ALT_NUM_2_2, ALT_NUM_2_3, ALT_NUM_2_4,
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-               QK_LAYER_LOCK, KC_SPC, KC_NO,                                         KC_NO, KC_TRNS, QK_LAYER_LOCK),
+               KC_NO,QK_LAYER_LOCK, KC_SPC,                                         KC_TRNS, QK_LAYER_LOCK,KC_NO),
 
 
   [_TAIPO] = LAYOUT_split_3x5_3(
@@ -87,7 +88,7 @@ KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_M
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              TP_BLP,        TP_BLR,    TP_BLM,       TP_BLI,KC_NO,                          KC_NO, BASE_2_1, BASE_2_2, BASE_2_3, BASE_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        TP_LIT,       TP_LOT,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                       KC_NO, TP_LIT,       TP_LOT,                                  KC_NO, QK_LAYER_LOCK,KC_NO),
 
 
 
@@ -99,7 +100,7 @@ KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_M
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              TP_BLP,        TP_BLR,    TP_BLM,       TP_BLI,KC_NO,                          KC_NO, BASE_2_1, BASE_2_2, BASE_2_3, BASE_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        TP_LIT,       TP_LOT,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                        KC_NO,TP_LIT,       TP_LOT,                                  KC_NO, QK_LAYER_LOCK,KC_NO),
 
 
 
@@ -111,7 +112,7 @@ KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_M
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, NUM_2_1, NUM_2_2, NUM_2_3, NUM_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                        KC_NO,KC_NO,KC_NO,                                  KC_NO, QK_LAYER_LOCK,KC_NO),
 
     [_ART_CUS] = LAYOUT_split_3x5_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -121,7 +122,7 @@ KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_M
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, CUS_2_1, CUS_2_2, CUS_2_3, CUS_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                        KC_NO,KC_NO,KC_NO,                                  KC_NO, QK_LAYER_LOCK,KC_NO),
 
 
     [_ART_PUNC] = LAYOUT_split_3x5_3(
@@ -132,7 +133,7 @@ KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_M
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, PUNC_2_1, PUNC_2_2, PUNC_2_3, PUNC_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                        KC_NO,KC_NO,KC_NO,                                  KC_NO, QK_LAYER_LOCK,KC_NO),
 
 
     [_ART_MOU] = LAYOUT_split_3x5_3(
@@ -143,7 +144,7 @@ KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_M
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, MOU_2_1, MOU_2_2, MOU_2_3, MOU_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                        KC_NO,KC_NO,KC_NO,                                  KC_NO, QK_LAYER_LOCK,KC_NO),
 
     [_ART_NAV] = LAYOUT_split_3x5_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -153,7 +154,7 @@ KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_M
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, NAV_2_1, NAV_2_2, NAV_2_3, NAV_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                        KC_NO,KC_NO,KC_NO,                                  KC_NO, QK_LAYER_LOCK,KC_NO),
 
     [_ART_SYM] = LAYOUT_split_3x5_3(
             //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -163,7 +164,7 @@ KC_F9, KC_F10, KC_F11, KC_F12, KC_F2,                                       KC_M
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
              KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,                                         KC_NO, SYM_2_1, SYM_2_2, SYM_2_3, SYM_2_4,
               //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-                        KC_NO,KC_NO,KC_NO,                                  KC_NO,KC_NO, QK_LAYER_LOCK),
+                        KC_NO,KC_NO,KC_NO,                                  KC_NO, QK_LAYER_LOCK,KC_NO),
 
 
 

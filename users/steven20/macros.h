@@ -33,15 +33,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false; 
     }
 
-const uint8_t mods = get_mods();
-const uint8_t oneshot_mods = get_oneshot_mods();
-
-#if TAIPO_ENABLE != no
-   if (IS_LAYER_ON(_TAIPO)) {
-        return taipo_process_record_user(keycode, record);
-    }
-#endif
-
 
  switch (keycode) {
     case CTRL_TICK:  // Types ctrl + backtick
@@ -51,48 +42,12 @@ const uint8_t oneshot_mods = get_oneshot_mods();
         return false;
         break;
 
-   case SHOW_WORKSPACES:  // Types ctrl + alt + up arrow
+    case SHOW_WORKSPACES:  // Types ctrl + alt + up arrow
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL(SS_LALT(SS_TAP(X_UP))));
       }
         return false;
         break;   
-
-
-    case BRACES:  // Types [], {}, or <> and puts cursor between braces.
-    if (record->event.pressed) {
-      clear_oneshot_mods();  // Temporarily disable mods.
-      unregister_mods(MOD_MASK_CSAG);
-      if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {
-        SEND_STRING("[]");
-      } else if ((mods | oneshot_mods) & MOD_MASK_CTRL) {
-        SEND_STRING("{}");
-      } else if ((mods | oneshot_mods) & MOD_MASK_ALT) {
-        SEND_STRING("<>");
-      } else {
-        SEND_STRING("()");
-      }
-      tap_code(KC_LEFT);  // Move cursor between braces.
-      register_mods(mods);  // Restore mods.
-    }            
-  return false;
-  break;
-
-    case ENTER_VARIATIONS:  // Types shift_enter or alt_enter.
-    if (record->event.pressed) {
-      clear_oneshot_mods();  // Temporarily disable mods.
-      unregister_mods(MOD_MASK_CSAG);
-      if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {
-        SEND_STRING(SS_LSFT(SS_TAP(X_ENT)));
-      } else if ((mods | oneshot_mods) & MOD_MASK_CTRL) {
-        SEND_STRING(SS_LALT(SS_TAP(X_ENT)));
-      } else {
-        SEND_STRING("}");
-      }
-      register_mods(mods);  // Restore mods.
-    }            
-  return false;
-  break;
 
     case KC_BSPC: {
       static uint16_t registered_key = KC_NO;
@@ -126,15 +81,13 @@ const uint8_t oneshot_mods = get_oneshot_mods();
 
 
 
+
     case PEE_PASTE:  // Comma on tap, Ctrl+C on long press.
       layer_state_set_user(get_highest_layer(layer_state)); //Change the colour back to the current level
       return process_tap_or_long_press_key(record, C(KC_V));
       break;
 
    case DOT_COPY:  // Dot on tap, Ctrl+V on long press.
-  #if OLED_ENABLE != no
-      rgblight_sethsv(HSV_GOLD);  //Change the led to show it's been copied
-  #endif
       
       return process_tap_or_long_press_key(record, C(KC_C));
     break;
@@ -201,42 +154,7 @@ const uint8_t oneshot_mods = get_oneshot_mods();
           return false;
         break;
 
-    case SHIFT_CTRL_COPY:  // Types ctrl + Shift+c
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT(SS_LCTL("c")));
-      }
-          return false;
-        break;
 
-
-    case SHIFT_CTRL_PASTE:  // Types ctrl + shift + v
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT(SS_LCTL("v")));
-      }
-          return false;
-        break;
-   
-    case SHIFT_CTRL_HOME:  // Types ctrl + shift + home
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT(SS_LCTL(SS_TAP(X_HOME))));
-      }
-          return false;
-        break;
-   
-    case SHIFT_CTRL_END:  // Types ctrl + shift + home
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT(SS_LCTL(SS_TAP(X_END))));
-      }
-          return false;
-        break;
-    
-    case CTRL_R:  // Types ctrl + f
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTL("r"));
-      }
-          return false;
-        break;
-    
     case CTRL_C:  // Types ctrl + f
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL("c"));
@@ -244,12 +162,7 @@ const uint8_t oneshot_mods = get_oneshot_mods();
           return false;
         break;
 
-    case SHIFT_ENTER:  // Types shift enter
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT(SS_TAP(X_ENT)));
-      }
-          return false;
-        break;
+
     
  
 
@@ -260,7 +173,7 @@ const uint8_t oneshot_mods = get_oneshot_mods();
 
   return process_record_keymap(keycode, record);
 }
-
+//HOME ROW MODS
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
         SMTD_MT(CKC_A, KC_A, KC_LEFT_GUI, 2)
@@ -282,3 +195,13 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_TAB, KC_TAB, KC_LSFT, 2)
       }
 }
+
+/* Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+ [TD_CEE_TEE]  = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_T),
+  [TD_GEE_AITCH]  = ACTION_TAP_DANCE_DOUBLE(KC_G, CKC_H),
+  [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_R, CKC_H),
+  [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_S)
+};
+*/
+

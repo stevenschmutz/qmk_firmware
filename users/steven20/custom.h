@@ -22,29 +22,7 @@ enum custom_keycodes {
     CKC_SPC,
     CKC_TAB,
     SMTD_KEYCODES_END,
-    SHOW_WORKSPACES,
 
-
-    TP_TLP,
-    TP_TLR,
-    TP_TLM,
-    TP_TLI,
-    TP_BLP,
-    TP_BLR,
-    TP_BLM,
-    TP_BLI,
-    TP_LIT,
-    TP_LOT,
-    TP_TRP,
-    TP_TRR,
-    TP_TRM,
-    TP_TRI,
-    TP_BRP,
-    TP_BRR,
-    TP_BRM,
-    TP_BRI,
-    TP_RIT,
-    TP_ROT,
     KC_LAYER0,
     KC_LAYER1,
     KC_LAYER2,
@@ -62,6 +40,13 @@ enum custom_keycodes {
     KC_MOD_ACS,
     KC_MOD_GACS,
 
+    // TD_ESC_CAPS,
+    // TD_CEE_TEE,
+    // TD_GEE_AITCH,
+    // TD_ARR_EN,
+    // TD_EL_ES,
+
+
 
     QK_LAYER_LOCK,
     CTRL_TICK,
@@ -74,14 +59,9 @@ enum custom_keycodes {
     CTRL_UNDO,
     CTRL_C,
     CTRL_R,        
-    SHIFT_CTRL_COPY,
-    SHIFT_CTRL_PASTE,
-    SHIFT_CTRL_HOME,
-    SHIFT_CTRL_END,
     SHIFT_ENTER,
-    BRACES,
     QUOTE_BOLD,
-    ENTER_VARIATIONS,
+    SHOW_WORKSPACES
 };
 
 //Tap dance enums
@@ -95,10 +75,9 @@ enum {
     TD_COMMA_OH_CUT,
     TD_DOT_EE_LAYER_PARA,
     TD_PEE_U_LAYER_NUM,
-    TD_Q_WORKSPACE
+    TD_Q_WORKSPACE,
 
 };
-
 
 // from https://getreuer.info/posts/keyboards/triggers/index.html
 #define PEE_PASTE LT(0, KC_P)

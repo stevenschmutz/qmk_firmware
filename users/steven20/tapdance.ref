@@ -1,0 +1,154 @@
+// Single tap = ESC, Double tap = CAPS, Hold = Layer 1
+void esc_layer_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        layer_on(1);  // Held down -> layer-1
+    }  else if (state->count == 1) {
+        tap_code(KC_ESC);
+    } else if (state->count >= 2) {
+        tap_code(KC_CAPS);
+    }
+}
+
+
+// Single tap = A, Double tap = QUOTE, Hold = Layer 1
+void quote_ay_bold_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        tap_code16(C(KC_B));  // Held down -> ctrl+b
+    } else if (state->count == 1) {
+        tap_code(KC_A);
+    } else if (state->count >= 2) {
+        tap_code(KC_QUOT);
+    }
+}
+
+void quote_ay_bold_reset(tap_dance_state_t *state, void *user_data) {
+    ;  // Release the ctrl-bold
+}
+
+// Single tap = O, Double tap = COMMA, Hold = ctrl+x
+void comma_oh_cut_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        tap_code16(C(KC_X));  // Held down -> ctrl+x
+    } else if (state->count == 1) {
+        tap_code(KC_O);
+    } else if (state->count >= 2) {
+        tap_code(KC_COMM);
+    }
+}
+
+void comma_oh_cut_reset(tap_dance_state_t *state, void *user_data) {
+    ;  // Release the ctrl-cut
+}
+
+// Single tap = U, Double tap = P, Hold = _ART_NUM layer
+void pee_u_layer_art_num_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        layer_on(_ART_NUM);  // Held down -> _ART_NUM layer
+    } else if (state->count == 1) {
+        tap_code(KC_U);
+    } else if (state->count >= 2) {
+        tap_code(KC_P);
+    }
+}
+
+void pee_u_layer_art_num_reset(tap_dance_state_t *state, void *user_data) {
+    layer_off(_ART_NUM);  // Release the hold -> turn _ART_NUM layer back off
+}
+
+// Single tap = E, Double tap = EE, Hold = _ART_SYM layer
+void dot_ee_layer_art_para_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        layer_on(_ART_PARA);  // Held down -> _ART_SYM layer
+    } else if (state->count == 1) {
+        tap_code(KC_E);
+    } else if (state->count >= 2) {
+        tap_code(KC_E);
+        tap_code(KC_E);
+    }
+}
+
+void dot_ee_layer_art_para_reset(tap_dance_state_t *state, void *user_data) {
+    layer_off(_ART_PARA);  // Release the hold -> turn _ART_SYM layer back off
+}
+
+
+void esc_layer_reset(tap_dance_state_t *state, void *user_data) {
+    layer_off(1);  // Release the hold -> turn layer 1 back off
+}
+
+// Single tap = Q, Double tap = SHOW_WORKSPACES, Hold = Alt
+void q_workspace_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->pressed) {
+        register_code(KC_LALT);  // Held down -> Alt
+    } else if (state->count == 1) {
+        tap_code(KC_Q);
+    } else if (state->count >= 2) {
+        SEND_STRING(SS_LCTL(SS_LALT(SS_TAP(X_UP))));  // Same as SHOW_WORKSPACES
+    }
+}
+
+void q_workspace_reset(tap_dance_state_t *state, void *user_data) {
+    unregister_code(KC_LALT);  // Release the hold -> Alt back up
+}
+
+// Single tap = S, Double tap = L, Triple tap = LL
+void el_es_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        register_code(KC_S);
+    } else if (state->count == 2) {
+        register_code(KC_L);
+    } else if (state->count >= 3) {
+        tap_code(KC_L);
+        register_code(KC_L);
+    }
+}
+
+void el_es_reset(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        unregister_code(KC_S);
+    } else {
+        unregister_code(KC_L);
+    }
+}
+
+// Tap dance actions
+tap_dance_action_t tap_dance_actions[] = { 
+    [TD_Q_WORKSPACE] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        q_workspace_finished,
+        q_workspace_reset
+    ),
+    [TD_CEE_TEE]   = ACTION_TAP_DANCE_DOUBLE( KC_T,KC_C),
+    [TD_GEE_AITCH] = ACTION_TAP_DANCE_DOUBLE( KC_H,KC_G),
+    [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_N,KC_R),
+    [TD_EL_ES] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        el_es_finished,
+        el_es_reset
+    ),
+    [TD_ESC_LAYER] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        esc_layer_finished,
+        esc_layer_reset
+    ),
+    [TD_QUOTE_A_BOLD] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        quote_ay_bold_finished,
+        quote_ay_bold_reset
+    ),
+    [TD_COMMA_OH_CUT] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        comma_oh_cut_finished,
+        comma_oh_cut_reset
+    ),
+    [TD_PEE_U_LAYER_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        pee_u_layer_art_num_finished,
+        pee_u_layer_art_num_reset
+    ),
+    [TD_DOT_EE_LAYER_PARA] = ACTION_TAP_DANCE_FN_ADVANCED(
+        NULL,
+        dot_ee_layer_art_para_finished,
+        dot_ee_layer_art_para_reset
+    ),
+};
