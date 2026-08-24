@@ -61,14 +61,14 @@
 #define LEFT_2_3 KC_F12
 #define LEFT_2_4 KC_3
 
-/*#define MOU_1_1 KC_BTN1
-#define MOU_1_2 KC_MS_U
-#define MOU_1_3 KC_BTN2
-#define MOU_1_4 KC_WH_U
-#define MOU_2_1 KC_MS_L
-#define MOU_2_2 KC_MS_D
-#define MOU_2_3 KC_MS_R
-#define MOU_2_4 KC_WH_D*/
+/*#define MOU_1_1 MS_BTN1
+#define MOU_1_2 MS_UP
+#define MOU_1_3 MS_BTN2
+#define MOU_1_4 MS_WHLU
+#define MOU_2_1 MS_LEFT
+#define MOU_2_2 MS_DOWN
+#define MOU_2_3 MS_RGHT
+#define MOU_2_4 MS_WHLD*/
 #define NAV_1_1 KC_HOME
 #define NAV_1_2 KC_UP
 #define NAV_1_3 KC_END

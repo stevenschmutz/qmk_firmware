@@ -1,3 +1,4 @@
+COMBO_ENABLE = yes
 # markstos: smaller file size, little down-side
 LTO_ENABLE = yes
 OLED_DRIVER = ssd1306
@@ -24,3 +25,4 @@ TAP_DANCE_ENABLE = yes
 RAW_ENABLE = yes
 VIA_ENABLE = yes
 
+SRC += taipo.c

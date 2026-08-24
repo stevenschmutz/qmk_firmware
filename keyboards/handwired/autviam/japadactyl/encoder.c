@@ -7,11 +7,11 @@ static bool colABpressed = false;
 static bool encoderPressed = false;
 
 void clicked(void) {
-    tap_code(KC_MS_BTN1);
+    tap_code(MS_BTN1);
 }
 
 void turned(bool clockwise) {
-   tap_code16(clockwise ? KC_MS_WH_DOWN : KC_MS_WH_UP);
+   tap_code16(clockwise ? MS_WHLD : MS_WHLU);
 }
 
 void blank_column(matrix_row_t current_matrix[], uint8_t col) {

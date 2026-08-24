@@ -25,7 +25,6 @@ enum layers {
 #include "aliases.c"
 #include "dlip.h"
 #include "g/keymap_combo.h"
-#include "features/layer_lock.h"
 #include "macros.h"
 #include "tapdance.ref"
 
@@ -65,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
          KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                                     KC_NO, ALT_NAV_1_1, ALT_NAV_1_2, ALT_NAV_1_3, ALT_NAV_1_4,
           //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
-         KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                            KC_NO, ALT_NAV_2_1, ALT_NAV_2_2, ALT_NAV_2_3, ALT_NAV_2_4, 
+         KC_MUTE,KC_NO,MS_BTN3,KC_DEL,MOU_2_4,                                            KC_NO, ALT_NAV_2_1, ALT_NAV_2_2, ALT_NAV_2_3, ALT_NAV_2_4, 
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                   KC_NO,KC_TRNS,KC_SPC,                                              KC_TRNS, QK_LAYER_LOCK,KC_NO), 
 

@@ -29,10 +29,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
    if (!process_smtd(keycode, record)) {
         return false;
     }
-    if (!process_layer_lock(keycode, record, QK_LAYER_LOCK)) { 
-      return false; 
-    }
-
 const uint8_t mods = get_mods();
 const uint8_t oneshot_mods = get_oneshot_mods();
 

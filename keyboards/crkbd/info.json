@@ -7,11 +7,17 @@
     },
     "features": {
         "bootmagic": true,
-        "extrakey": true,
+        "extrakey": false,
         "nkro": true,
         "oled": true,
         "rgblight": false,
-        "rgb_matrix": true
+        "rgb_matrix": true,
+        "console": false,
+        "command": false,
+        "mouse": false,
+        "mousekey": false,
+        "deferred_exec": true,
+        "layer_lock": true
     },
     "bootmagic": {
         "matrix": [0, 1]

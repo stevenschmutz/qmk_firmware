@@ -48,7 +48,6 @@ enum custom_keycodes {
 
 
 
-    QK_LAYER_LOCK,
     CTRL_TICK,
     CTRL_CUT,
     CTRL_ALL,

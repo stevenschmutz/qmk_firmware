@@ -1,3 +1,4 @@
+COMBO_ENABLE = yes
 # markstos: smaller file size, little down-side
 VPATH  +=  keyboards/gboards/
 
