@@ -20,3 +20,6 @@ VPATH  +=  keyboards/gboards/
 # RGBLIGHT_ENABLE = no
 
 SRC += taipo.c
+
+RAW_ENABLE = yes
+VIA_ENABLE = yes
