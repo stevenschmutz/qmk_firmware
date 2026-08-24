@@ -1,13 +1,14 @@
+
 COMB(Equal,      KC_EQUAL,  KC_0,    KC_4)
 
 //Left hand
-COMB(qkSpace,      KC_SPC,    CKC_Q,    CKC_K)	
+COMB(qkSpace,      KC_SPC,    TD(TD_Q_WORKSPACE),    CKC_K)	
 COMB(dotpeeSCR,  KC_PSCR,   DOT_COPY,  PEE_PASTE)
 COMB(commaoHash,  KC_HASH,  COMMA_CUT,  CKC_O)
 COMB(doteePercent,  KC_PERC,  DOT_COPY,  CKC_E)
-COMB(qjkLeft,  KC_LEFT,  CKC_Q,  CKC_J,CKC_K)
+COMB(qjkLeft,  KC_LEFT,  TD(TD_Q_WORKSPACE),  CKC_J,CKC_K)
 
-COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, CKC_Q,  CKC_J,CKC_K)
+COMB(qjk_semicolonHome,  KC_HOME, CKC_SCLN, TD(TD_Q_WORKSPACE),  CKC_J,CKC_K)
 
 COMB(pySqrSt,  KC_LBRC,  PEE_PASTE,  LT(_NAV,KC_Y))
 COMB(puAt,  KC_AT,  PEE_PASTE,  CKC_U)
@@ -22,7 +23,7 @@ COMB(ukEqual,  KC_EQL,  CKC_U,  CKC_K)
 #endif
 
 COMB(ejSlash,  KC_BSLS,  CKC_E,  CKC_J)
-COMB(oqTilde,  KC_TILD,  CKC_O,  CKC_Q)
+COMB(oqTilde,  KC_TILD,  CKC_O,  TD(TD_Q_WORKSPACE))
 
 #if ARTSEY_ENABLE != no
 	COMB(ixUnderscore,  KC_UNDS,  LT(_NUMERIC,KC_I),  LT(_TAIPO,KC_X))
@@ -40,7 +41,7 @@ COMB(commquoteLt,  KC_LT,   QUOTE_BOLD, COMMA_CUT)
 
 COMB(commadotGt,  KC_GT,   COMMA_CUT,  DOT_COPY)
 COMB(uitBracket,  KC_LPRN, CKC_U, LT(_NUMERIC,KC_I) )
-COMB(sclnqBacktic,KC_GRV , CKC_SCLN , CKC_Q )
+COMB(sclnqBacktic,KC_GRV , CKC_SCLN , TD(TD_Q_WORKSPACE) )
 
 
 COMB(HOME,      SHIFT_CTRL_HOME, CKC_A, QUOTE_BOLD  )
@@ -51,9 +52,9 @@ COMB(numDEl,      KC_DEL,  KC_7, KC_8 )
 COMB(END,  SHIFT_CTRL_END, CKC_A, CKC_SCLN)
 COMB(navBkpsc,  KC_BSPC, KC_UP, KC_END)
 COMB(numBkpsc,  KC_BSPC, KC_8, KC_9 )
-COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E, CKC_Q)
+COMB(shiftPaste,  SHIFT_CTRL_PASTE, CKC_K, CKC_E, TD(TD_Q_WORKSPACE))
 COMB(shiftCopy,  SHIFT_CTRL_COPY, CKC_U, DOT_COPY)
-COMB(leftCut,  CTRL_CUT, CKC_J, CKC_Q)
+COMB(leftCut,  CTRL_CUT, CKC_J, TD(TD_Q_WORKSPACE))
 
 //Right hand
 COMB(dhtSmartBraces,  BRACES,  CKC_D,  CKC_H, KC_T)
