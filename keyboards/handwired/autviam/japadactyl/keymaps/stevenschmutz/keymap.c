@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         QUOTE_BOLD, COMMA_CUT, DOT_COPY, PEE_PASTE, LT(_NAV,KC_Y),                         KC_F, KC_G, KC_C, KC_R, KC_L,
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       CKC_A, CKC_O, CKC_E , KC_U, LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
+       CKC_A, CKC_O, CKC_E , LT(_NUMERIC,KC_U), LT(_NUMERIC,KC_I),                                          CKC_D , CKC_H , KC_T , CKC_N , KC_S,
 
       CKC_SCLN, TD(TD_Q_WORKSPACE), CKC_J, CKC_K, KC_X,                             KC_B, CKC_M, KC_W, KC_V, ALT_DOWN,
       //,-----------------------------------------------------.                    ,-----------------------------------------------------.
