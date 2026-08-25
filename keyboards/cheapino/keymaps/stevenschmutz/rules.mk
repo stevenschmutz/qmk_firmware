@@ -1,3 +1,4 @@
+COMBO_ENABLE = yes
 # markstos: smaller file size, little down-side
 LTO_ENABLE = yes
 OLED_DRIVER = ssd1306
@@ -18,3 +19,7 @@ VPATH  +=  keyboards/gboards/
 # https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md
 # RGBLIGHT_ENABLE = no
 
+SRC += taipo.c
+
+RAW_ENABLE = yes
+VIA_ENABLE = yes

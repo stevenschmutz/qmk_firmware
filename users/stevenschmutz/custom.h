@@ -63,7 +63,6 @@ enum custom_keycodes {
     KC_MOD_GACS,
 
 
-    QK_LAYER_LOCK,
     CTRL_TICK,
     CTRL_CUT,
     CTRL_ALL,

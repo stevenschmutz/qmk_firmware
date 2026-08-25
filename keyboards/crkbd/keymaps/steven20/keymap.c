@@ -22,7 +22,6 @@ enum layers {
 #include "sm_td.h"
 #include "aliases.c"
 #include "g/keymap_combo.h"
-#include "features/layer_lock.h"
 #include "macros.h"
 #include "tapdance.ref"
 
@@ -71,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_NO, KC_VOLD, MOU_2_1, MOU_2_2, MOU_2_3, CTRL_TICK,                           KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,KC_NO,
           //,--------------             ---------------------------------------.                    ,-----------------------------------------------------.
-       KC_NO,  KC_MUTE,KC_NO,KC_MS_BTN3,KC_DEL,MOU_2_4,                                 LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,KC_NO,
+       KC_NO,  KC_MUTE,KC_NO,MS_BTN3,KC_DEL,MOU_2_4,                                 LCTL(KC_UP), LCTL(KC_DOWN), LCTL(KC_RBRC),KC_NO,KC_TRNS,KC_NO,
           //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                  KC_NO,  QK_LAYER_LOCK,KC_TRNS,                                              KC_TRNS, KC_NO, KC_NO
                  ),
