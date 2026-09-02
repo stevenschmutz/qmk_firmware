@@ -70,7 +70,7 @@ COMB(artsey_period,KC_DOT,BASE_1_1,BASE_2_2)
 COMB(artsey_slash,KC_SLSH,BASE_1_1,BASE_2_4)
 COMB(artsey_tab,KC_TAB,BASE_1_1,BASE_1_2,BASE_1_3,BASE_2_4)
 COMB(artsey_os_shift,OSM(MOD_LSFT),BASE_2_1,BASE_1_2,BASE_1_3,BASE_1_4)
-COMB(artsey_colon,KC_COLON,BASE_2_1,BASE_2_2)
+COMB(artsey_colon,KC_COLON,BASE_1_3,BASE_2_2)
 
 
 COMB(artsey_ctrl,KC_LCTL,BASE_1_4,BASE_2_1)
