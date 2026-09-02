@@ -38,7 +38,8 @@ COMB(oqTilde,  KC_TILD,  CKC_O,  TD(TD_Q_WORKSPACE))
 #endif
 
 //Period + space + one-shot shift
-COMB(thDotSpcOsft,  DOT_SPC_OSFT,  KC_T, CKC_H)
+COMB(tmDotSpcOsft,  DOT_SPC_OSFT,  CKC_M, KC_T)
+
 
 //ESC
 COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
