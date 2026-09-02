@@ -57,10 +57,13 @@ enum custom_keycodes {
     CTRL_FIND,
     CTRL_UNDO,
     CTRL_C,
-    CTRL_R,        
+    CTRL_R,
+    CTRL_ENTER,
     SHIFT_ENTER,
     QUOTE_BOLD,
-    SHOW_WORKSPACES
+    SHOW_WORKSPACES,
+    DOT_SPC_OSFT,
+    QUES_SPC_OSFT,
 };
 
 //Tap dance enums

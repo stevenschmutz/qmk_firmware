@@ -37,6 +37,13 @@ COMB(oqTilde,  KC_TILD,  CKC_O,  TD(TD_Q_WORKSPACE))
 	COMB(ixUnderscore,  KC_UNDS,  LT(_NUMERIC,KC_I),  KC_X)
 #endif
 
+//Period + space + one-shot shift
+COMB(tmDotSpcOsft,  DOT_SPC_OSFT,  CKC_M, KC_T)
+
+//Question mark + space + one-shot shift
+COMB(tmentQuesSpcOsft,  QUES_SPC_OSFT,  CKC_M, KC_T, LSFT_T(KC_ENT))
+
+
 //ESC
 COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
 COMB(uhESC2,  KC_ESC,  KC_U, CKC_H)
@@ -90,6 +97,7 @@ COMB(righthandUp,  KC_UP, KC_L, KC_S)
 COMB(righthandDown,  KC_DOWN, ALT_DOWN, KC_S)
 //COMB(mvEnter,      KC_ENT,    CKC_M,    KC_V)
 COMB(wvCTRSAVE,      CTRL_SAVE, KC_W,    KC_V)
+COMB(mwkCTRLEnter,      CTRL_ENTER, CKC_M,    KC_W,    CKC_K)
 COMB(vzUNDO,      CTRL_UNDO, CKC_M,    KC_V)
 COMB(hnCTRLC,      CTRL_C, CKC_H,    CKC_N)
 COMB(grCTRLR,      CTRL_R, KC_G,    KC_R)

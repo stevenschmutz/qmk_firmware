@@ -27,6 +27,16 @@ COMB(key_KC_L,  KC_L, TD(TD_EL_ES),ALT_DOWN)
 
 
 COMB(wvCTRSAVE,      CTRL_SAVE, KC_W,    KC_V)
+COMB(mwkCTRLEnter,      CTRL_ENTER, CKC_M,    KC_W,    LT(_ART_SYM,KC_K))
+
+//Period + space + shift next letter
+COMB(tmDotSpcOsft,  DOT_SPC_OSFT,  CKC_M, TD(TD_CEE_TEE))
+
+//Question mark + space + shift next letter
+COMB(tmentQuesSpcOsft,  QUES_SPC_OSFT,  CKC_M, TD(TD_CEE_TEE), RSFT_T(KC_ENT))
+
+//Shift+Enter
+COMB(euhtShiftEnter,  SHIFT_ENTER, CKC_J, LT(_ART_SYM,KC_K), CKC_M, KC_W)
 COMB(vzUNDO,      CTRL_UNDO, CKC_M,    KC_V)
 //ESC
 COMB(uhESC,  KC_ESC,   TD(TD_PEE_U_LAYER_NUM), TD(TD_GEE_AITCH))
