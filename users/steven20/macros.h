@@ -23,11 +23,36 @@ static bool process_tap_or_long_press_key (
 
 
 
+// Shift-the-next-letter state for DOT_SPC_OSFT/QUES_SPC_OSFT. A real (not
+// one-shot) shift is used because sm_td resolves mod-tap keys via
+// tap_code16(), which sends a raw HID report using whatever *real* mods are
+// currently registered and never consults get_oneshot_mods() - so a
+// one-shot shift is silently dropped whenever the very next letter is an
+// sm_td mod-tap key (i.e. almost always on this layout).
+static bool shift_next_key_armed = false;
+static bool shift_next_key_held = false;
+static uint16_t shift_next_key_target = KC_NO;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
+    if (shift_next_key_armed && record->event.pressed && keycode != DOT_SPC_OSFT && keycode != QUES_SPC_OSFT) {
+        shift_next_key_armed = false;
+        shift_next_key_held = true;
+        shift_next_key_target = keycode;
+        register_code(KC_LSFT);
+    }
 
    if (!process_smtd(keycode, record)) {
+        if (shift_next_key_held && !record->event.pressed && keycode == shift_next_key_target) {
+            unregister_code(KC_LSFT);
+            shift_next_key_held = false;
+        }
         return false;
+    }
+
+    if (shift_next_key_held && !record->event.pressed && keycode == shift_next_key_target) {
+        unregister_code(KC_LSFT);
+        shift_next_key_held = false;
     }
 
  switch (keycode) {
@@ -161,6 +186,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case CTRL_ENTER:  // Types ctrl + enter
       if (record->event.pressed) {
         SEND_STRING(SS_LCTL(SS_TAP(X_ENT)));
+      }
+          return false;
+        break;
+
+    case DOT_SPC_OSFT:  // Types ". " then shifts the next letter typed.
+      if (record->event.pressed) {
+        SEND_STRING(". ");
+        shift_next_key_armed = true;
+      }
+          return false;
+        break;
+
+    case QUES_SPC_OSFT:  // Types "? " then shifts the next letter typed.
+      if (record->event.pressed) {
+        SEND_STRING("? ");
+        shift_next_key_armed = true;
+      }
+          return false;
+        break;
+
+    case SHIFT_ENTER:  // Types shift enter
+      if (record->event.pressed) {
+        SEND_STRING(SS_LSFT(SS_TAP(X_ENT)));
       }
           return false;
         break;

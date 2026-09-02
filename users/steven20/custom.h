@@ -61,7 +61,9 @@ enum custom_keycodes {
     CTRL_ENTER,
     SHIFT_ENTER,
     QUOTE_BOLD,
-    SHOW_WORKSPACES
+    SHOW_WORKSPACES,
+    DOT_SPC_OSFT,
+    QUES_SPC_OSFT,
 };
 
 //Tap dance enums
