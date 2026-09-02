@@ -35,7 +35,7 @@ static uint16_t shift_next_key_target = KC_NO;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
-    if (shift_next_key_armed && record->event.pressed && keycode != DOT_SPC_OSFT) {
+    if (shift_next_key_armed && record->event.pressed && keycode != DOT_SPC_OSFT && keycode != QUES_SPC_OSFT) {
         shift_next_key_armed = false;
         shift_next_key_held = true;
         shift_next_key_target = keycode;
@@ -275,6 +275,14 @@ const uint8_t oneshot_mods = get_oneshot_mods();
     case DOT_SPC_OSFT:  // Types ". " then shifts the next letter typed.
       if (record->event.pressed) {
         SEND_STRING(". ");
+        shift_next_key_armed = true;
+      }
+          return false;
+        break;
+
+    case QUES_SPC_OSFT:  // Types "? " then shifts the next letter typed.
+      if (record->event.pressed) {
+        SEND_STRING("? ");
         shift_next_key_armed = true;
       }
           return false;

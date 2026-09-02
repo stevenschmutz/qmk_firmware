@@ -40,6 +40,9 @@ COMB(oqTilde,  KC_TILD,  CKC_O,  TD(TD_Q_WORKSPACE))
 //Period + space + one-shot shift
 COMB(tmDotSpcOsft,  DOT_SPC_OSFT,  CKC_M, KC_T)
 
+//Question mark + space + one-shot shift
+COMB(tmentQuesSpcOsft,  QUES_SPC_OSFT,  CKC_M, KC_T, LSFT_T(KC_ENT))
+
 
 //ESC
 COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
