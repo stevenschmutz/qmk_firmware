@@ -37,6 +37,9 @@ COMB(oqTilde,  KC_TILD,  CKC_O,  TD(TD_Q_WORKSPACE))
 	COMB(ixUnderscore,  KC_UNDS,  LT(_NUMERIC,KC_I),  KC_X)
 #endif
 
+//Period + space + one-shot shift
+COMB(thDotSpcOsft,  DOT_SPC_OSFT,  KC_T, CKC_H)
+
 //ESC
 COMB(uhESC,  KC_ESC,   CKC_U, CKC_H)
 COMB(uhESC2,  KC_ESC,  KC_U, CKC_H)

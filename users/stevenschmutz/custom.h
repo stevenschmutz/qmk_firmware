@@ -81,6 +81,7 @@ enum custom_keycodes {
     BRACES,
     QUOTE_BOLD,
     ENTER_VARIATIONS,
+    DOT_SPC_OSFT,
 };
 
 //Tap dance enums

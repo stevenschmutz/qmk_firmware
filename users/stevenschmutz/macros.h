@@ -246,6 +246,14 @@ const uint8_t oneshot_mods = get_oneshot_mods();
       }
           return false;
         break;
+
+    case DOT_SPC_OSFT:  // Types ". " then one-shot shift for the next letter.
+      if (record->event.pressed) {
+        SEND_STRING(". ");
+        tap_code16(OSM(MOD_LSFT));
+      }
+          return false;
+        break;
     
  
 
