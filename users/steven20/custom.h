@@ -57,7 +57,8 @@ enum custom_keycodes {
     CTRL_FIND,
     CTRL_UNDO,
     CTRL_C,
-    CTRL_R,        
+    CTRL_R,
+    CTRL_ENTER,
     SHIFT_ENTER,
     QUOTE_BOLD,
     SHOW_WORKSPACES

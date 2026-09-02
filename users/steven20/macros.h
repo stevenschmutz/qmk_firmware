@@ -158,6 +158,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           return false;
         break;
 
+    case CTRL_ENTER:  // Types ctrl + enter
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_TAP(X_ENT)));
+      }
+          return false;
+        break;
+
 
     
  

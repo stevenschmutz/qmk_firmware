@@ -257,6 +257,13 @@ const uint8_t oneshot_mods = get_oneshot_mods();
       }
           return false;
         break;
+
+    case CTRL_ENTER:  // Types ctrl + enter
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_TAP(X_ENT)));
+      }
+          return false;
+        break;
     
     case CTRL_C:  // Types ctrl + f
       if (record->event.pressed) {
