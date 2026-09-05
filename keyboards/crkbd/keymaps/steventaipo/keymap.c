@@ -31,7 +31,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,
         KC_NO, KC_R,          KC_S,      KC_N,         KC_I,   KC_NO,          KC_NO,   KC_I,       KC_N,       KC_S,       KC_R,   KC_NO,
         KC_NO, KC_A,          KC_O,      KC_T,         KC_E,    KC_NO,         KC_NO,    KC_E,       KC_T,       KC_O,       KC_A,   KC_NO,
-                                  KC_NO, LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC),   LT(_OUTER, KC_SPC), LT(_INNER, KC_BSPC), KC_NO
+                                  // The unused outermost left thumb slot is a manual
+                                  // EEPROM-clear key -- not load-bearing now that
+                                  // keyboard_post_init_user() resyncs on every boot, but
+                                  // handy to keep around for a VIA-enabled board.
+                                  QK_CLEAR_EEPROM, LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC),   LT(_OUTER, KC_SPC), LT(_INNER, KC_BSPC), KC_NO
     ),
 
   // Held while the inner thumb (Backspace) is down. Single letters here are
@@ -74,4 +78,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 void housekeeping_task_user(void) {
   layer_lock_task();
   // Other tasks ...
+}
+
+// VIA/RAW_ENABLE's dynamic keymap is EEPROM-backed and is what actually gets
+// read at runtime (keycode_at_keymap_location()), not this PROGMEM array
+// directly -- the array only ever seeds EEPROM on a reset. In practice a
+// QK_CLEAR_EEPROM press wasn't reliably resyncing it after a reflash (traced
+// via the debug console: process_record_user kept seeing bare KC_BSPC
+// instead of LT(_INNER, KC_BSPC)), so force the resync unconditionally on
+// every boot instead. Tradeoff: any layout tweak made from the VIA GUI won't
+// survive a power cycle -- fine while this keymap's source of truth is this
+// file, not VIA.
+void keyboard_post_init_user(void) {
+  dynamic_keymap_reset();
 }
