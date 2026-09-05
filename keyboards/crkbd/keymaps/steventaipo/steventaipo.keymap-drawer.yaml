@@ -1,0 +1,419 @@
+layout: {qmk_keyboard: crkbd/rev1, layout_name: LAYOUT_split_3x6_3}
+layers:
+  TAIPO:
+  - ['', '', '', '', '', '']
+  - ['', '', '', '', '', '']
+  - ['', R, S, N, I, '']
+  - ['', I, N, S, R, '']
+  - ['', A, O, T, E, '']
+  - ['', E, T, O, A, '']
+  - - QK CLEAR EEPROM
+    - {t: BSPC, h: INNER}
+    - {t: SPC, h: OUTER}
+    - {t: SPC, h: OUTER}
+    - {t: BSPC, h: INNER}
+    - ''
+  INNER:
+  - ['', '', '', '', '', '']
+  - ['', '', '', '', '', '']
+  - ['', '>', '}', ']', ), '']
+  - ['', ), ']', '}', '>', '']
+  - ['', <, '{', '[', (, '']
+  - ['', (, '[', '{', <, '']
+  - - ''
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+  OUTER:
+  - ['', '', '', '', '', '']
+  - ['', '', '', '', '', '']
+  - ['', Sft+R, Sft+S, Sft+N, Sft+I, '']
+  - ['', Sft+I, Sft+N, Sft+S, Sft+R, '']
+  - ['', Sft+A, Sft+O, Sft+T, Sft+E, '']
+  - ['', Sft+E, Sft+T, Sft+O, Sft+A, '']
+  - - ''
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+  BOTH:
+  - ['', '', '', '', '', '']
+  - ['', '', '', '', '', '']
+  - ['', PRINT SCREEN, BRIGHTNESS UP, BRIGHTNESS DOWN, MEDIA PLAY PAUSE, '']
+  - ['', MEDIA PLAY PAUSE, BRIGHTNESS DOWN, BRIGHTNESS UP, PRINT SCREEN, '']
+  - ['', MEDIA NEXT TRACK, KB VOLUME UP, KB VOLUME DOWN, MEDIA PREV TRACK, '']
+  - ['', MEDIA PREV TRACK, KB VOLUME DOWN, KB VOLUME UP, MEDIA NEXT TRACK, '']
+  - - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+combos:
+- p: [13, 14]
+  k: B
+  l: [TAIPO]
+- p: [13, 15]
+  k: Z
+  l: [TAIPO]
+- p: [13, 16]
+  k: G
+  l: [TAIPO]
+- p: [13, 25]
+  k: OSM(GUI)
+  l: [TAIPO]
+- p: [13, 26]
+  k: Scln
+  l: [TAIPO]
+- p: [13, 27]
+  k: X
+  l: [TAIPO]
+- p: [13, 28]
+  k: M
+  l: [TAIPO]
+- p: [14, 15]
+  k: P
+  l: [TAIPO]
+- p: [14, 16]
+  k: F
+  l: [TAIPO]
+- p: [14, 25]
+  k: ''''
+  l: [TAIPO]
+- p: [14, 26]
+  k: OSM(ALT)
+  l: [TAIPO]
+- p: [14, 27]
+  k: Slsh
+  l: [TAIPO]
+- p: [14, 28]
+  k: V
+  l: [TAIPO]
+- p: [15, 16]
+  k: Y
+  l: [TAIPO]
+- p: [15, 25]
+  k: J
+  l: [TAIPO]
+- p: [15, 26]
+  k: Mins
+  l: [TAIPO]
+- p: [15, 27]
+  k: OSM(CTL)
+  l: [TAIPO]
+- p: [15, 28]
+  k: Comm
+  l: [TAIPO]
+- p: [16, 25]
+  k: W
+  l: [TAIPO]
+- p: [16, 26]
+  k: K
+  l: [TAIPO]
+- p: [16, 27]
+  k: Ques
+  l: [TAIPO]
+- p: [16, 28]
+  k: OSM(SFT)
+  l: [TAIPO]
+- p: [25, 26]
+  k: L
+  l: [TAIPO]
+- p: [25, 27]
+  k: Q
+  l: [TAIPO]
+- p: [25, 28]
+  k: D
+  l: [TAIPO]
+- p: [26, 27]
+  k: U
+  l: [TAIPO]
+- p: [26, 28]
+  k: C
+  l: [TAIPO]
+- p: [27, 28]
+  k: H
+  l: [TAIPO]
+- p: [13, 14, 15]
+  k: ''''
+  l: [TAIPO]
+- p: [13, 14, 25, 26]
+  k: OSM(GUI+ALT)
+  l: [TAIPO]
+- p: [13, 15, 25, 27]
+  k: OSM(GUI+CTL)
+  l: [TAIPO]
+- p: [13, 16, 25, 28]
+  k: OSM(GUI+SFT)
+  l: [TAIPO]
+- p: [14, 15, 16]
+  k: Tab
+  l: [TAIPO]
+- p: [14, 15, 26, 27]
+  k: OSM(ALT+CTL)
+  l: [TAIPO]
+- p: [14, 16, 26, 28]
+  k: OSM(ALT+SFT)
+  l: [TAIPO]
+- p: [15, 16, 27, 28]
+  k: OSM(CTL+SFT)
+  l: [TAIPO]
+- p: [25, 26, 27]
+  k: Scln
+  l: [TAIPO]
+- p: [26, 27, 28]
+  k: Enter
+  l: [TAIPO]
+- p: [13, 14, 15, 25, 26, 27]
+  k: OSM(GUI+ALT+CTL)
+  l: [TAIPO]
+- p: [13, 14, 16, 25, 26, 28]
+  k: OSM(GUI+ALT+SFT)
+  l: [TAIPO]
+- p: [13, 15, 16, 25, 27, 28]
+  k: OSM(GUI+CTL+SFT)
+  l: [TAIPO]
+- p: [14, 15, 16, 26, 27, 28]
+  k: OSM(ALT+CTL+SFT)
+  l: [TAIPO]
+- p: [13, 14, 15, 16, 25, 26, 27, 28]
+  k: OSM(GUI+ALT+CTL+SFT)
+  l: [TAIPO]
+- p: [37, 38]
+  k: MO(BOTH)
+  l: [TAIPO]
+- p: [13, 14]
+  k: '9'
+  l: [INNER]
+- p: [13, 15]
+  k: '8'
+  l: [INNER]
+- p: [13, 16]
+  k: '#'
+  l: [INNER]
+- p: [13, 25]
+  k: PgUp
+  l: [INNER]
+- p: [13, 27]
+  k: ^
+  l: [INNER]
+- p: [13, 28]
+  k: $
+  l: [INNER]
+- p: [14, 15]
+  k: '7'
+  l: [INNER]
+- p: [14, 16]
+  k: '6'
+  l: [INNER]
+- p: [14, 25]
+  k: '`'
+  l: [INNER]
+- p: [14, 26]
+  k: Home
+  l: [INNER]
+- p: [14, 27]
+  k: '|'
+  l: [INNER]
+- p: [14, 28]
+  k: '*'
+  l: [INNER]
+- p: [15, 16]
+  k: '5'
+  l: [INNER]
+- p: [15, 25]
+  k: '='
+  l: [INNER]
+- p: [15, 26]
+  k: '%'
+  l: [INNER]
+- p: [15, 27]
+  k: End
+  l: [INNER]
+- p: [15, 28]
+  k: '~'
+  l: [INNER]
+- p: [16, 25]
+  k: '&'
+  l: [INNER]
+- p: [16, 26]
+  k: +
+  l: [INNER]
+- p: [16, 28]
+  k: PgDn
+  l: [INNER]
+- p: [25, 26]
+  k: '4'
+  l: [INNER]
+- p: [25, 27]
+  k: '3'
+  l: [INNER]
+- p: [25, 28]
+  k: '@'
+  l: [INNER]
+- p: [26, 27]
+  k: '2'
+  l: [INNER]
+- p: [26, 28]
+  k: '1'
+  l: [INNER]
+- p: [27, 28]
+  k: '0'
+  l: [INNER]
+- p: [13, 14, 15]
+  k: '`'
+  l: [INNER]
+- p: [14, 15, 16]
+  k: Ins
+  l: [INNER]
+- p: [26, 27, 28]
+  k: OSM(RALT)
+  l: [INNER]
+- p: [13, 14]
+  k: Sft+B
+  l: [OUTER]
+- p: [13, 15]
+  k: Sft+Z
+  l: [OUTER]
+- p: [13, 16]
+  k: Sft+G
+  l: [OUTER]
+- p: [13, 25]
+  k: Right
+  l: [OUTER]
+- p: [13, 26]
+  k: ':'
+  l: [OUTER]
+- p: [13, 27]
+  k: Sft+X
+  l: [OUTER]
+- p: [13, 28]
+  k: Sft+M
+  l: [OUTER]
+- p: [14, 15]
+  k: Sft+P
+  l: [OUTER]
+- p: [14, 16]
+  k: Sft+F
+  l: [OUTER]
+- p: [14, 25]
+  k: '"'
+  l: [OUTER]
+- p: [14, 26]
+  k: Up
+  l: [OUTER]
+- p: [14, 27]
+  k: \\
+  l: [OUTER]
+- p: [14, 28]
+  k: Sft+V
+  l: [OUTER]
+- p: [15, 16]
+  k: Sft+Y
+  l: [OUTER]
+- p: [15, 25]
+  k: Sft+J
+  l: [OUTER]
+- p: [15, 26]
+  k: _
+  l: [OUTER]
+- p: [15, 27]
+  k: Down
+  l: [OUTER]
+- p: [15, 28]
+  k: Dot
+  l: [OUTER]
+- p: [16, 25]
+  k: Sft+W
+  l: [OUTER]
+- p: [16, 26]
+  k: Sft+K
+  l: [OUTER]
+- p: [16, 27]
+  k: '!'
+  l: [OUTER]
+- p: [16, 28]
+  k: Left
+  l: [OUTER]
+- p: [25, 26]
+  k: Sft+L
+  l: [OUTER]
+- p: [25, 27]
+  k: Sft+Q
+  l: [OUTER]
+- p: [25, 28]
+  k: Sft+D
+  l: [OUTER]
+- p: [26, 27]
+  k: Sft+U
+  l: [OUTER]
+- p: [26, 28]
+  k: Sft+C
+  l: [OUTER]
+- p: [27, 28]
+  k: Sft+H
+  l: [OUTER]
+- p: [13, 14, 15]
+  k: '"'
+  l: [OUTER]
+- p: [14, 15, 16]
+  k: Del
+  l: [OUTER]
+- p: [25, 26, 27]
+  k: ':'
+  l: [OUTER]
+- p: [26, 27, 28]
+  k: Esc
+  l: [OUTER]
+- p: [13, 14]
+  k: F9
+  l: [BOTH]
+- p: [13, 15]
+  k: F8
+  l: [BOTH]
+- p: [13, 16]
+  k: F12
+  l: [BOTH]
+- p: [13, 27]
+  k: Ctl+X
+  l: [BOTH]
+- p: [14, 15]
+  k: F7
+  l: [BOTH]
+- p: [14, 16]
+  k: F6
+  l: [BOTH]
+- p: [14, 28]
+  k: Ctl+V
+  l: [BOTH]
+- p: [15, 16]
+  k: F5
+  l: [BOTH]
+- p: [15, 25]
+  k: Ctl+Z
+  l: [BOTH]
+- p: [16, 26]
+  k: Ctl+C
+  l: [BOTH]
+- p: [25, 26]
+  k: F4
+  l: [BOTH]
+- p: [25, 27]
+  k: F3
+  l: [BOTH]
+- p: [25, 28]
+  k: F11
+  l: [BOTH]
+- p: [26, 27]
+  k: F2
+  l: [BOTH]
+- p: [26, 28]
+  k: F1
+  l: [BOTH]
+- p: [27, 28]
+  k: F10
+  l: [BOTH]
+draw_config: {separate_combo_diagrams: true, combo_diagrams_scale: 2}

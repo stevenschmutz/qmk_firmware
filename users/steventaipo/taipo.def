@@ -1,0 +1,28 @@
+// Copyright 2023 Dane Lipscombe (@dlip)
+// SPDX-License-Identifier: GPL-2.0-or-later
+//
+// combos.def-style port of taipo.c's per-flavor determine_key() tables.
+//
+// This is a TAP-ONLY simplification of taipo.c's bespoke per-hand
+// state machine:
+//   - Mod chords (gui/ctrl/alt/ralt and their combinations) become
+//     one-shot mods (OSM(...)) instead of taipo.c's tap=one-shot,
+//     hold=real-held-mod behavior. Holding a mod chord to click the
+//     mouse or chord with the other hand no longer works.
+//   - Layer chords (KC_LAYER0..3 in taipo.c) become absolute layer
+//     switches (TO(0)..TO(3)) -- these already fired the same way on
+//     tap or hold in the original, so no behavior is lost here.
+//   - Every other chord (letters/symbols/nav/media/function keys) is a
+//     straight port: same finger+thumb combination, same output.
+//
+// Select a flavor the same way taipo.c did: define TAIPO_FLAVOR_FLAT or
+// TAIPO_FLAVOR_POSH before this is included; otherwise the original/
+// default table (the one documented in taipo.md) is used.
+
+#if defined(TAIPO_FLAVOR_FLAT)
+    #include "taipo_flat.def"
+#elif defined(TAIPO_FLAVOR_POSH)
+    #include "taipo_posh.def"
+#else
+    #include "taipo_default.def"
+#endif

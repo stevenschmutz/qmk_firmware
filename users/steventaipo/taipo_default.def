@@ -1,0 +1,162 @@
+// Copyright 2023 Dane Lipscombe (@dlip)
+// SPDX-License-Identifier: GPL-2.0-or-later
+//
+// Auto-derived from taipo.c's TAIPO_FLAVOR_DEFAULT (else) determine_key() table.
+// combos.def-style port, included from taipo.ref -- see taipo.ref for the
+// tap-only simplification notes.
+//
+// Single physical keys (one bit set) are NOT combos here -- they're plain
+// keycodes placed directly on the _TAIPO layout row. See the keymap.c
+// substitution table (from the conversion writeup) for this flavor's layout.
+//
+// Chords that used to include the inner thumb (Backspace) or outer thumb
+// (Space) have been converted to layers instead of combos -- see keymap.c's
+// _INNER/_OUTER/_BOTH layers. A single letter held with a thumb is now just
+// that letter's plain keycode on the relevant layer (no combo needed); a
+// multi-letter chord held with a thumb is still a combo below, just matched
+// against that layer's keycodes (KC_GT etc. for _INNER, S(KC_R) etc. for
+// _OUTER, KC_PRINT_SCREEN etc. for _BOTH) instead of the bare letters.
+
+COMB(tpDefRS, KC_B, KC_R, KC_S)
+COMB(tpDefRN, KC_Z, KC_R, KC_N)
+COMB(tpDefRI, KC_G, KC_R, KC_I)
+COMB(tpDefRA, OSM(MOD_LGUI), KC_R, KC_A)
+COMB(tpDefRO, KC_SCLN, KC_R, KC_O)
+COMB(tpDefRT, KC_X, KC_R, KC_T)
+COMB(tpDefRE, KC_M, KC_R, KC_E)
+COMB(tpDefSN, KC_P, KC_S, KC_N)
+COMB(tpDefSI, KC_F, KC_S, KC_I)
+COMB(tpDefSA, KC_QUOT, KC_S, KC_A)
+COMB(tpDefSO, OSM(MOD_LALT), KC_S, KC_O)
+COMB(tpDefST, KC_SLSH, KC_S, KC_T)
+COMB(tpDefSE, KC_V, KC_S, KC_E)
+COMB(tpDefNI, KC_Y, KC_N, KC_I)
+COMB(tpDefNA, KC_J, KC_N, KC_A)
+COMB(tpDefNO, KC_MINS, KC_N, KC_O)
+COMB(tpDefNT, OSM(MOD_LCTL), KC_N, KC_T)
+COMB(tpDefNE, KC_COMM, KC_N, KC_E)
+COMB(tpDefIA, KC_W, KC_I, KC_A)
+COMB(tpDefIO, KC_K, KC_I, KC_O)
+COMB(tpDefIT, KC_QUES, KC_I, KC_T)
+COMB(tpDefIE, OSM(MOD_LSFT), KC_I, KC_E)
+COMB(tpDefAO, KC_L, KC_A, KC_O)
+COMB(tpDefAT, KC_Q, KC_A, KC_T)
+COMB(tpDefAE, KC_D, KC_A, KC_E)
+COMB(tpDefOT, KC_U, KC_O, KC_T)
+COMB(tpDefOE, KC_C, KC_O, KC_E)
+COMB(tpDefTE, KC_H, KC_T, KC_E)
+COMB(tpDefRSN, KC_QUOT, KC_R, KC_S, KC_N)
+COMB(tpDefRSAO, OSM(MOD_LGUI|MOD_LALT), KC_R, KC_S, KC_A, KC_O)
+COMB(tpDefRNAT, OSM(MOD_LGUI|MOD_LCTL), KC_R, KC_N, KC_A, KC_T)
+COMB(tpDefRIAE, OSM(MOD_LGUI|MOD_LSFT), KC_R, KC_I, KC_A, KC_E)
+COMB(tpDefSNI, KC_TAB, KC_S, KC_N, KC_I)
+COMB(tpDefSNOT, OSM(MOD_LALT|MOD_LCTL), KC_S, KC_N, KC_O, KC_T)
+COMB(tpDefSIOE, OSM(MOD_LALT|MOD_LSFT), KC_S, KC_I, KC_O, KC_E)
+COMB(tpDefNITE, OSM(MOD_LCTL|MOD_LSFT), KC_N, KC_I, KC_T, KC_E)
+COMB(tpDefAOT, KC_SCLN, KC_A, KC_O, KC_T)
+COMB(tpDefOTE, KC_ENTER, KC_O, KC_T, KC_E)
+COMB(tpDefRSNAOT, OSM(MOD_LGUI|MOD_LALT|MOD_LCTL), KC_R, KC_S, KC_N, KC_A, KC_O, KC_T)
+COMB(tpDefRSIAOE, OSM(MOD_LGUI|MOD_LALT|MOD_LSFT), KC_R, KC_S, KC_I, KC_A, KC_O, KC_E)
+COMB(tpDefRNIATE, OSM(MOD_LGUI|MOD_LCTL|MOD_LSFT), KC_R, KC_N, KC_I, KC_A, KC_T, KC_E)
+COMB(tpDefSNIOTE, OSM(MOD_LALT|MOD_LCTL|MOD_LSFT), KC_S, KC_N, KC_I, KC_O, KC_T, KC_E)
+COMB(tpDefRSNIAOTE, OSM(MOD_LGUI|MOD_LALT|MOD_LCTL|MOD_LSFT), KC_R, KC_S, KC_N, KC_I, KC_A, KC_O, KC_T, KC_E)
+
+// Chord that reaches the _BOTH layer: hold the inner and outer thumb keys
+// together (see keymap.c). MO(_BOTH) is registered while both are held and
+// released as soon as either one comes up, same as any other combo result.
+COMB(tpBoth, MO(_BOTH), LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC))
+
+// --- _INNER layer (inner thumb / Backspace held) ---
+// Multi-letter chords that used to be "letters + Backspace". Matched
+// against _INNER's own keycodes (KC_GT for R, KC_RCBR for S, etc.) since
+// that's what the letter positions resolve to while this layer is active.
+COMB(tpInnerRS, KC_9, KC_GT, KC_RCBR)
+COMB(tpInnerRN, KC_8, KC_GT, KC_RBRC)
+COMB(tpInnerRI, KC_HASH, KC_GT, KC_RPRN)
+COMB(tpInnerRA, KC_PGUP, KC_GT, KC_LT)
+COMB(tpInnerRT, KC_CIRC, KC_GT, KC_LBRC)
+COMB(tpInnerRE, KC_DLR, KC_GT, KC_LPRN)
+COMB(tpInnerSN, KC_7, KC_RCBR, KC_RBRC)
+COMB(tpInnerSI, KC_6, KC_RCBR, KC_RPRN)
+COMB(tpInnerSA, KC_GRV, KC_RCBR, KC_LT)
+COMB(tpInnerSO, KC_HOME, KC_RCBR, KC_LCBR)
+COMB(tpInnerST, KC_PIPE, KC_RCBR, KC_LBRC)
+COMB(tpInnerSE, KC_ASTR, KC_RCBR, KC_LPRN)
+COMB(tpInnerNI, KC_5, KC_RBRC, KC_RPRN)
+COMB(tpInnerNA, KC_EQL, KC_RBRC, KC_LT)
+COMB(tpInnerNO, KC_PERC, KC_RBRC, KC_LCBR)
+COMB(tpInnerNT, KC_END, KC_RBRC, KC_LBRC)
+COMB(tpInnerNE, KC_TILD, KC_RBRC, KC_LPRN)
+COMB(tpInnerIA, KC_AMPR, KC_RPRN, KC_LT)
+COMB(tpInnerIO, KC_PLUS, KC_RPRN, KC_LCBR)
+COMB(tpInnerIE, KC_PGDN, KC_RPRN, KC_LPRN)
+COMB(tpInnerAO, KC_4, KC_LT, KC_LCBR)
+COMB(tpInnerAT, KC_3, KC_LT, KC_LBRC)
+COMB(tpInnerAE, KC_AT, KC_LT, KC_LPRN)
+COMB(tpInnerOT, KC_2, KC_LCBR, KC_LBRC)
+COMB(tpInnerOE, KC_1, KC_LCBR, KC_LPRN)
+COMB(tpInnerTE, KC_0, KC_LBRC, KC_LPRN)
+COMB(tpInnerRSN, KC_GRV, KC_GT, KC_RCBR, KC_RBRC)
+COMB(tpInnerSNI, KC_INS, KC_RCBR, KC_RBRC, KC_RPRN)
+COMB(tpInnerOTE, OSM(MOD_RALT), KC_LCBR, KC_LBRC, KC_LPRN)
+
+// --- _OUTER layer (outer thumb / Space held) ---
+// Multi-letter chords that used to be "letters + Space". Matched against
+// _OUTER's own keycodes (S(KC_R) for R, S(KC_S) for S, etc.).
+COMB(tpOuterRS, S(KC_B), S(KC_R), S(KC_S))
+COMB(tpOuterRN, S(KC_Z), S(KC_R), S(KC_N))
+COMB(tpOuterRI, S(KC_G), S(KC_R), S(KC_I))
+COMB(tpOuterRA, KC_RIGHT, S(KC_R), S(KC_A))
+COMB(tpOuterRO, KC_COLN, S(KC_R), S(KC_O))
+COMB(tpOuterRT, S(KC_X), S(KC_R), S(KC_T))
+COMB(tpOuterRE, S(KC_M), S(KC_R), S(KC_E))
+COMB(tpOuterSN, S(KC_P), S(KC_S), S(KC_N))
+COMB(tpOuterSI, S(KC_F), S(KC_S), S(KC_I))
+COMB(tpOuterSA, KC_DQT, S(KC_S), S(KC_A))
+COMB(tpOuterSO, KC_UP, S(KC_S), S(KC_O))
+COMB(tpOuterST, KC_BSLS, S(KC_S), S(KC_T))
+COMB(tpOuterSE, S(KC_V), S(KC_S), S(KC_E))
+COMB(tpOuterNI, S(KC_Y), S(KC_N), S(KC_I))
+COMB(tpOuterNA, S(KC_J), S(KC_N), S(KC_A))
+COMB(tpOuterNO, KC_UNDS, S(KC_N), S(KC_O))
+COMB(tpOuterNT, KC_DOWN, S(KC_N), S(KC_T))
+COMB(tpOuterNE, KC_DOT, S(KC_N), S(KC_E))
+COMB(tpOuterIA, S(KC_W), S(KC_I), S(KC_A))
+COMB(tpOuterIO, S(KC_K), S(KC_I), S(KC_O))
+COMB(tpOuterIT, KC_EXLM, S(KC_I), S(KC_T))
+COMB(tpOuterIE, KC_LEFT, S(KC_I), S(KC_E))
+COMB(tpOuterAO, S(KC_L), S(KC_A), S(KC_O))
+COMB(tpOuterAT, S(KC_Q), S(KC_A), S(KC_T))
+COMB(tpOuterAE, S(KC_D), S(KC_A), S(KC_E))
+COMB(tpOuterOT, S(KC_U), S(KC_O), S(KC_T))
+COMB(tpOuterOE, S(KC_C), S(KC_O), S(KC_E))
+COMB(tpOuterTE, S(KC_H), S(KC_T), S(KC_E))
+COMB(tpOuterRSN, KC_DQT, S(KC_R), S(KC_S), S(KC_N))
+COMB(tpOuterSNI, KC_DEL, S(KC_S), S(KC_N), S(KC_I))
+COMB(tpOuterAOT, KC_COLN, S(KC_A), S(KC_O), S(KC_T))
+COMB(tpOuterOTE, KC_ESC, S(KC_O), S(KC_T), S(KC_E))
+
+// --- _BOTH layer (both thumbs held) ---
+// Multi-letter chords that used to be "letters + Backspace + Space".
+// Matched against _BOTH's own keycodes (KC_PRINT_SCREEN for R,
+// KC_BRIGHTNESS_UP for S, etc.). The four that used to be TO(0)/TO(1)/
+// TO(2)/TO(3) (RAItOt, SOItOt, NTItOt, IEItOt) are dropped: those layers
+// were never built out, so the presses did nothing anyway, and 1/2/3 are
+// now real layer indices (_INNER/_OUTER/_BOTH) that TO(n) would have
+// wrongly landed on.
+COMB(tpBothRS, KC_F9, KC_PRINT_SCREEN, KC_BRIGHTNESS_UP)
+COMB(tpBothRN, KC_F8, KC_PRINT_SCREEN, KC_BRIGHTNESS_DOWN)
+COMB(tpBothRI, KC_F12, KC_PRINT_SCREEN, KC_MEDIA_PLAY_PAUSE)
+COMB(tpBothRT, C(KC_X), KC_PRINT_SCREEN, KC_KB_VOLUME_DOWN)
+COMB(tpBothSN, KC_F7, KC_BRIGHTNESS_UP, KC_BRIGHTNESS_DOWN)
+COMB(tpBothSI, KC_F6, KC_BRIGHTNESS_UP, KC_MEDIA_PLAY_PAUSE)
+COMB(tpBothSE, C(KC_V), KC_BRIGHTNESS_UP, KC_MEDIA_PREV_TRACK)
+COMB(tpBothNI, KC_F5, KC_BRIGHTNESS_DOWN, KC_MEDIA_PLAY_PAUSE)
+COMB(tpBothNA, C(KC_Z), KC_BRIGHTNESS_DOWN, KC_MEDIA_NEXT_TRACK)
+COMB(tpBothIO, C(KC_C), KC_MEDIA_PLAY_PAUSE, KC_KB_VOLUME_UP)
+COMB(tpBothAO, KC_F4, KC_MEDIA_NEXT_TRACK, KC_KB_VOLUME_UP)
+COMB(tpBothAT, KC_F3, KC_MEDIA_NEXT_TRACK, KC_KB_VOLUME_DOWN)
+COMB(tpBothAE, KC_F11, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PREV_TRACK)
+COMB(tpBothOT, KC_F2, KC_KB_VOLUME_UP, KC_KB_VOLUME_DOWN)
+COMB(tpBothOE, KC_F1, KC_KB_VOLUME_UP, KC_MEDIA_PREV_TRACK)
+COMB(tpBothTE, KC_F10, KC_KB_VOLUME_DOWN, KC_MEDIA_PREV_TRACK)
