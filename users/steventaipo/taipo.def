@@ -15,9 +15,6 @@
 //   - Every other chord (letters/symbols/nav/media/function keys) is a
 //     straight port: same finger+thumb combination, same output.
 //
-// taipo.c/taipo.h are left in place, unused, as a reference for the
-// original hold-vs-tap logic in case it's ever wanted back.
-//
 // Select a flavor the same way taipo.c did: define TAIPO_FLAVOR_FLAT or
 // TAIPO_FLAVOR_POSH before this is included; otherwise the original/
 // default table (the one documented in taipo.md) is used.
