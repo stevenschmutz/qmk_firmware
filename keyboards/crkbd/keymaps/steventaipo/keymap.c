@@ -6,6 +6,9 @@
 // entirely and just use numbers.
 enum layers {
  _TAIPO,
+ _INNER,  // held while the inner thumb (Backspace) is down
+ _OUTER,  // held while the outer thumb (Space) is down
+ _BOTH,   // held while both thumbs are down together
 };
 
 // custom.h/sm_td.h/aliases.c/macros.h/tapdance.ref (SMTD home-row mods, tap
@@ -28,7 +31,42 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,
         KC_NO, KC_R,          KC_S,      KC_N,         KC_I,   KC_NO,          KC_NO,   KC_I,       KC_N,       KC_S,       KC_R,   KC_NO,
         KC_NO, KC_A,          KC_O,      KC_T,         KC_E,    KC_NO,         KC_NO,    KC_E,       KC_T,       KC_O,       KC_A,   KC_NO,
-                                  KC_NO, KC_BSPC,      KC_SPC,                 KC_SPC,     KC_BSPC, KC_NO 
+                                  KC_NO, LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC),   LT(_OUTER, KC_SPC), LT(_INNER, KC_BSPC), KC_NO
+    ),
+
+  // Held while the inner thumb (Backspace) is down. Single letters here are
+  // straight substitutions for the old "letter + Backspace" combos; letter
+  // pairs/triples still combo together (see taipo_default.def's tpInner*
+  // combos) to reach the rest of what used to be *It chords.
+  [_INNER] = LAYOUT_split_3x6_3(
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        //,
+        KC_NO, KC_GT,         KC_RCBR,   KC_RBRC,      KC_RPRN, KC_NO,         KC_NO,   KC_RPRN,    KC_RBRC,    KC_RCBR,    KC_GT,  KC_NO,
+        KC_NO, KC_LT,         KC_LCBR,   KC_LBRC,      KC_LPRN, KC_NO,         KC_NO,   KC_LPRN,    KC_LBRC,    KC_LCBR,    KC_LT,  KC_NO,
+                                  KC_NO, KC_TRNS,      KC_TRNS,                KC_TRNS,    KC_TRNS, KC_NO
+    ),
+
+  // Held while the outer thumb (Space) is down. Single letters are shifted
+  // letters (the old *Ot singles); pairs/triples combo per taipo_default.def's
+  // tpOuter* combos.
+  [_OUTER] = LAYOUT_split_3x6_3(
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        //,
+        KC_NO, S(KC_R),       S(KC_S),   S(KC_N),      S(KC_I), KC_NO,         KC_NO,   S(KC_I),    S(KC_N),    S(KC_S),    S(KC_R), KC_NO,
+        KC_NO, S(KC_A),       S(KC_O),   S(KC_T),      S(KC_E), KC_NO,         KC_NO,   S(KC_E),    S(KC_T),    S(KC_O),    S(KC_A), KC_NO,
+                                  KC_NO, KC_TRNS,      KC_TRNS,                KC_TRNS,    KC_TRNS, KC_NO
+    ),
+
+  // Held while both thumbs are down together (reached via the tpBoth combo
+  // in taipo_default.def, which chords the two thumb layer-tap keys).
+  // Single letters are the old *ItOt singles (media/system keys); pairs
+  // combo per taipo_default.def's tpBoth* combos to reach the F-keys.
+  [_BOTH] = LAYOUT_split_3x6_3(
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        //,
+        KC_NO, KC_PRINT_SCREEN, KC_BRIGHTNESS_UP, KC_BRIGHTNESS_DOWN, KC_MEDIA_PLAY_PAUSE, KC_NO,   KC_NO, KC_MEDIA_PLAY_PAUSE, KC_BRIGHTNESS_DOWN, KC_BRIGHTNESS_UP, KC_PRINT_SCREEN, KC_NO,
+        KC_NO, KC_MEDIA_NEXT_TRACK, KC_KB_VOLUME_UP, KC_KB_VOLUME_DOWN, KC_MEDIA_PREV_TRACK, KC_NO, KC_NO, KC_MEDIA_PREV_TRACK, KC_KB_VOLUME_DOWN, KC_KB_VOLUME_UP, KC_MEDIA_NEXT_TRACK, KC_NO,
+                                  KC_NO, KC_TRNS,      KC_TRNS,                KC_TRNS,    KC_TRNS, KC_NO
     ),
 
 };
