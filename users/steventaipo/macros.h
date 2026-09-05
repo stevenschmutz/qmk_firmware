@@ -1,0 +1,258 @@
+
+
+__attribute__ ((weak))
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
+  return true;
+}
+
+
+// Helper for implementing tap vs. long-press keys. Given a tap-hold
+// key event, replaces the hold function with `long_press_keycode`.
+// From : https://getreuer.info/posts/keyboards/triggers/index.html
+static bool process_tap_or_long_press_key (
+    keyrecord_t* record, uint16_t long_press_keycode) {
+  if (record->tap.count == 0) {  // Key is being held.
+    if (record->event.pressed) {
+      tap_code16(long_press_keycode);
+    }
+    return false;  // Skip default handling.
+  }
+  return true;  // Continue default handling.
+}
+
+
+
+
+// Shift-the-next-letter state for DOT_SPC_OSFT/QUES_SPC_OSFT. A real (not
+// one-shot) shift is used because sm_td resolves mod-tap keys via
+// tap_code16(), which sends a raw HID report using whatever *real* mods are
+// currently registered and never consults get_oneshot_mods() - so a
+// one-shot shift is silently dropped whenever the very next letter is an
+// sm_td mod-tap key (i.e. almost always on this layout).
+static bool shift_next_key_armed = false;
+static bool shift_next_key_held = false;
+static uint16_t shift_next_key_target = KC_NO;
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
+    if (shift_next_key_armed && record->event.pressed && keycode != DOT_SPC_OSFT && keycode != QUES_SPC_OSFT) {
+        shift_next_key_armed = false;
+        shift_next_key_held = true;
+        shift_next_key_target = keycode;
+        register_code(KC_LSFT);
+    }
+
+   if (!process_smtd(keycode, record)) {
+        if (shift_next_key_held && !record->event.pressed && keycode == shift_next_key_target) {
+            unregister_code(KC_LSFT);
+            shift_next_key_held = false;
+        }
+        return false;
+    }
+
+    if (shift_next_key_held && !record->event.pressed && keycode == shift_next_key_target) {
+        unregister_code(KC_LSFT);
+        shift_next_key_held = false;
+    }
+
+ switch (keycode) {
+    case CTRL_TICK:  // Types ctrl + backtick
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("`"));
+      }
+        return false;
+        break;
+
+    case SHOW_WORKSPACES:  // Types ctrl + alt + up arrow
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_LALT(SS_TAP(X_UP))));
+      }
+        return false;
+        break;   
+
+    case KC_BSPC: {
+      static uint16_t registered_key = KC_NO;
+      if (record->event.pressed) {  // On key press.
+        const uint8_t mods = get_mods();
+#ifndef NO_ACTION_ONESHOT
+        uint8_t shift_mods = (mods | get_oneshot_mods()) & MOD_MASK_SHIFT;
+#else
+        uint8_t shift_mods = mods & MOD_MASK_SHIFT;
+#endif  // NO_ACTION_ONESHOT
+        if (shift_mods) {  // At least one shift key is held.
+          registered_key = KC_DEL;
+          // If one shift is held, clear it from the mods. But if both
+          // shifts are held, leave as is to send Shift + Del.
+          if (shift_mods != MOD_MASK_SHIFT) {
+#ifndef NO_ACTION_ONESHOT
+            del_oneshot_mods(MOD_MASK_SHIFT);
+#endif  // NO_ACTION_ONESHOT
+            unregister_mods(MOD_MASK_SHIFT);
+          }
+        } else {
+          registered_key = KC_BSPC;
+        }
+
+        register_code(registered_key);
+        set_mods(mods);
+      } else {  // On key release.
+        unregister_code(registered_key);
+      }
+    } return false;
+
+
+
+
+    case PEE_PASTE:  // Comma on tap, Ctrl+C on long press.
+      layer_state_set_user(get_highest_layer(layer_state)); //Change the colour back to the current level
+      return process_tap_or_long_press_key(record, C(KC_V));
+      break;
+
+   case DOT_COPY:  // Dot on tap, Ctrl+V on long press.
+      
+      return process_tap_or_long_press_key(record, C(KC_C));
+    break;
+    
+   case QUOTE_BOLD:  // Quote on tap, Ctrl+B on long press.
+      return process_tap_or_long_press_key(record, C(KC_B));
+    break; 
+
+    case COMMA_CUT:  // Comma on tap, Ctrl+X on long press.
+      return process_tap_or_long_press_key(record, C(KC_X));
+    break; 
+
+
+    case ALT_DOWN:  // Dot on tap, Ctrl+X on long press.
+      return process_tap_or_long_press_key(record, A(KC_DOWN));
+    break;
+  
+    case CTRL_CUT:  // Types ctrl + x
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("x"));
+      }
+          return false;
+        break;
+         
+    case CTRL_ALL:  // Types ctrl + a
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("a"));
+      }
+          return false;
+        break;
+        
+    case CTRL_COPY:  // Types ctrl + C
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("c"));
+      }
+          return false;
+        break;
+    case CTRL_PASTE:  // Types ctrl + V
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("v"));
+      }
+        return false;
+        break;
+        
+    case CTRL_SAVE:  // Types ctrl + S
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("s"));
+      }
+          return false;
+        break;
+
+     case CTRL_FIND:  // Types ctrl + f
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("f"));
+      }
+          return false;
+        break;
+
+
+    case CTRL_UNDO:  // Types ctrl + z
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("z"));
+      }
+          return false;
+        break;
+
+
+    case CTRL_C:  // Types ctrl + f
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL("c"));
+      }
+          return false;
+        break;
+
+    case CTRL_ENTER:  // Types ctrl + enter
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_TAP(X_ENT)));
+      }
+          return false;
+        break;
+
+    case DOT_SPC_OSFT:  // Types ". " then shifts the next letter typed.
+      if (record->event.pressed) {
+        SEND_STRING(". ");
+        shift_next_key_armed = true;
+      }
+          return false;
+        break;
+
+    case QUES_SPC_OSFT:  // Types "? " then shifts the next letter typed.
+      if (record->event.pressed) {
+        SEND_STRING("? ");
+        shift_next_key_armed = true;
+      }
+          return false;
+        break;
+
+    case SHIFT_ENTER:  // Types shift enter
+      if (record->event.pressed) {
+        SEND_STRING(SS_LSFT(SS_TAP(X_ENT)));
+      }
+          return false;
+        break;
+
+
+    
+ 
+
+
+      return true;
+   }
+
+
+  return process_record_keymap(keycode, record);
+}
+//HOME ROW MODS
+void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
+    switch (keycode) {
+        SMTD_MT(CKC_A, KC_A, KC_LEFT_GUI, 2)
+        SMTD_MT(CKC_SCLN, KC_SCLN, KC_LEFT_GUI, 2)
+        SMTD_MT(CKC_O, KC_O, KC_LALT, 2)
+        SMTD_MT(CKC_E, KC_E, KC_E, 2)
+        SMTD_MT(CKC_U, KC_U, KC_U, 2)
+        //SMTD_MT(CKC_S, KC_S, KC_S, 2)
+        //SMTD_MT(CKC_N, KC_N, KC_N, 2)
+        SMTD_MT(CKC_N, KC_N, KC_N, 2)
+        SMTD_MT(CKC_H, KC_H, KC_LSFT, 2)
+        SMTD_MT(CKC_D, KC_D, KC_D, 2)
+        //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
+        //SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)   
+        SMTD_MT(CKC_M, KC_M, KC_M, 2)   
+        SMTD_MT(CKC_K, KC_K, KC_K, 2)
+        SMTD_MT(CKC_Q, KC_Q, KC_LALT, 2)
+        SMTD_MT(CKC_J, KC_J, KC_LEFT_CTRL, 2)
+        SMTD_MT(CKC_TAB, KC_TAB, KC_LSFT, 2)
+      }
+}
+
+/* Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+ [TD_CEE_TEE]  = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_T),
+  [TD_GEE_AITCH]  = ACTION_TAP_DANCE_DOUBLE(KC_G, CKC_H),
+  [TD_ARR_EN]  = ACTION_TAP_DANCE_DOUBLE(KC_R, CKC_H),
+  [TD_EL_ES]  = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_S)
+};
+*/
+
