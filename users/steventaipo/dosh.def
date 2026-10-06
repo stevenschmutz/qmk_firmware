@@ -1,0 +1,140 @@
+// Dosh chord table, ported from dosh.rs.
+// SPDX-License-Identifier: GPL-2.0-or-later
+//
+// combos.def-style table, selected by TAIPO_FLAVOR_DOSH in taipo.def. Same
+// tap-only simplification as the Taipo flavors (mod chords are one-shots,
+// nothing holds).
+//
+// Dosh drops the upper pinky and keeps the lower one: 7 finger keys per hand
+// plus two thumbs. Every chord that is a single finger key is a plain keycode
+// on a layer in keymap.c; every chord of two or more finger keys is a combo
+// below, matched against the keycodes of whichever layer the thumbs select:
+//
+//   base   a o t e / s n i              letters
+//   _OUTER the Space thumb              S(letter) capitals
+//   _INNER the Backspace thumb          Esc, arrows, Enter, `.`
+//   _BOTH  both thumbs                  Del, End, PgDn, Home, Tab, PgUp, `"`
+//
+// The layer keycodes of the single finger keys, which the combos below are
+// spelled in, are therefore:
+//
+//   finger       a      o      t      e      s      n      i
+//   _INNER       KC_ESC KC_RGHT KC_DOWN KC_LEFT KC_ENT KC_UP KC_DOT
+//   _OUTER       S(a)   S(o)    S(t)   S(e)   S(s)   S(n)  S(i)
+//   _BOTH        KC_DEL KC_END KC_PGDN KC_HOME KC_TAB KC_PGUP S(KC_QUOT)
+//
+// Left unmapped, as in dosh.rs: everything needing a consumer-control report
+// (play/pause, track skip, volume, brightness), and the chords that select a
+// chord table or switch to Orsy, which are firmware concepts that do not apply
+// here. The seven chords dosh.rs leaves empty are left empty here too.
+
+COMB(tpDoshAO, KC_L, KC_A, KC_O)
+COMB(tpDoshAT, KC_Q, KC_A, KC_T)
+COMB(tpDoshOT, KC_U, KC_O, KC_T)
+COMB(tpDoshAE, KC_D, KC_A, KC_E)
+COMB(tpDoshOE, KC_C, KC_O, KC_E)
+COMB(tpDoshTE, KC_H, KC_T, KC_E)
+COMB(tpDoshOTE, KC_B, KC_O, KC_T, KC_E)
+COMB(tpDoshSO, OSM(MOD_LALT), KC_S, KC_O)
+COMB(tpDoshSAO, OSM(MOD_LGUI), KC_S, KC_A, KC_O)
+COMB(tpDoshST, S(KC_SLSH), KC_S, KC_T)
+COMB(tpDoshSE, KC_M, KC_S, KC_E)
+COMB(tpDoshSTE, KC_X, KC_S, KC_T, KC_E)
+COMB(tpDoshNA, KC_J, KC_N, KC_A)
+COMB(tpDoshNO, KC_G, KC_N, KC_O)
+COMB(tpDoshNT, OSM(MOD_LCTL), KC_N, KC_T)
+COMB(tpDoshNOT, KC_PSCR, KC_N, KC_O, KC_T)
+COMB(tpDoshNE, KC_R, KC_N, KC_E)
+COMB(tpDoshNTE, KC_Z, KC_N, KC_T, KC_E)
+COMB(tpDoshSN, KC_P, KC_S, KC_N)
+COMB(tpDoshSNE, KC_V, KC_S, KC_N, KC_E)
+COMB(tpDoshIA, KC_W, KC_I, KC_A)
+COMB(tpDoshIO, KC_K, KC_I, KC_O)
+COMB(tpDoshIE, OSM(MOD_LSFT), KC_I, KC_E)
+COMB(tpDoshIOE, KC_GRV, KC_I, KC_O, KC_E)
+COMB(tpDoshITE, KC_QUOT, KC_I, KC_T, KC_E)
+COMB(tpDoshSI, KC_F, KC_S, KC_I)
+COMB(tpDoshSIE, KC_INS, KC_S, KC_I, KC_E)
+COMB(tpDoshNI, KC_Y, KC_N, KC_I)
+
+// Both thumbs together reach _BOTH: MO(_BOTH) is registered while both thumb
+// keys are held and released as soon as either one comes up. Both thumbs
+// alone type nothing, as dosh.rs's null key.
+COMB(tpDoshBoth, MO(_BOTH), LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC))
+
+// --- _INNER layer (Backspace thumb held) ---
+COMB(tpDoshInAO, KC_2, KC_ESC, KC_RGHT)
+COMB(tpDoshInAT, S(KC_2), KC_ESC, KC_DOWN)
+COMB(tpDoshInOT, KC_4, KC_RGHT, KC_DOWN)
+COMB(tpDoshInAE, KC_1, KC_ESC, KC_LEFT)
+COMB(tpDoshInOE, KC_3, KC_RGHT, KC_LEFT)
+COMB(tpDoshInTE, KC_COMM, KC_DOWN, KC_LEFT)
+COMB(tpDoshInOTE, KC_MINS, KC_RGHT, KC_DOWN, KC_LEFT)
+COMB(tpDoshInSO, S(KC_LBRC), KC_ENT, KC_RGHT)
+COMB(tpDoshInST, S(KC_6), KC_ENT, KC_DOWN)
+COMB(tpDoshInSOT, S(KC_COMM), KC_ENT, KC_RGHT, KC_DOWN)
+COMB(tpDoshInSE, KC_5, KC_ENT, KC_LEFT)
+COMB(tpDoshInSTE, S(KC_4), KC_ENT, KC_DOWN, KC_LEFT)
+COMB(tpDoshInNA, S(KC_SCLN), KC_UP, KC_ESC)
+COMB(tpDoshInNO, KC_8, KC_UP, KC_RGHT)
+COMB(tpDoshInNT, S(KC_9), KC_UP, KC_DOWN)
+COMB(tpDoshInNE, KC_0, KC_UP, KC_LEFT)
+COMB(tpDoshInNTE, S(KC_7), KC_UP, KC_DOWN, KC_LEFT)
+COMB(tpDoshInSN, S(KC_EQL), KC_ENT, KC_UP)
+COMB(tpDoshInSNE, KC_SLSH, KC_ENT, KC_UP, KC_LEFT)
+COMB(tpDoshInIA, KC_6, KC_DOT, KC_ESC)
+COMB(tpDoshInIO, KC_SCLN, KC_DOT, KC_RGHT)
+COMB(tpDoshInIE, KC_LBRC, KC_DOT, KC_LEFT)
+COMB(tpDoshInIOE, S(KC_5), KC_DOT, KC_RGHT, KC_LEFT)
+COMB(tpDoshInSI, KC_7, KC_ENT, KC_DOT)
+COMB(tpDoshInNI, KC_9, KC_UP, KC_DOT)
+
+// --- _OUTER layer (Space thumb held) ---
+COMB(tpDoshOutAO, S(KC_L), S(KC_A), S(KC_O))
+COMB(tpDoshOutAT, S(KC_Q), S(KC_A), S(KC_T))
+COMB(tpDoshOutOT, S(KC_U), S(KC_O), S(KC_T))
+COMB(tpDoshOutAE, S(KC_D), S(KC_A), S(KC_E))
+COMB(tpDoshOutOE, S(KC_C), S(KC_O), S(KC_E))
+COMB(tpDoshOutTE, S(KC_H), S(KC_T), S(KC_E))
+COMB(tpDoshOutOTE, S(KC_B), S(KC_O), S(KC_T), S(KC_E))
+COMB(tpDoshOutSO, S(KC_RBRC), S(KC_S), S(KC_O))
+COMB(tpDoshOutST, S(KC_1), S(KC_S), S(KC_T))
+COMB(tpDoshOutSOT, S(KC_DOT), S(KC_S), S(KC_O), S(KC_T))
+COMB(tpDoshOutSE, S(KC_M), S(KC_S), S(KC_E))
+COMB(tpDoshOutSTE, S(KC_X), S(KC_S), S(KC_T), S(KC_E))
+COMB(tpDoshOutNA, S(KC_J), S(KC_N), S(KC_A))
+COMB(tpDoshOutNO, S(KC_G), S(KC_N), S(KC_O))
+COMB(tpDoshOutNT, S(KC_0), S(KC_N), S(KC_T))
+COMB(tpDoshOutNE, S(KC_R), S(KC_N), S(KC_E))
+COMB(tpDoshOutNTE, S(KC_Z), S(KC_N), S(KC_T), S(KC_E))
+COMB(tpDoshOutSN, S(KC_P), S(KC_S), S(KC_N))
+COMB(tpDoshOutSNE, S(KC_V), S(KC_S), S(KC_N), S(KC_E))
+COMB(tpDoshOutIA, S(KC_W), S(KC_I), S(KC_A))
+COMB(tpDoshOutIO, S(KC_K), S(KC_I), S(KC_O))
+COMB(tpDoshOutIE, KC_RBRC, S(KC_I), S(KC_E))
+COMB(tpDoshOutIOE, S(KC_GRV), S(KC_I), S(KC_O), S(KC_E))
+COMB(tpDoshOutSI, S(KC_F), S(KC_S), S(KC_I))
+COMB(tpDoshOutNI, S(KC_Y), S(KC_N), S(KC_I))
+
+// --- _BOTH layer (both thumbs held) ---
+COMB(tpDoshBothAO, KC_F2, KC_DEL, KC_END)
+COMB(tpDoshBothAT, KC_F11, KC_DEL, KC_PGDN)
+COMB(tpDoshBothOT, KC_F4, KC_END, KC_PGDN)
+COMB(tpDoshBothAE, KC_F1, KC_DEL, KC_HOME)
+COMB(tpDoshBothOE, KC_F3, KC_END, KC_HOME)
+COMB(tpDoshBothOTE, S(KC_MINS), KC_END, KC_PGDN, KC_HOME)
+COMB(tpDoshBothSO, OSM(MOD_LALT|MOD_LSFT), KC_TAB, KC_END)
+COMB(tpDoshBothSAO, OSM(MOD_LGUI|MOD_LSFT), KC_TAB, KC_DEL, KC_END)
+COMB(tpDoshBothSE, KC_F5, KC_TAB, KC_HOME)
+COMB(tpDoshBothSTE, S(KC_3), KC_TAB, KC_PGDN, KC_HOME)
+COMB(tpDoshBothNA, S(KC_8), KC_PGUP, KC_DEL)
+COMB(tpDoshBothNO, KC_F8, KC_PGUP, KC_END)
+COMB(tpDoshBothNT, OSM(MOD_LCTL|MOD_LSFT), KC_PGUP, KC_PGDN)
+COMB(tpDoshBothNE, KC_F10, KC_PGUP, KC_HOME)
+COMB(tpDoshBothNTE, KC_F12, KC_PGUP, KC_PGDN, KC_HOME)
+COMB(tpDoshBothSN, KC_EQL, KC_TAB, KC_PGUP)
+COMB(tpDoshBothSNE, KC_BSLS, KC_TAB, KC_PGUP, KC_HOME)
+COMB(tpDoshBothIA, KC_F6, S(KC_QUOT), KC_DEL)
+COMB(tpDoshBothIO, S(KC_BSLS), S(KC_QUOT), KC_END)
+COMB(tpDoshBothSI, KC_F7, KC_TAB, S(KC_QUOT))
+COMB(tpDoshBothNI, KC_F9, KC_PGUP, S(KC_QUOT))

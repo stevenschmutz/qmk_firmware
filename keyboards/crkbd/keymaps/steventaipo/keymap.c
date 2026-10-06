@@ -5,7 +5,7 @@
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
 enum layers {
- _TAIPO,
+ _DOSH,
  _INNER,  // held while the inner thumb (Backspace) is down
  _OUTER,  // held while the outer thumb (Space) is down
  _BOTH,   // held while both thumbs are down together
@@ -22,54 +22,52 @@ enum layers {
 #include "g/keymap_combo.h"
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  // Default taipo flavor (see users/steventaipo/taipo_default.def). Both
+  // Dosh flavor (see users/steventaipo/dosh.def). Both
   // hands carry the same letters -- combos.def-based combos match by
   // keycode, not physical position, so either hand (or a mix of both)
   // can form any chord.
-  [_TAIPO] = LAYOUT_split_3x6_3(
+  [_DOSH] = LAYOUT_split_3x6_3(
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         //,
-        KC_NO, KC_R,          KC_S,      KC_N,         KC_I,   KC_NO,          KC_NO,   KC_I,       KC_N,       KC_S,       KC_R,   KC_NO,
+        KC_NO, KC_NO,          KC_S,      KC_N,         KC_I,   KC_NO,          KC_NO,   KC_I,       KC_N,       KC_S,       KC_NO,   KC_NO,
         KC_NO, KC_A,          KC_O,      KC_T,         KC_E,    KC_NO,         KC_NO,    KC_E,       KC_T,       KC_O,       KC_A,   KC_NO,
                                   // The unused outermost left thumb slot is a manual
                                   // EEPROM-clear key -- not load-bearing now that
                                   // keyboard_post_init_user() resyncs on every boot, but
                                   // handy to keep around for a VIA-enabled board.
-                                  QK_CLEAR_EEPROM, LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC),   LT(_OUTER, KC_SPC), LT(_INNER, KC_BSPC), KC_NO
+                                  QK_CLEAR_EEPROM, LT(_OUTER, KC_SPC), LT(_INNER, KC_BSPC),   LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC), KC_NO
     ),
 
-  // Held while the inner thumb (Backspace) is down. Single letters here are
-  // straight substitutions for the old "letter + Backspace" combos; letter
-  // pairs/triples still combo together (see taipo_default.def's tpInner*
-  // combos) to reach the rest of what used to be *It chords.
+  // Held while the Backspace thumb is down: Escape, the arrows, Enter and `.`
+  // on the single finger keys; pairs/triples combo together (see dosh.def's
+  // tpDoshIn* combos) to reach the digits, symbols and brackets.
   [_INNER] = LAYOUT_split_3x6_3(
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         //,
-        KC_NO, KC_GT,         KC_RCBR,   KC_RBRC,      KC_RPRN, KC_NO,         KC_NO,   KC_RPRN,    KC_RBRC,    KC_RCBR,    KC_GT,  KC_NO,
-        KC_NO, KC_LT,         KC_LCBR,   KC_LBRC,      KC_LPRN, KC_NO,         KC_NO,   KC_LPRN,    KC_LBRC,    KC_LCBR,    KC_LT,  KC_NO,
+        KC_NO, KC_NO, KC_ENT, KC_UP, KC_DOT, KC_NO,      KC_NO, KC_DOT, KC_UP, KC_ENT, KC_NO, KC_NO,
+        KC_NO, KC_ESC, KC_RGHT, KC_DOWN, KC_LEFT, KC_NO,      KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_ESC, KC_NO,
                                   KC_NO, KC_TRNS,      KC_TRNS,                KC_TRNS,    KC_TRNS, KC_NO
     ),
 
-  // Held while the outer thumb (Space) is down. Single letters are shifted
-  // letters (the old *Ot singles); pairs/triples combo per taipo_default.def's
-  // tpOuter* combos.
+  // Held while the Space thumb is down: shifted letters on the single finger
+  // keys; pairs/triples combo per dosh.def's tpDoshOut* combos.
   [_OUTER] = LAYOUT_split_3x6_3(
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         //,
-        KC_NO, S(KC_R),       S(KC_S),   S(KC_N),      S(KC_I), KC_NO,         KC_NO,   S(KC_I),    S(KC_N),    S(KC_S),    S(KC_R), KC_NO,
-        KC_NO, S(KC_A),       S(KC_O),   S(KC_T),      S(KC_E), KC_NO,         KC_NO,   S(KC_E),    S(KC_T),    S(KC_O),    S(KC_A), KC_NO,
+        KC_NO, KC_NO, S(KC_S), S(KC_N), S(KC_I), KC_NO,      KC_NO, S(KC_I), S(KC_N), S(KC_S), KC_NO, KC_NO,
+        KC_NO, S(KC_A), S(KC_O), S(KC_T), S(KC_E), KC_NO,      KC_NO, S(KC_E), S(KC_T), S(KC_O), S(KC_A), KC_NO,
                                   KC_NO, KC_TRNS,      KC_TRNS,                KC_TRNS,    KC_TRNS, KC_NO
     ),
 
-  // Held while both thumbs are down together (reached via the tpBoth combo
-  // in taipo_default.def, which chords the two thumb layer-tap keys).
-  // Single letters are the old *ItOt singles (media/system keys); pairs
-  // combo per taipo_default.def's tpBoth* combos to reach the F-keys.
+  // Held while both thumbs are down together (reached via the tpDoshBoth combo
+  // in dosh.def, which chords the two thumb layer-tap keys). Single finger keys
+  // are Delete, End, PgDn, Home, Tab, PgUp and `"`; pairs combo per dosh.def's
+  // tpDoshBoth* combos to reach the F-keys. Media keys are unmapped, as in dosh.rs.
   [_BOTH] = LAYOUT_split_3x6_3(
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         //,
-        KC_NO, KC_PRINT_SCREEN, KC_BRIGHTNESS_UP, KC_BRIGHTNESS_DOWN, KC_MEDIA_PLAY_PAUSE, KC_NO,   KC_NO, KC_MEDIA_PLAY_PAUSE, KC_BRIGHTNESS_DOWN, KC_BRIGHTNESS_UP, KC_PRINT_SCREEN, KC_NO,
-        KC_NO, KC_MEDIA_NEXT_TRACK, KC_KB_VOLUME_UP, KC_KB_VOLUME_DOWN, KC_MEDIA_PREV_TRACK, KC_NO, KC_NO, KC_MEDIA_PREV_TRACK, KC_KB_VOLUME_DOWN, KC_KB_VOLUME_UP, KC_MEDIA_NEXT_TRACK, KC_NO,
+        KC_NO, KC_NO, KC_TAB, KC_PGUP, S(KC_QUOT), KC_NO,      KC_NO, S(KC_QUOT), KC_PGUP, KC_TAB, KC_NO, KC_NO,
+        KC_NO, KC_DEL, KC_END, KC_PGDN, KC_HOME, KC_NO,      KC_NO, KC_HOME, KC_PGDN, KC_END, KC_DEL, KC_NO,
                                   KC_NO, KC_TRNS,      KC_TRNS,                KC_TRNS,    KC_TRNS, KC_NO
     ),
 
