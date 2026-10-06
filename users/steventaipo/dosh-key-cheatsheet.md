@@ -1,6 +1,6 @@
 # Dosh cheatsheet
 
-Every character on the Dosh layout, by the chord that types it. Generated from `dosh.rs`; see `dosh-keys.md` for the full table, including navigation, F-keys and modifiers.
+Every character and control key on the Dosh layout, by the chord that types it. Generated from `dosh.rs`; see `dosh-keys.md` for the full chord table, including the capitals and the layers of every chord.
 
 - **Chord** is the finger keys pressed together: bottom row `a o t e`, top row `s n i`. The upper pinky is never used.
 - **Thumb held** is held down with the chord: none, the Space (outer) thumb, the Backspace (inner) thumb, or both.
@@ -91,3 +91,60 @@ All numbers are on the Backspace thumb.
 | `*` | `a+n` | both | `--#-`<br>`#---` | `-#--`<br>`---#` |
 | ``` | `o+e+i` | none | `---#`<br>`-#-#` | `#---`<br>`#-#-` |
 | `~` | `o+e+i` | Space | `---#`<br>`-#-#` | `#---`<br>`#-#-` |
+
+## Control keys
+
+### Editing
+
+| Key | Chord | Thumb held | Left hand | Right hand |
+|-----|-------|------------|-----------|------------|
+| Space | `(none)` | Space thumb alone | `----`<br>`----` | `----`<br>`----` |
+| Backspace | `(none)` | Backspace thumb alone | `----`<br>`----` | `----`<br>`----` |
+| Tab | `s` | both | `-#--`<br>`----` | `--#-`<br>`----` |
+| Enter | `s` | Backspace | `-#--`<br>`----` | `--#-`<br>`----` |
+| Delete | `a` | both | `----`<br>`#---` | `----`<br>`---#` |
+| Escape | `a` | Backspace | `----`<br>`#---` | `----`<br>`---#` |
+| Insert | `e+s+i` | none | `-#-#`<br>`---#` | `#-#-`<br>`#---` |
+| Print Screen | `o+t+n` | none | `--#-`<br>`-##-` | `-#--`<br>`-##-` |
+
+### Navigation
+
+| Key | Chord | Thumb held | Left hand | Right hand |
+|-----|-------|------------|-----------|------------|
+| Up | `n` | Backspace | `--#-`<br>`----` | `-#--`<br>`----` |
+| Down | `t` | Backspace | `----`<br>`--#-` | `----`<br>`-#--` |
+| Left | `e` | Backspace | `----`<br>`---#` | `----`<br>`#---` |
+| Right | `o` | Backspace | `----`<br>`-#--` | `----`<br>`--#-` |
+| Home | `e` | both | `----`<br>`---#` | `----`<br>`#---` |
+| End | `o` | both | `----`<br>`-#--` | `----`<br>`--#-` |
+| Page Up | `n` | both | `--#-`<br>`----` | `-#--`<br>`----` |
+| Page Down | `t` | both | `----`<br>`--#-` | `----`<br>`-#--` |
+
+### Function keys
+
+| Key | Chord | Thumb held | Left hand | Right hand |
+|-----|-------|------------|-----------|------------|
+| F1 | `a+e` | both | `----`<br>`#--#` | `----`<br>`#--#` |
+| F2 | `a+o` | both | `----`<br>`##--` | `----`<br>`--##` |
+| F3 | `o+e` | both | `----`<br>`-#-#` | `----`<br>`#-#-` |
+| F4 | `o+t` | both | `----`<br>`-##-` | `----`<br>`-##-` |
+| F5 | `e+s` | both | `-#--`<br>`---#` | `--#-`<br>`#---` |
+| F6 | `a+i` | both | `---#`<br>`#---` | `#---`<br>`---#` |
+| F7 | `s+i` | both | `-#-#`<br>`----` | `#-#-`<br>`----` |
+| F8 | `o+n` | both | `--#-`<br>`-#--` | `-#--`<br>`--#-` |
+| F9 | `n+i` | both | `--##`<br>`----` | `##--`<br>`----` |
+| F10 | `e+n` | both | `--#-`<br>`---#` | `-#--`<br>`#---` |
+| F11 | `a+t` | both | `----`<br>`#-#-` | `----`<br>`-#-#` |
+| F12 | `t+e+n` | both | `--#-`<br>`--##` | `-#--`<br>`##--` |
+
+### Modifiers (one-shot: tap, then press the next key)
+
+| Key | Chord | Thumb held | Left hand | Right hand |
+|-----|-------|------------|-----------|------------|
+| Shift | `e+i` | none | `---#`<br>`---#` | `#---`<br>`#---` |
+| Ctrl | `t+n` | none | `--#-`<br>`--#-` | `-#--`<br>`-#--` |
+| Alt | `o+s` | none | `-#--`<br>`-#--` | `--#-`<br>`--#-` |
+| Gui | `a+o+s` | none | `-#--`<br>`##--` | `--#-`<br>`--##` |
+| Ctrl+Shift | `t+n` | both | `--#-`<br>`--#-` | `-#--`<br>`-#--` |
+| Alt+Shift | `o+s` | both | `-#--`<br>`-#--` | `--#-`<br>`--#-` |
+| Gui+Shift | `a+o+s` | both | `-#--`<br>`##--` | `--#-`<br>`--##` |
