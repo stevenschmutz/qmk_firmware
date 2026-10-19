@@ -24,8 +24,8 @@ thumbs: outer = Space (capitals), inner = Backspace (symbols/navigation)
 | Thumb held | Layer | What it does |
 |------------|-------|--------------|
 | none | base | letters |
-| Space (outer) | `_OUTER` | capitals, plus some shifted punctuation (see the chord table) |
-| Backspace (inner) | `_INNER` | Esc, arrows, Enter, `.`, digits, symbols, brackets |
+| Backspace (outer) | `_OUTER` | capitals, plus some shifted punctuation (see the chord table) |
+| Space (inner) | `_INNER` | Esc, arrows, Enter, `.`, digits, symbols, brackets |
 | both | `_BOTH` | Del, End, PgDn, Home, Tab, PgUp, `"`, F-keys |
 
 Both thumbs together with no finger key is the null key and types nothing.
@@ -34,8 +34,8 @@ Both thumbs together with no finger key is the null key and types nothing.
 
 | Key | Output |
 |-----|--------|
-| outer thumb | `Space` |
-| inner thumb | `Backspace` |
+| inner thumb | `Space` |
+| outer thumb | `Backspace` |
 | both thumbs | null (nothing) |
 
 ## Single finger keys

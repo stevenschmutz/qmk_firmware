@@ -3,9 +3,9 @@
 Every character and control key on the Dosh layout, by the chord that types it. Generated from `dosh.rs`; see `dosh-keys.md` for the full chord table, including the capitals and the layers of every chord.
 
 - **Chord** is the finger keys pressed together: bottom row `a o t e`, top row `s n i`. The upper pinky is never used.
-- **Thumb held** is held down with the chord: none, the Space (outer) thumb, the Backspace (inner) thumb, or both.
+- **Thumb held** is held down with the chord: none, the Outer (outer) thumb, the Inner (inner) thumb, or both.
 - **Left hand** and **Right hand** show the same chord on each hand: `#` is pressed, `-` is not, top row above the bottom row. The two hands carry the same letters, so either hand (or a mix) works.
-- Capitals are the same chord with the Space thumb held.
+- Capitals are the same chord with the Outer thumb held.
 
 ## Letters
 
@@ -40,57 +40,57 @@ Every character and control key on the Dosh layout, by the chord that types it. 
 
 ## Numbers
 
-All numbers are on the Backspace thumb.
+All numbers are on the Inner thumb.   
 
 | Key | Chord | Thumb held | Left hand | Right hand |
 |-----|-------|------------|-----------|------------|
-| `0` | `e+n` | Backspace | `--#-`<br>`---#` | `-#--`<br>`#---` |
-| `1` | `a+e` | Backspace | `----`<br>`#--#` | `----`<br>`#--#` |
-| `2` | `a+o` | Backspace | `----`<br>`##--` | `----`<br>`--##` |
-| `3` | `o+e` | Backspace | `----`<br>`-#-#` | `----`<br>`#-#-` |
-| `4` | `o+t` | Backspace | `----`<br>`-##-` | `----`<br>`-##-` |
-| `5` | `e+s` | Backspace | `-#--`<br>`---#` | `--#-`<br>`#---` |
-| `6` | `a+i` | Backspace | `---#`<br>`#---` | `#---`<br>`---#` |
-| `7` | `s+i` | Backspace | `-#-#`<br>`----` | `#-#-`<br>`----` |
-| `8` | `o+n` | Backspace | `--#-`<br>`-#--` | `-#--`<br>`--#-` |
-| `9` | `n+i` | Backspace | `--##`<br>`----` | `##--`<br>`----` |
+| `0` | `e+n` | Inner | `--#-`<br>`---#` | `-#--`<br>`#---` |
+| `1` | `a+e` | Inner | `----`<br>`#--#` | `----`<br>`#--#` |
+| `2` | `a+o` | Inner | `----`<br>`##--` | `----`<br>`--##` |
+| `3` | `o+e` | Inner | `----`<br>`-#-#` | `----`<br>`#-#-` |
+| `4` | `o+t` | Inner | `----`<br>`-##-` | `----`<br>`-##-` |
+| `5` | `e+s` | Inner | `-#--`<br>`---#` | `--#-`<br>`#---` |
+| `6` | `a+i` | Inner | `---#`<br>`#---` | `#---`<br>`---#` |
+| `7` | `s+i` | Inner | `-#-#`<br>`----` | `#-#-`<br>`----` |
+| `8` | `o+n` | Inner | `--#-`<br>`-#--` | `-#--`<br>`--#-` |
+| `9` | `n+i` | Inner | `--##`<br>`----` | `##--`<br>`----` |
 
 ## Punctuation
 
 | Key | Chord | Thumb held | Left hand | Right hand |
 |-----|-------|------------|-----------|------------|
-| `.` | `i` | Backspace | `---#`<br>`----` | `#---`<br>`----` |
-| `,` | `t+e` | Backspace | `----`<br>`--##` | `----`<br>`##--` |
-| `;` | `o+i` | Backspace | `---#`<br>`-#--` | `#---`<br>`--#-` |
-| `:` | `a+n` | Backspace | `--#-`<br>`#---` | `-#--`<br>`---#` |
+| `.` | `i` | Inner | `---#`<br>`----` | `#---`<br>`----` |
+| `,` | `t+e` | Inner | `----`<br>`--##` | `----`<br>`##--` |
+| `;` | `o+i` | Inner | `---#`<br>`-#--` | `#---`<br>`--#-` |
+| `:` | `a+n` | Inner | `--#-`<br>`#---` | `-#--`<br>`---#` |
 | `'` | `t+e+i` | none | `---#`<br>`--##` | `#---`<br>`##--` |
 | `"` | `i` | both | `---#`<br>`----` | `#---`<br>`----` |
-| `!` | `t+s` | Space | `-#--`<br>`--#-` | `--#-`<br>`-#--` |
+| `!` | `t+s` | Outer | `-#--`<br>`--#-` | `--#-`<br>`-#--` |
 | `?` | `t+s` | none | `-#--`<br>`--#-` | `--#-`<br>`-#--` |
-| `-` | `o+t+e` | Backspace | `----`<br>`-###` | `----`<br>`###-` |
+| `-` | `o+t+e` | Inner | `----`<br>`-###` | `----`<br>`###-` |
 | `_` | `o+t+e` | both | `----`<br>`-###` | `----`<br>`###-` |
 | `=` | `s+n` | both | `-##-`<br>`----` | `-##-`<br>`----` |
-| `+` | `s+n` | Backspace | `-##-`<br>`----` | `-##-`<br>`----` |
-| `/` | `e+s+n` | Backspace | `-##-`<br>`---#` | `-##-`<br>`#---` |
+| `+` | `s+n` | Inner | `-##-`<br>`----` | `-##-`<br>`----` |
+| `/` | `e+s+n` | Inner | `-##-`<br>`---#` | `-##-`<br>`#---` |
 | `\` | `e+s+n` | both | `-##-`<br>`---#` | `-##-`<br>`#---` |
 | `\|` | `o+i` | both | `---#`<br>`-#--` | `#---`<br>`--#-` |
-| `(` | `t+n` | Backspace | `--#-`<br>`--#-` | `-#--`<br>`-#--` |
-| `)` | `t+n` | Space | `--#-`<br>`--#-` | `-#--`<br>`-#--` |
-| `[` | `e+i` | Backspace | `---#`<br>`---#` | `#---`<br>`#---` |
-| `]` | `e+i` | Space | `---#`<br>`---#` | `#---`<br>`#---` |
-| `{` | `o+s` | Backspace | `-#--`<br>`-#--` | `--#-`<br>`--#-` |
-| `}` | `o+s` | Space | `-#--`<br>`-#--` | `--#-`<br>`--#-` |
-| `<` | `o+t+s` | Backspace | `-#--`<br>`-##-` | `--#-`<br>`-##-` |
-| `>` | `o+t+s` | Space | `-#--`<br>`-##-` | `--#-`<br>`-##-` |
-| `@` | `a+t` | Backspace | `----`<br>`#-#-` | `----`<br>`-#-#` |
+| `(` | `t+n` | Inner | `--#-`<br>`--#-` | `-#--`<br>`-#--` |
+| `)` | `t+n` | Outer | `--#-`<br>`--#-` | `-#--`<br>`-#--` |
+| `[` | `e+i` | Inner | `---#`<br>`---#` | `#---`<br>`#---` |
+| `]` | `e+i` | Outer | `---#`<br>`---#` | `#---`<br>`#---` |
+| `{` | `o+s` | Inner | `-#--`<br>`-#--` | `--#-`<br>`--#-` |
+| `}` | `o+s` | Outer | `-#--`<br>`-#--` | `--#-`<br>`--#-` |
+| `<` | `o+t+s` | Inner | `-#--`<br>`-##-` | `--#-`<br>`-##-` |
+| `>` | `o+t+s` | Outer | `-#--`<br>`-##-` | `--#-`<br>`-##-` |
+| `@` | `a+t` | Inner | `----`<br>`#-#-` | `----`<br>`-#-#` |
 | `#` | `t+e+s` | both | `-#--`<br>`--##` | `--#-`<br>`##--` |
-| `$` | `t+e+s` | Backspace | `-#--`<br>`--##` | `--#-`<br>`##--` |
-| `%` | `o+e+i` | Backspace | `---#`<br>`-#-#` | `#---`<br>`#-#-` |
-| `^` | `t+s` | Backspace | `-#--`<br>`--#-` | `--#-`<br>`-#--` |
-| `&` | `t+e+n` | Backspace | `--#-`<br>`--##` | `-#--`<br>`##--` |
+| `$` | `t+e+s` | Inner | `-#--`<br>`--##` | `--#-`<br>`##--` |
+| `%` | `o+e+i` | Inner | `---#`<br>`-#-#` | `#---`<br>`#-#-` |
+| `^` | `t+s` | Inner | `-#--`<br>`--#-` | `--#-`<br>`-#--` |
+| `&` | `t+e+n` | Inner | `--#-`<br>`--##` | `-#--`<br>`##--` |
 | `*` | `a+n` | both | `--#-`<br>`#---` | `-#--`<br>`---#` |
 | ``` | `o+e+i` | none | `---#`<br>`-#-#` | `#---`<br>`#-#-` |
-| `~` | `o+e+i` | Space | `---#`<br>`-#-#` | `#---`<br>`#-#-` |
+| `~` | `o+e+i` | Outer | `---#`<br>`-#-#` | `#---`<br>`#-#-` |
 
 ## Control keys
 
@@ -98,12 +98,12 @@ All numbers are on the Backspace thumb.
 
 | Key | Chord | Thumb held | Left hand | Right hand |
 |-----|-------|------------|-----------|------------|
-| Space | `(none)` | Space thumb alone | `----`<br>`----` | `----`<br>`----` |
-| Backspace | `(none)` | Backspace thumb alone | `----`<br>`----` | `----`<br>`----` |
+| Outer | `(none)` | Outer thumb alone | `----`<br>`----` | `----`<br>`----` |
+| Inner | `(none)` | Inner thumb alone | `----`<br>`----` | `----`<br>`----` |
 | Tab | `s` | both | `-#--`<br>`----` | `--#-`<br>`----` |
-| Enter | `s` | Backspace | `-#--`<br>`----` | `--#-`<br>`----` |
+| Enter | `s` | Inner | `-#--`<br>`----` | `--#-`<br>`----` |
 | Delete | `a` | both | `----`<br>`#---` | `----`<br>`---#` |
-| Escape | `a` | Backspace | `----`<br>`#---` | `----`<br>`---#` |
+| Escape | `a` | Inner | `----`<br>`#---` | `----`<br>`---#` |
 | Insert | `e+s+i` | none | `-#-#`<br>`---#` | `#-#-`<br>`#---` |
 | Print Screen | `o+t+n` | none | `--#-`<br>`-##-` | `-#--`<br>`-##-` |
 
@@ -111,10 +111,10 @@ All numbers are on the Backspace thumb.
 
 | Key | Chord | Thumb held | Left hand | Right hand |
 |-----|-------|------------|-----------|------------|
-| Up | `n` | Backspace | `--#-`<br>`----` | `-#--`<br>`----` |
-| Down | `t` | Backspace | `----`<br>`--#-` | `----`<br>`-#--` |
-| Left | `e` | Backspace | `----`<br>`---#` | `----`<br>`#---` |
-| Right | `o` | Backspace | `----`<br>`-#--` | `----`<br>`--#-` |
+| Up | `n` | Inner | `--#-`<br>`----` | `-#--`<br>`----` |
+| Down | `t` | Inner | `----`<br>`--#-` | `----`<br>`-#--` |
+| Left | `e` | Inner | `----`<br>`---#` | `----`<br>`#---` |
+| Right | `o` | Inner | `----`<br>`-#--` | `----`<br>`--#-` |
 | Home | `e` | both | `----`<br>`---#` | `----`<br>`#---` |
 | End | `o` | both | `----`<br>`-#--` | `----`<br>`--#-` |
 | Page Up | `n` | both | `--#-`<br>`----` | `-#--`<br>`----` |

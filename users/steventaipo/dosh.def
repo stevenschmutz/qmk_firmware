@@ -60,7 +60,7 @@ COMB(tpDoshNI, KC_Y, KC_N, KC_I)
 // Both thumbs together reach _BOTH: MO(_BOTH) is registered while both thumb
 // keys are held and released as soon as either one comes up. Both thumbs
 // alone type nothing, as dosh.rs's null key.
-COMB(tpDoshBoth, MO(_BOTH), LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC))
+COMB(tpDoshBoth, MO(_BOTH), LT(_INNER, KC_SPC), LT(_OUTER, KC_BSPC))
 
 // --- _INNER layer (Backspace thumb held) ---
 COMB(tpDoshInAO, KC_2, KC_ESC, KC_RGHT)
