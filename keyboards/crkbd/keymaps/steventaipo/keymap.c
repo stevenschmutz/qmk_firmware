@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   // EEPROM-clear key -- not load-bearing now that
                                   // keyboard_post_init_user() resyncs on every boot, but
                                   // handy to keep around for a VIA-enabled board.
-                                  QK_CLEAR_EEPROM, LT(_OUTER, KC_SPC), LT(_INNER, KC_BSPC),   LT(_INNER, KC_BSPC), LT(_OUTER, KC_SPC), KC_NO
+                                  QK_CLEAR_EEPROM, LT(_OUTER, KC_BSPC), LT(_INNER, KC_SPC),   LT(_INNER, KC_SPC), LT(_OUTER, KC_BSPC), KC_NO
     ),
 
   // Held while the Backspace thumb is down: Escape, the arrows, Enter and `.`
