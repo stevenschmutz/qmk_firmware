@@ -305,6 +305,25 @@ const uint8_t oneshot_mods = get_oneshot_mods();
   return process_record_keymap(keycode, record);
 }
 
+// Longer window for the second tap of K, so a double tap is picked up
+// (default is TAPPING_TERM / 2 = 115ms on this board)
+#define CKC_K_SEQUENCE_TERM 200
+
+uint32_t get_smtd_timeout(uint16_t keycode, smtd_timeout timeout) {
+    if (keycode == CKC_K && timeout == SMTD_TIMEOUT_SEQUENCE) {
+        return CKC_K_SEQUENCE_TERM;
+    }
+    return get_smtd_timeout_default(timeout);
+}
+
+// Hold the tap until the sequence ends so a double tap sends only Ctrl+J, not K then Ctrl+J
+bool smtd_feature_enabled(uint16_t keycode, smtd_feature feature) {
+    if (keycode == CKC_K && feature == SMTD_FEATURE_AGGREGATE_TAPS) {
+        return true;
+    }
+    return smtd_feature_enabled_default(feature);
+}
+
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
         SMTD_MT(CKC_A, KC_A, KC_LEFT_GUI, 2)
@@ -320,7 +339,35 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         //SMTD_LT(CKC_I, KC_I, _NAVIGATION)
         //SMTD_MT(CKC_M, KC_M, KC_RSFT, 2)   
         SMTD_MT(CKC_M, KC_M, KC_M, 2)   
-        SMTD_MT(CKC_K, KC_K, KC_K, 2)
+        case CKC_K: {  // Same as SMTD_MT(CKC_K, KC_K, KC_K, 2), but double tap sends Ctrl+J
+            switch (action) {
+                case SMTD_ACTION_TOUCH:
+                    break;
+                case SMTD_ACTION_TAP:  // tap_count is the number of earlier taps, so 1 means a double tap
+                    if (tap_count < 1) {
+                        SMTD_TAP_16(true, KC_K);
+                    } else {
+                        tap_code16(LCTL(KC_J));
+                    }
+                    break;
+                case SMTD_ACTION_HOLD:
+                    if (tap_count < 2) {
+                        register_mods(MOD_BIT(KC_LSFT));
+                    } else {
+                        SMTD_REGISTER_16(true, KC_K);
+                    }
+                    break;
+                case SMTD_ACTION_RELEASE:
+                    if (tap_count < 2) {
+                        unregister_mods(MOD_BIT(KC_LSFT));
+                    } else {
+                        SMTD_UNREGISTER_16(true, KC_K);
+                        send_keyboard_report();
+                    }
+                    break;
+            }
+            break;
+        }
         SMTD_MT(CKC_Q, KC_Q, KC_LALT, 2)
         SMTD_MT(CKC_J, KC_J, KC_LEFT_CTRL, 2)
         SMTD_MT(CKC_TAB, KC_TAB, KC_LSFT, 2)
